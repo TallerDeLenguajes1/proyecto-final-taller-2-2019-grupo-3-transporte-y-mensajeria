@@ -11,6 +11,8 @@
     <AssemblyName>Entidades del Proyecto</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -42,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Avion.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Envio.cs" />
     <Compile Include="Furgoneta.cs" />
     <Compile Include="Mercancia.cs" />
     <Compile Include="Moto.cs" />

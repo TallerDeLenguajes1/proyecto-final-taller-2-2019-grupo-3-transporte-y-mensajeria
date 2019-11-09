@@ -13,7 +13,7 @@ namespace Entidades_del_Proyecto
         //Setters and Getters
 
         //Constructor
-        protected Cliente(int cuil, string nombre, string direccion, string telefono) : base( cuil, nombre, direccion, telefono) { }
+        protected Cliente(int cuil, string nombre, string apellido, string direccion, string telefono) : base( cuil, nombre, apellido, direccion, telefono) { }
 
         //Otros Metodos
 

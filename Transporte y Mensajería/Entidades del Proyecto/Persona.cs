@@ -12,6 +12,7 @@ namespace Entidades_del_Proyecto
         int idPersona;
         int cuil;
         string nombre;
+        string apellido;
         string direccion;
         string telefono;
 
@@ -19,14 +20,16 @@ namespace Entidades_del_Proyecto
         public int IdPersona { get => idPersona; set => idPersona = value; }
         public int Cuil { get => cuil; set => cuil = value; }
         public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Telefono { get => telefono; set => telefono = value; }
 
         //Constructor
-        protected Persona( int cuil, string nombre, string direccion, string telefono)
+        protected Persona( int cuil, string nombre, string apellido, string direccion, string telefono)
         {
             this.cuil = cuil;
             this.nombre = nombre;
+            this.apellido = apellido;
             this.direccion = direccion;
             this.telefono = telefono;
         }
