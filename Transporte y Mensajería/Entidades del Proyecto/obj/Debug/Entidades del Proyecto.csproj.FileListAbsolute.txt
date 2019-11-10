@@ -1,0 +1,2 @@
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajería\Entidades del Proyecto\obj\Debug\Entidades del Proyecto.csprojAssemblyReference.cache
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajería\Entidades del Proyecto\obj\Debug\Entidades del Proyecto.csproj.CoreCompileInputs.cache
