@@ -1,0 +1,30 @@
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.exe.config
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.exe
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.pdb
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csprojAssemblyReference.cache
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\App.g.cs
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF_MarkupCompile.cache
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF_MarkupCompile.lref
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\MainWindow.baml
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.g.resources
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI_WPF.Properties.Resources.resources
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.GenerateResource.cache
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.CoreCompileInputs.cache
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.exe
+C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.pdb
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.exe.config
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.exe
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.pdb
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csprojAssemblyReference.cache
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\App.g.cs
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF_MarkupCompile.cache
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF_MarkupCompile.lref
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\MainWindow.baml
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.g.resources
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI_WPF.Properties.Resources.resources
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.GenerateResource.cache
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.CoreCompileInputs.cache
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.exe
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.pdb
