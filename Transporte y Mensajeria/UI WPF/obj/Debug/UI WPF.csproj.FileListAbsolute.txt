@@ -28,3 +28,19 @@ C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.CoreCompileInputs.cache
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.exe
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.pdb
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMCliente.g.cs
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\AccesoADatos.dll
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\EntidadesDelProyecto.dll
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MySql.Data.dll
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Google.Protobuf.dll
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Renci.SshNet.dll
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\AccesoADatos.pdb
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\EntidadesDelProyecto.pdb
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MySql.Data.xml
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Google.Protobuf.xml
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Renci.SshNet.xml
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMCliente.baml
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.CopyComplete
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\AltaCliente.g.cs
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\AltaCliente.baml

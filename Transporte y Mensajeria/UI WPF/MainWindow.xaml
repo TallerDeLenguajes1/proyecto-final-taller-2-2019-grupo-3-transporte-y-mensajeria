@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="585" Width="1000">
+        Title="MainWindow" Height="585" Width="1000" >
     <Grid>
-        
+        <Label Content="PAGINA PRINCIPAL" HorizontalAlignment="Left" Margin="409,32,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="605,40,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Frame NavigationUIVisibility="Hidden" x:Name="frmAltaCliente" Content="" HorizontalAlignment="Left" Height="390" Margin="295,120,0,0" VerticalAlignment="Top" Width="300" />
+
     </Grid>
 </Window>

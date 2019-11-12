@@ -34,6 +34,17 @@ namespace EntidadesDelProyecto
             this.telefono = telefono;
         }
 
+        protected Persona(int idPersona, int cuil, string nombre, string apellido, string direccion, string telefono)
+        {
+            this.idPersona = idPersona;
+            this.cuil = cuil;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.direccion = direccion;
+            this.telefono = telefono;
+        }
+
+
         //Otros Metodos
 
 

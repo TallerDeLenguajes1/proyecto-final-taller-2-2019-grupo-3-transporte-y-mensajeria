@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AccesoADatos;
+using EntidadesDelProyecto;
+using UI_WPF.Vistas;
 
 namespace UI_WPF
 {
@@ -23,6 +26,15 @@ namespace UI_WPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        //Instanciaciones necesaria para conexion a base de datos
+        AccesoADatos.ADCliente clienteBD = new AccesoADatos.ADCliente();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationService.Navigate(new Uri("Vistas/AltaCliente.xaml",UriKind.RelativeOrAbsolute));
+            frmAltaCliente.Content = new AltaCliente(clienteBD);
         }
     }
 }

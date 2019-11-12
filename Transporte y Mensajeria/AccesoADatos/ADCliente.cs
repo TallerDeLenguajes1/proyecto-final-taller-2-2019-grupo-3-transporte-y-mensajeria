@@ -9,7 +9,7 @@ using System.Windows;
 
 namespace AccesoADatos
 {
-    public class ABMAlumno
+    public class ADCliente
     {
         Conexion conexion = new Conexion();
         MySqlCommand cmd;
@@ -40,7 +40,7 @@ namespace AccesoADatos
         }
 
         //Buscar cliente segun cuil
-        public Cliente GetCliente(int cuil)
+        public Cliente GetClientes(int cuil)
         {
             //Variables auxiliares
             Cliente nuevoCliente = null;
@@ -53,7 +53,8 @@ namespace AccesoADatos
             try
             {
                 conexion.abrir();
-                cmd = new MySqlCommand("Select * from clientes where cuil=" + cuil + "", conexion.retornarCN());
+                cmd = new MySqlCommand("Select * from clientes where cuil=@cuil", conexion.retornarCN());
+                cmd.Parameters.AddWithValue("@cuil", cuil);
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -62,7 +63,7 @@ namespace AccesoADatos
                     apellido = dr[3].ToString();
                     direccion = dr[4].ToString();
                     telefono = dr[5].ToString();
-                    nuevoCliente = new Cliente(cuil, nombre, apellido, direccion, telefono);
+                    nuevoCliente = new Cliente(idCliente,cuil, nombre, apellido, direccion, telefono);
 
                 }
                 dr.Close();
@@ -73,10 +74,93 @@ namespace AccesoADatos
                 MessageBox.Show("Error en la consulta" + ex.ToString());
             }
             return nuevoCliente;
-
-
         }
 
+        //Buscar clientes segun Nombre Completo
+        public List<Cliente> GetClientes(string nombreBuscado, string apellidoBuscado)
+        {
+            //Variables auxiliares
+            List<Cliente> ListClientes = new List<Cliente>();
+            Cliente nuevoCliente;
+            int idCliente;
+            int cuil;
+            string nombre;
+            string apellido;
+            string direccion;
+            string telefono;
+
+            //string[] descomponer;
+            //descomponer = nombreCompleto.Split(' ');
+            //string nombreABuscar = descomponer[0];
+            //string apellidoABuscar = descomponer[1];
+
+            try
+            {
+                conexion.abrir();
+                cmd = new MySqlCommand("Select * from clientes where nombre=@nombre and apellido=@apellido", conexion.retornarCN());
+                cmd.Parameters.AddWithValue("@nombre", nombreBuscado);
+                cmd.Parameters.AddWithValue("@apellido", apellidoBuscado);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    idCliente = Convert.ToInt32(dr[0]);
+                    cuil = Convert.ToInt32(dr[1]);
+                    nombre = dr[2].ToString();
+                    apellido = dr[3].ToString();
+                    direccion = dr[4].ToString();
+                    telefono = dr[5].ToString();
+                    nuevoCliente = new Cliente(idCliente, cuil, nombre, apellido, direccion, telefono);
+                    ListClientes.Add(nuevoCliente);
+                }
+                dr.Close();
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
+            }
+            return ListClientes;
+        }
+
+        //Buscar clientes segun NOMBRE O APELLIDO
+        public List<Cliente> GetClientes(string nombreOApellido)
+        {
+            //Variables auxiliares
+            List<Cliente> ListClientes = new List<Cliente>();
+            Cliente nuevoCliente;
+            int idCliente;
+            int cuil;
+            string nombre;
+            string apellido;
+            string direccion;
+            string telefono;
+
+            try
+            {
+                conexion.abrir();
+                cmd = new MySqlCommand("Select * from clientes where nombre=@nombreOApellido or apellido=@nombreOApellido", conexion.retornarCN());
+                cmd.Parameters.AddWithValue("@nombreOApellido", nombreOApellido);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    idCliente = Convert.ToInt32(dr[0]);
+                    cuil = Convert.ToInt32(dr[1]);
+                    nombre = dr[2].ToString();
+                    apellido = dr[3].ToString();
+                    direccion = dr[4].ToString();
+                    telefono = dr[5].ToString();
+                    nuevoCliente = new Cliente(idCliente, cuil, nombre, apellido, direccion, telefono);
+                    ListClientes.Add(nuevoCliente);
+                }
+                dr.Close();
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
+            }
+            return ListClientes;
+        }
 
         //Devolver listado de clientes
         public List<Cliente> GetClientes()
@@ -84,6 +168,7 @@ namespace AccesoADatos
             //Variables auxiliares
             List<Cliente> ListClientes = new List<Cliente>();
             Cliente nuevoCliente;
+            int idCliente;
             int cuil;
             string nombre;
             string apellido;
@@ -98,12 +183,13 @@ namespace AccesoADatos
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
+                    idCliente = Convert.ToInt32(dr[0]);
                     cuil = Convert.ToInt32(dr[1]);
                     nombre = dr[2].ToString();
                     apellido = dr[3].ToString();
                     direccion = dr[4].ToString();
                     telefono = dr[5].ToString();
-                    nuevoCliente = new Cliente(cuil, nombre, apellido, direccion, telefono);
+                    nuevoCliente = new Cliente(idCliente,cuil, nombre, apellido, direccion, telefono);
                     ListClientes.Add(nuevoCliente);
                 }
                 dr.Close();
@@ -113,7 +199,6 @@ namespace AccesoADatos
             {
                 MessageBox.Show("Error en la consulta" + ex.ToString());
             }
-
             return ListClientes;
         }
 

@@ -19,7 +19,7 @@ namespace AccesoADatos
             try
             {
                 cn = new MySqlConnection("Server=localhost; Database=transporte_y_mensajeria; Uid=root; Pwd = 1234; Integrated Security =True");
-                MessageBox.Show("Conectado");
+                //MessageBox.Show("Conectado");
             }
             catch (Exception ex)
             {

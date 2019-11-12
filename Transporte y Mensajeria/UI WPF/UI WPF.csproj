@@ -54,6 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Vistas\ABMCliente.xaml.cs">
+      <DependentUpon>ABMCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\AltaCliente.xaml.cs">
+      <DependentUpon>AltaCliente.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +72,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Vistas\ABMCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\AltaCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -95,7 +109,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imagenes\" />
-    <Folder Include="Vistas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AccesoADatos\AccesoADatos.csproj">
+      <Project>{375ca961-960c-4a25-bb59-3ea1efca4d4d}</Project>
+      <Name>AccesoADatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntidadesDelProyecto\EntidadesDelProyecto.csproj">
+      <Project>{b6cd3902-d7f8-492c-89ed-c90efa0d00bd}</Project>
+      <Name>EntidadesDelProyecto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
