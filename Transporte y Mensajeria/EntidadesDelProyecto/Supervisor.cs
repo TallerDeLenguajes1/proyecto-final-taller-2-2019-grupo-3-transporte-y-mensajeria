@@ -20,6 +20,11 @@ namespace EntidadesDelProyecto
             this.Vehiculos = new List<Vehiculo>();
         }
 
+        public Supervisor(int idPersona, int cuil, string nombre, string apellido, string direccion, string telefono) : base(idPersona, cuil, nombre, apellido, direccion, telefono)
+        {
+            this.Vehiculos = new List<Vehiculo>();
+        }
+
         //Otros Metodos
         public void AsignarVehiculo(Vehiculo vehiculo)
         {
