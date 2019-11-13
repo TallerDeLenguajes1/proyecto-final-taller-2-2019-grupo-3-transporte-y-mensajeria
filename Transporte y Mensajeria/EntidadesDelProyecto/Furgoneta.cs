@@ -12,12 +12,25 @@ namespace EntidadesDelProyecto
         double capacidadCarga;
 
         //Setters and Getters
-        public double CapacidadCarga { get => capacidadCarga; set => capacidadCarga = value; }
+       // public double CapacidadCarga { get => capacidadCarga; set => capacidadCarga = value; }
 
         //Constructor
-        protected Furgoneta(string descripcion, DateTime fechaCompra, double precioCompra, double capacidadCarga) : base(descripcion, fechaCompra, precioCompra)
+        public Furgoneta(string descripcion, DateTime fechaCompra, double precioCompra, double capacidadCarga, double aumento) : base(descripcion, fechaCompra, precioCompra, aumento)
         {
             this.capacidadCarga = capacidadCarga;
+        }
+
+        public double CapacidadCarga
+        {
+            get
+            {
+                return capacidadCarga;
+            }
+
+            set
+            {
+                capacidadCarga = value;
+            }
         }
 
         //Otros Metodos

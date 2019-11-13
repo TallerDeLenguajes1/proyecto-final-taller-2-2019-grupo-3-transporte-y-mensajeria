@@ -11,8 +11,21 @@ namespace EntidadesDelProyecto
         //Atributos
         List<Vehiculo> vehiculos;
 
+        public List<Vehiculo> Vehiculos
+        {
+            get
+            {
+                return vehiculos;
+            }
+
+            set
+            {
+                vehiculos = value;
+            }
+        }
+
         //Setters and Getters
-        public List<Vehiculo> Vehiculos { get => vehiculos; set => vehiculos = value; }
+        // public List<Vehiculo> Vehiculos { get => vehiculos; set => vehiculos = value; }
 
         //Constructor
         protected Supervisor(int cuil, string nombre, string apellido, string direccion, string telefono) : base(cuil, nombre, apellido, direccion, telefono)

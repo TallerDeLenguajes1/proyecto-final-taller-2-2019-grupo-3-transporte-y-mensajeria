@@ -10,16 +10,43 @@ namespace EntidadesDelProyecto
     {
         //Atribtos
         double volumen;
-        static double precioM3;
+        double precioM3;
+
+        public double Volumen
+        {
+            get
+            {
+                return volumen;
+            }
+
+            set
+            {
+                volumen = value;
+            }
+        }
+
+        public double PrecioM3
+        {
+            get
+            {
+                return precioM3;
+            }
+
+            set
+            {
+                precioM3 = value;
+            }
+        }
 
         //Setters and Getters
-        public double Volumen { get => volumen; set => volumen = value; }
-        public static double PrecioM3 { get => precioM3; set => precioM3 = value; }
+        //public double Volumen { get => volumen; set => volumen = value; }
+        //public static double PrecioM3 { get => precioM3; set => precioM3 = value; }
 
         //Constructor
-        protected Paquete(string descripcion, bool asegurada, bool largoRecorrido, double volumen) : base(descripcion, asegurada, largoRecorrido)
+        public Paquete(string descripcion, bool asegurada, bool largoRecorrido, double aumSeguro, double precioM3, double volumen) : base(descripcion, asegurada, largoRecorrido, aumSeguro)
         {
             this.volumen = volumen;
+            this.precioM3 = precioM3;
         }
 
         //Otros Metodos

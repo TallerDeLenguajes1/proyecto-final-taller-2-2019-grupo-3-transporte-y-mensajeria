@@ -31,6 +31,7 @@ namespace AccesoADatos
 
                 cmd.ExecuteNonQuery();
                 conexion.cerrar();
+                MessageBox.Show("Cliente agregado");
             }
             catch (Exception ex)
             {
@@ -40,7 +41,7 @@ namespace AccesoADatos
         }
 
         //Buscar cliente segun cuil
-        public Cliente GetClientes(int cuil)
+        public Cliente GetClientes(int cuil, string metodoBusqueda)
         {
             //Variables auxiliares
             Cliente nuevoCliente = null;
@@ -201,6 +202,31 @@ namespace AccesoADatos
             return ListClientes;
         }
 
+        //Modificar Cliente
+        public void ModificacionCliente(Cliente cliente)
+        {
+            try
+            {
+                conexion.abrir();
+                cmd = new MySqlCommand("UPDATE clientes SET cuil=@cuil, nombre=@nombre, apellido=@apellido, direccion=@direccion, telefono=@telefono WHERE cuil=@cuil", conexion.retornarCN());
+
+                cmd.Parameters.AddWithValue("@cuil", cliente.Cuil);
+                cmd.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
+                cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
+
+                cmd.ExecuteNonQuery();
+                conexion.cerrar();
+                MessageBox.Show("Cliente modificado");
+            }
+            catch (Exception ex)
+            {
+                //Loguear el error
+                MessageBox.Show("Error en la consulta" + ex.ToString());
+            }
+        }
+
         //Eliminar Cliente
         public void BajaCliente(int cuil)
         {
@@ -213,6 +239,7 @@ namespace AccesoADatos
 
                 cmd.ExecuteNonQuery();
                 conexion.cerrar();
+                MessageBox.Show("Cliente eliminado");
             }
             catch (Exception ex)
             {

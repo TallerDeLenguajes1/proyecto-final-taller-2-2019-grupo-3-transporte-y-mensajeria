@@ -15,6 +15,7 @@ namespace EntidadesDelProyecto
         //Constructor
         public Cliente(int cuil, string nombre, string apellido, string direccion, string telefono) : base(cuil, nombre, apellido, direccion, telefono) { }
         public Cliente(int idPersona, int cuil, string nombre, string apellido, string direccion, string telefono) : base(idPersona, cuil, nombre, apellido, direccion, telefono) { }
+        public Cliente() : base() { }
 
         //Otros Metodos
 

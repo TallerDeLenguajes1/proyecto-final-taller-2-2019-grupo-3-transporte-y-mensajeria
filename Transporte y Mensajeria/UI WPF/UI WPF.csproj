@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -57,8 +63,26 @@
     <Compile Include="Vistas\ABMCliente.xaml.cs">
       <DependentUpon>ABMCliente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\AltaCliente.xaml.cs">
-      <DependentUpon>AltaCliente.xaml</DependentUpon>
+    <Compile Include="Vistas\ABMEnvio.xaml.cs">
+      <DependentUpon>ABMEnvio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ABMMercancia.xaml.cs">
+      <DependentUpon>ABMMercancia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ABMSupervisor.xaml.cs">
+      <DependentUpon>ABMSupervisor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ABMVehiculos.xaml.cs">
+      <DependentUpon>ABMVehiculos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasCliente\DatosCliente.xaml.cs">
+      <DependentUpon>DatosCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasCliente\EliminarCliente.xaml.cs">
+      <DependentUpon>EliminarCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasCliente\ModificarCliente.xaml.cs">
+      <DependentUpon>ModificarCliente.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -76,7 +100,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vistas\AltaCliente.xaml">
+    <Page Include="Vistas\ABMEnvio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\ABMMercancia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\ABMSupervisor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\ABMVehiculos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasCliente\DatosCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasCliente\EliminarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasCliente\ModificarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,6 +147,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

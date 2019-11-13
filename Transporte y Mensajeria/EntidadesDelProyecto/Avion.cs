@@ -13,7 +13,7 @@ namespace EntidadesDelProyecto
         //Setters and Getters
 
         //Constructor
-        protected Avion(string descripcion, DateTime fechaCompra, double precioCompra) : base(descripcion, fechaCompra, precioCompra) { }
+        public Avion(string descripcion, DateTime fechaCompra, double precioCompra, double aumento) : base(descripcion, fechaCompra, precioCompra,aumento) { }
 
         //Otros Metodos
         public override double CalcularPrecio(double precioNeto, double unidad)

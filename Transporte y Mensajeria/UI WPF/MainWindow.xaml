@@ -5,11 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UI_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="585" Width="1000" >
-    <Grid>
-        <Label Content="PAGINA PRINCIPAL" HorizontalAlignment="Left" Margin="409,32,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="605,40,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Frame NavigationUIVisibility="Hidden" x:Name="frmAltaCliente" Content="" HorizontalAlignment="Left" Height="390" Margin="295,120,0,0" VerticalAlignment="Top" Width="300" />
+        Title="MainWindow" Height="640" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" >
+    <Grid Background="#FF7ECDE4">
+
+
+        <!--Menu lateral izquierdo-->
+        <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Left" Width="200" Background="#FF292929">
+            <Grid>
+                <Button x:Name="btnClientes" Content="Clientes" HorizontalAlignment="Center" Margin="62,165,62,0" VerticalAlignment="Top" Width="76" Click="btnClientes_Click"/>
+                <Button x:Name="btnSupervisores" Content="Supervisores" HorizontalAlignment="Center" Margin="62,205,62,0" VerticalAlignment="Top" Width="76" Click="btnSupervisores_Click"/>
+                <Button x:Name="btnVehiculos" Content="Vehiculos" HorizontalAlignment="Center" Margin="62,241,63,0" VerticalAlignment="Top" Width="75" Click="btnVehiculos_Click"/>
+                <Button x:Name="btnMercancia" Content="Mercancia" HorizontalAlignment="Center" Margin="62,277,62,0" VerticalAlignment="Top" Width="76" Click="btnMercancia_Click"/>
+                <Button x:Name="btnEnvios" Content="Envios" HorizontalAlignment="Center" Margin="62,313,62,0" VerticalAlignment="Top" Width="76" Click="btnEnvios_Click"/>
+
+            </Grid>
+        </Border>
+        
+        <!--Frame principal para cargar el contenidos dfe las paginas asociadas al menu-->
+        <Frame x:Name="frmMain" NavigationUIVisibility="Hidden" Margin="200,0,0,0" Background="#FFA6A6A6"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </Grid>
 </Window>
+ 

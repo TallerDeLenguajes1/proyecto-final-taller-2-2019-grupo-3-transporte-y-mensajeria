@@ -12,12 +12,25 @@ namespace EntidadesDelProyecto
         int cilindrada;
 
         //Setters and Getters
-        public int Cilindrada { get => cilindrada; set => cilindrada = value; }
+        //public int Cilindrada { get => cilindrada; set => cilindrada = value; }
 
         //Constructor
-        protected Moto(string descripcion, DateTime fechaCompra, double precioCompra, int cilindrada) : base(descripcion, fechaCompra, precioCompra)
+        public Moto(string descripcion, DateTime fechaCompra, double precioCompra, int cilindrada, double aumento) : base(descripcion, fechaCompra, precioCompra, aumento)
         {
             this.cilindrada = cilindrada;
+        }
+
+        public int Cilindrada
+        {
+            get
+            {
+                return cilindrada;
+            }
+
+            set
+            {
+                cilindrada = value;
+            }
         }
 
         //Otros Metodos

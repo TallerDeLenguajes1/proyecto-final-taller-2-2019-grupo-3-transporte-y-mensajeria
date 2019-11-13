@@ -14,3 +14,17 @@ C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\obj\Debug\AccesoADatos.csproj.CopyComplete
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\obj\Debug\AccesoADatos.dll
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\obj\Debug\AccesoADatos.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\AccesoADatos.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\AccesoADatos.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\BouncyCastle.Crypto.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\Google.Protobuf.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\MySql.Data.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\Renci.SshNet.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\Google.Protobuf.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\MySql.Data.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\Renci.SshNet.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\obj\Debug\AccesoADatos.csprojResolveAssemblyReference.cache
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\obj\Debug\AccesoADatos.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\obj\Debug\AccesoADatos.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\EntidadesDelProyecto.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\AccesoADatos\bin\Debug\EntidadesDelProyecto.pdb

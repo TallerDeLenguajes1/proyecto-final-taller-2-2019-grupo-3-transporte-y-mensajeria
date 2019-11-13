@@ -10,16 +10,43 @@ namespace EntidadesDelProyecto
     {
         //Atribtos
         double peso;
-        static double precioGramo;
+        double precioGramo;
+
+        public double Peso
+        {
+            get
+            {
+                return peso;
+            }
+
+            set
+            {
+                peso = value;
+            }
+        }
+
+        public double PrecioGramo
+        {
+            get
+            {
+                return precioGramo;
+            }
+
+            set
+            {
+                precioGramo = value;
+            }
+        }
 
         //Setters and Getters
-        public double Peso { get => peso; set => peso = value; }
-        public static double PrecioGramo { get => precioGramo; set => precioGramo = value; }
+        //public double Peso { get => peso; set => peso = value; }
+        //public static double PrecioGramo { get => precioGramo; set => precioGramo = value; }
 
         //Constructor
-        protected Sobre(string descripcion, bool asegurada, bool largoRecorrido, double peso) : base(descripcion, asegurada, largoRecorrido)
+        public Sobre(string descripcion, bool asegurada, bool largoRecorrido, double aumSeguro, double precioGramo, double peso) : base(descripcion, asegurada, largoRecorrido, aumSeguro)
         {
             this.peso = peso;
+            this.precioGramo = precioGramo;
         }
 
         //Otros Metodos

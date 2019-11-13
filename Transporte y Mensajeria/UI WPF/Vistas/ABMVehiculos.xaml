@@ -1,0 +1,18 @@
+﻿<Page x:Class="UI_WPF.Vistas.ABMVehiculos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI_WPF.Vistas"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="792"
+      Title="ABMVehiculos">
+
+    <Grid>
+        <Grid Background="White">
+            <TextBlock HorizontalAlignment="Left" Margin="20,27,0,0" TextWrapping="Wrap" Text="VEHICULOS" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="20"/>
+
+        </Grid>
+
+    </Grid>
+</Page>
