@@ -1,0 +1,67 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI_WPF.Vistas"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="UI_WPF.Vistas.ABMMercancia"
+      mc:Ignorable="d" 
+      d:DesignHeight="610" d:DesignWidth="792"
+      Title="ABMMercancia">
+
+    <Grid>
+        <Grid Background="White">
+            <TextBlock HorizontalAlignment="Left" Margin="20,27,0,0" TextWrapping="Wrap" Text="MERCANCIAS" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="20"/>
+            <Border BorderBrush="Black" BorderThickness="1" Height="230" Margin="20,80,272,0" VerticalAlignment="Top" CornerRadius="10" Background="White">
+                <Grid>
+                    <Label Content="NUEVO" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
+                    <Frame x:Name="frmNuevaMercancia" Content="" Margin="0,69,0,10"/>
+                    <RadioButton x:Name="rdoSobre" GroupName="tipoMercancia" Content="Sobre" HorizontalAlignment="Left" Margin="16,48,0,0" VerticalAlignment="Top" IsChecked="True" Checked="rdoSobre_Checked"/>
+                    <RadioButton x:Name="rdoPaquete" GroupName="tipoMercancia" Content="Paquete" HorizontalAlignment="Left" Margin="80,48,0,0" VerticalAlignment="Top" Checked="rdoPaquete_Checked"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,80,22,0" Width="236" CornerRadius="10" Background="White" Height="230" VerticalAlignment="Top">
+                <Grid>
+                    <Line X1="15" X2="218" Y1="35" Y2="35" Stroke="Black"/>
+                    <Label Content="EXPORTAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
+                </Grid>
+            </Border>
+
+            <Border BorderBrush="Black" BorderThickness="1" Margin="20,324,22,21" CornerRadius="10" Background="White">
+                <Grid>
+                    <Label Content="BUSCAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
+                    <Label x:Name="lblBuscarPor" Content="Buscar por:" HorizontalAlignment="Left" Margin="16,41,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="tbxBuscar" HorizontalAlignment="Left" Height="23" Margin="224,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="zapatilla"/>
+                    <Button x:Name="btnBuscar" HorizontalAlignment="Left" Margin="357,45,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                        <materialDesign:PackIcon Kind="Magnify"/>
+                    </Button>
+                    <ComboBox x:Name="cboBuscar" HorizontalAlignment="Left" Margin="90,45,0,0" VerticalAlignment="Top" Width="129">
+                        <ComboBoxItem Content="Contenido" IsSelected="True"/>
+                        <ComboBoxItem/>
+                    </ComboBox>
+                    <Label x:Name="lblResultadoBusqueda" Content="Resultados:" HorizontalAlignment="Left" Margin="16,82,0,0" VerticalAlignment="Top"/>
+                    <ListBox x:Name="lbxResult" HorizontalAlignment="Left" Height="90" Margin="90,86,0,0" VerticalAlignment="Top" Width="289"/>
+                    <Label x:Name="lblAcciones" Content="Acciones:" HorizontalAlignment="Left" Margin="16,187,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnVer" HorizontalAlignment="Left" Margin="90,191,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                        <materialDesign:PackIcon Kind="Eye"/>
+                    </Button>
+                    <Button x:Name="btnModificar" HorizontalAlignment="Left" Margin="117,191,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                        <materialDesign:PackIcon Kind="pencil"/>
+                    </Button>
+                    <Button x:Name="btnEliminar" HorizontalAlignment="Left" Margin="144,191,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                        <materialDesign:PackIcon Kind="Delete"/>
+                    </Button>
+                    <Button x:Name="btnAsociarVehiculo" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="125" Height="22">
+                        <Grid>
+                            <materialDesign:PackIcon Kind="CarMultiple" Margin="-12,0,0,0"/>
+                            <TextBlock Text="ASOCIAR VEHICULO" FontSize="10" Margin="11,0,-11,0"/>
+                        </Grid>
+                    </Button>
+                    <Frame x:Name="frmAccion" NavigationUIVisibility="Hidden" Margin="434,0,0,0" BorderThickness="1"/>
+                </Grid>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+</Page>

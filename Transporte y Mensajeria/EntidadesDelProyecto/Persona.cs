@@ -16,13 +16,91 @@ namespace EntidadesDelProyecto
         string direccion;
         string telefono;
 
+        public int IdPersona
+        {
+            get
+            {
+                return idPersona;
+            }
+
+            set
+            {
+                idPersona = value;
+            }
+        }
+
+        public int Cuil
+        {
+            get
+            {
+                return cuil;
+            }
+
+            set
+            {
+                cuil = value;
+            }
+        }
+
+        public string Nombre
+        {
+            get
+            {
+                return nombre;
+            }
+
+            set
+            {
+                nombre = value;
+            }
+        }
+
+        public string Apellido
+        {
+            get
+            {
+                return apellido;
+            }
+
+            set
+            {
+                apellido = value;
+            }
+        }
+
+        public string Direccion
+        {
+            get
+            {
+                return direccion;
+            }
+
+            set
+            {
+                direccion = value;
+            }
+        }
+
+        public string Telefono
+        {
+            get
+            {
+                return telefono;
+            }
+
+            set
+            {
+                telefono = value;
+            }
+        }
+
         //Setters and Getters
-        public int IdPersona { get => idPersona; set => idPersona = value; }
-        public int Cuil { get => cuil; set => cuil = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
-        public string Direccion { get => direccion; set => direccion = value; }
-        public string Telefono { get => telefono; set => telefono = value; }
+        //public int IdPersona { get => idPersona; set => idPersona = value; }
+        //public int Cuil { get => cuil; set => cuil = value; }
+        //public string Nombre { get => nombre; set => nombre = value; }
+        //public string Apellido { get => apellido; set => apellido = value; }
+        //public string Direccion { get => direccion; set => direccion = value; }
+        //public string Telefono { get => telefono; set => telefono = value; }
 
         //Constructor
         protected Persona(int cuil, string nombre, string apellido, string direccion, string telefono)
@@ -33,6 +111,24 @@ namespace EntidadesDelProyecto
             this.direccion = direccion;
             this.telefono = telefono;
         }
+
+        protected Persona(int idPersona, int cuil, string nombre, string apellido, string direccion, string telefono)
+        {
+            this.idPersona = idPersona;
+            this.cuil = cuil;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.direccion = direccion;
+            this.telefono = telefono;
+        }
+
+        protected Persona(){ }
+
+        public override string ToString()
+        {
+            return "("+ cuil + ") " + apellido + ", " + nombre ;
+        }
+
 
         //Otros Metodos
 

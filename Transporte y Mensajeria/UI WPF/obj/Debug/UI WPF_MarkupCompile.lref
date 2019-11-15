@@ -1,4 +1,17 @@
 ﻿
 
-FC:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\MainWindow.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\MainWindow.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\ABMCliente.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\ABMEnvio.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\ABMMercancia.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\ABMSupervisor.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\ABMVehiculos.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasCliente\DatosCliente.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasCliente\EliminarCliente.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasCliente\ModificarCliente.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasMercancia\AltaPaquete.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasMercancia\AltaSobre.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasVehiculo\AltaAvion.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasVehiculo\AltaFurgoneta.xaml;;
+FE:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\Vistas\VistasVehiculo\AltaMoto.xaml;;
 

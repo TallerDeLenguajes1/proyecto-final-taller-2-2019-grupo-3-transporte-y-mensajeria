@@ -1,0 +1,20 @@
+﻿<Page x:Class="UI_WPF.Vistas.VistasCliente.EliminarCliente"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI_WPF.Vistas.VistasCliente"
+      mc:Ignorable="d" 
+      d:DesignHeight="263" d:DesignWidth="314"
+      Title="EliminarCliente">
+
+    <Grid>
+        <Grid x:Name="grdContent" Background="White">
+            <Label Content="ELIMINAR CLIENTE" Margin="0,10,181,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" HorizontalAlignment="Right" Width="123"/>
+            <Button x:Name="btnSiEliminar" Content="SI" HorizontalAlignment="Left" Margin="179,70,0,0" VerticalAlignment="Top" Width="42" Click="btnSiEliminar_Click" />
+            <Button x:Name="btnNoEliminar" Content="NO" HorizontalAlignment="Left" Margin="226,70,0,0" VerticalAlignment="Top" Width="42" Click="btnNoEliminar_Click" />
+            <Label x:Name="lblClientCuil" Content="¿Seguro que desea eliminar?" Margin="0,66,140,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="164"/>
+
+        </Grid>
+    </Grid>
+</Page>

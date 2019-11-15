@@ -1,0 +1,24 @@
+﻿<Page x:Class="UI_WPF.Vistas.VistasVehiculo.AltaFurgoneta"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI_WPF.Vistas.VistasVehiculo"
+      mc:Ignorable="d" 
+      d:DesignHeight="149" d:DesignWidth="498"
+      Title="AltaFurgoneta">
+
+    <Grid>
+        <Grid Height="149" VerticalAlignment="Top" Background="White">
+            <Label x:Name="lblModelo" Content="Modelo:" Margin="10,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
+            <Label x:Name="lblPrecioCompra" Content="Precio de compra:" Margin="274,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
+            <TextBox x:Name="tbxModelo" HorizontalAlignment="Left" Height="22" Margin="14,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
+            <TextBox x:Name="tbxPrecioCompra" HorizontalAlignment="Left" Height="22" Margin="280,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblFechaCompra" Content="Fecha de compra:" Margin="9,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+            <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblCapCarga" Content="Capacidad de carga:" Margin="176,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
+            <TextBox x:Name="tbxCapCarga" HorizontalAlignment="Left" Height="22" Margin="182,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btnAltaFurgoneta" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" />
+        </Grid>
+    </Grid>
+</Page>

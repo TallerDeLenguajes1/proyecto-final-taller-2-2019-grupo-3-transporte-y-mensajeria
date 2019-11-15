@@ -10,24 +10,90 @@ namespace EntidadesDelProyecto
     {
         //Atributos
         int idVehiculo;
-        string descripcion;
+        string modelo;
         DateTime fechaCompra;
         double precioCompra;
-        static double aumento;
+        double aumento;
+
+        public int IdVehiculo
+        {
+            get
+            {
+                return idVehiculo;
+            }
+
+            set
+            {
+                idVehiculo = value;
+            }
+        }
+
+        public string Modelo
+        {
+            get
+            {
+                return modelo;
+            }
+
+            set
+            {
+                modelo = value;
+            }
+        }
+
+        public DateTime FechaCompra
+        {
+            get
+            {
+                return fechaCompra;
+            }
+
+            set
+            {
+                fechaCompra = value;
+            }
+        }
+
+        public double PrecioCompra
+        {
+            get
+            {
+                return precioCompra;
+            }
+
+            set
+            {
+                precioCompra = value;
+            }
+        }
+
+        public  double Aumento
+        {
+            get
+            {
+                return aumento;
+            }
+
+            set
+            {
+                aumento = value;
+            }
+        }
 
         //Setters and Getters
-        public int IdVehiculo { get => idVehiculo; set => idVehiculo = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public DateTime FechaCompra { get => fechaCompra; set => fechaCompra = value; }
-        public double PrecioCompra { get => precioCompra; set => precioCompra = value; }
-        public static double Aumento { get => aumento; set => aumento = value; }
+        //public int IdVehiculo { get => idVehiculo; set => idVehiculo = value; }
+        //public string Modelo { get => modelo; set => modelo = value; }
+        //public DateTime FechaCompra { get => fechaCompra; set => fechaCompra = value; }
+        //public double PrecioCompra { get => precioCompra; set => precioCompra = value; }
+        //public static double Aumento { get => aumento; set => aumento = value; }
 
         //Constructor
-        protected Vehiculo(string descripcion, DateTime fechaCompra, double precioCompra)
+        public Vehiculo(string modelo, DateTime fechaCompra, double precioCompra, double aumento)
         {
-            this.descripcion = descripcion;
+            this.modelo = modelo;
             this.fechaCompra = fechaCompra;
             this.precioCompra = precioCompra;
+            this.aumento = aumento;
         }
 
         //Otros Metodos

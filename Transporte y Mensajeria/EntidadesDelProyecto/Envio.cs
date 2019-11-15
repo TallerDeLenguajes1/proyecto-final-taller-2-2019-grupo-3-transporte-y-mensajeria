@@ -15,12 +15,77 @@ namespace EntidadesDelProyecto
         Cliente receptor;
         Mercancia merc;
 
+        public int IdEnvio
+        {
+            get
+            {
+                return idEnvio;
+            }
+
+            set
+            {
+                idEnvio = value;
+            }
+        }
+
+        public DateTime FechaEnvio
+        {
+            get
+            {
+                return fechaEnvio;
+            }
+
+            set
+            {
+                fechaEnvio = value;
+            }
+        }
+
+        public Cliente Emisor
+        {
+            get
+            {
+                return emisor;
+            }
+
+            set
+            {
+                emisor = value;
+            }
+        }
+
+        public Cliente Receptor
+        {
+            get
+            {
+                return receptor;
+            }
+
+            set
+            {
+                receptor = value;
+            }
+        }
+
+        public Mercancia Merc
+        {
+            get
+            {
+                return merc;
+            }
+
+            set
+            {
+                merc = value;
+            }
+        }
+
         //Setters and Getters
-        public int IdEnvio { get => idEnvio; set => idEnvio = value; }
-        public DateTime FechaEnvio { get => fechaEnvio; set => fechaEnvio = value; }
-        public Cliente Emisor { get => emisor; set => emisor = value; }
-        public Cliente Receptor { get => receptor; set => receptor = value; }
-        public Mercancia Merc { get => merc; set => merc = value; }
+        //public int IdEnvio { get => idEnvio; set => idEnvio = value; }
+        //public DateTime FechaEnvio { get => fechaEnvio; set => fechaEnvio = value; }
+        //public Cliente Emisor { get => emisor; set => emisor = value; }
+        //public Cliente Receptor { get => receptor; set => receptor = value; }
+        //public Mercancia Merc { get => merc; set => merc = value; }
 
         //Constructor
         public Envio(int idEnvio, DateTime fechaEnvio, Cliente emisor, Cliente receptor, Mercancia merc)
