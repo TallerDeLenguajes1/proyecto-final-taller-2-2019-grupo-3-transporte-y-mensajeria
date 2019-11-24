@@ -14,11 +14,13 @@
             <Label x:Name="lblPrecioCompra" Content="Precio de compra:" Margin="274,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
             <TextBox x:Name="tbxModelo" HorizontalAlignment="Left" Height="22" Margin="14,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
             <TextBox x:Name="tbxPrecioCompra" HorizontalAlignment="Left" Height="22" Margin="280,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label x:Name="lblFechaCompra" Content="Fecha de compra:" Margin="9,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
-            <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lblCapCarga" Content="Capacidad de carga:" Margin="176,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
-            <TextBox x:Name="tbxCapCarga" HorizontalAlignment="Left" Height="22" Margin="182,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btnAltaFurgoneta" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" />
+            <Label x:Name="lblFechaCompra" Content="Fecha de compra:" Margin="14,53,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+            <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,79,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblCapCarga" Content="Capacidad de carga:" Margin="181,55,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
+            <TextBox x:Name="tbxCapCarga" HorizontalAlignment="Left" Height="22" Margin="182,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btnAltaFurgoneta" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" Click="BtnAltaFurgoneta_Click" />
+            <Label x:Name="lblAumento" Content="Aumento:" Margin="323,55,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="121"/>
+            <TextBox x:Name="tbxAumento" HorizontalAlignment="Left" Height="22" Margin="329,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </Grid>
     </Grid>
 </Page>

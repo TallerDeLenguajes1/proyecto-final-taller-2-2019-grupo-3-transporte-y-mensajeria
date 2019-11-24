@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\obj\Debug\
+C:\Users\fvg\Documents\taller2\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\
 UI_WPF
 none
 false
 DEBUG;TRACE
-E:\Taller de Lenguajes II\Transporte y Mensajeria\UI WPF\App.xaml
+C:\Users\fvg\Documents\taller2\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\App.xaml
 14-993898888
 
 18-1363857638
-17676317706
+17-567773148
 MainWindow.xaml;Vistas\ABMCliente.xaml;Vistas\ABMEnvio.xaml;Vistas\ABMMercancia.xaml;Vistas\ABMSupervisor.xaml;Vistas\ABMVehiculos.xaml;Vistas\VistasCliente\DatosCliente.xaml;Vistas\VistasCliente\EliminarCliente.xaml;Vistas\VistasCliente\ModificarCliente.xaml;Vistas\VistasMercancia\AltaPaquete.xaml;Vistas\VistasMercancia\AltaSobre.xaml;Vistas\VistasVehiculo\AltaAvion.xaml;Vistas\VistasVehiculo\AltaFurgoneta.xaml;Vistas\VistasVehiculo\AltaMoto.xaml;
 
 False

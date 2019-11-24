@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntidadesDelProyecto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,21 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class AltaAvion : Page
     {
-        public AltaAvion()
+        AccesoADatos.ADAvion avionBD;
+        public AltaAvion(AccesoADatos.ADAvion avionBD)
         {
             InitializeComponent();
+            this.avionBD = avionBD;
+        }
+
+        private void BtnAltaAvion_Click(object sender, RoutedEventArgs e)
+        {
+            string modelo = tbxModelo.Text;
+            double aumento = Convert.ToDouble(tbxAumento.Text);
+            DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+            double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+            Avion nuevoAvion = new Avion(modelo, fechaCompra, precioCompra, aumento);
+            avionBD.AltaAvion(nuevoAvion);
         }
     }
 }

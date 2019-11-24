@@ -31,6 +31,9 @@ namespace UI_WPF
         //Instanciaciones necesaria para conexion a base de datos
         AccesoADatos.ADCliente clienteBD = new AccesoADatos.ADCliente();
         AccesoADatos.ADSupervisor supervisorBD = new AccesoADatos.ADSupervisor();
+        AccesoADatos.ADMoto motoBD = new AccesoADatos.ADMoto();
+        AccesoADatos.ADFurgoneta furgonetaBD = new AccesoADatos.ADFurgoneta();
+        AccesoADatos.ADAvion avionBD= new AccesoADatos.ADAvion();
 
         //Cargar vista Clientes
         private void btnClientes_Click(object sender, RoutedEventArgs e)
@@ -47,7 +50,7 @@ namespace UI_WPF
         //Cargar vista Vehiculos
         private void btnVehiculos_Click(object sender, RoutedEventArgs e)
         {
-            frmMain.Content = new ABMVehiculos();
+            frmMain.Content = new ABMVehiculos(motoBD,furgonetaBD,avionBD);
         }
 
         //Cargar vista Mercancia

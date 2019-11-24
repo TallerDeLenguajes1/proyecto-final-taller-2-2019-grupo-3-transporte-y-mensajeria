@@ -27,7 +27,7 @@
                     <Label Content="BUSCAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
                     <Label x:Name="lblBuscarPor" Content="Buscar por:" HorizontalAlignment="Left" Margin="16,41,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="tbxBuscar" HorizontalAlignment="Left" Height="23" Margin="224,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="C90"/>
-                    <Button x:Name="btnBuscar" HorizontalAlignment="Left" Margin="357,45,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                    <Button x:Name="btnBuscar" HorizontalAlignment="Left" Margin="357,45,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="BtnBuscar_Click"  >
                         <materialDesign:PackIcon Kind="Magnify"/>
                     </Button>
                     <ComboBox x:Name="cboBuscar" HorizontalAlignment="Left" Margin="90,45,0,0" VerticalAlignment="Top" Width="129">

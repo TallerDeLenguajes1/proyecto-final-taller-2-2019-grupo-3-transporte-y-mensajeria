@@ -10,15 +10,17 @@
 
     <Grid>
         <Grid Height="149" VerticalAlignment="Top" Background="White">
-            <Label x:Name="lblModelo" Content="Modelo:" Margin="10,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
-            <Label x:Name="lblPrecioCompra" Content="Precio de compra:" Margin="274,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
-            <Button x:Name="btnAltaMoto" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" />
-            <TextBox x:Name="tbxModelo" HorizontalAlignment="Left" Height="22" Margin="14,26,0,0" Text="C90" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
-            <TextBox x:Name="tbxPrecioCompra" HorizontalAlignment="Left" Height="22" Margin="280,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="2500"/>
-            <Label x:Name="lblFechaCompra" Content="Fecha de compra:" Margin="9,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
-            <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lblCilindrada" Content="Cilindrada:" Margin="176,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
-            <TextBox x:Name="tbxCilindrada" HorizontalAlignment="Left" Height="22" Margin="182,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="75"/>
+            <Label x:Name="lblModelo" Content="Modelo:" Margin="10,-5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
+            <Label x:Name="lblPrecioCompra" Content="Precio de compra:" Margin="273,-5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
+            <Button x:Name="btnAltaMoto" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" Click="BtnAltaMoto_Click" />
+            <TextBox x:Name="tbxModelo" HorizontalAlignment="Left" Height="22" Margin="14,20,0,0" Text="C90" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
+            <TextBox x:Name="tbxPrecioCompra" HorizontalAlignment="Left" Height="22" Margin="273,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="2500"/>
+            <Label x:Name="lblFechaCompra" Content="Fecha de compra:" Margin="14,47,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+            <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,73,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblCilindrada" Content="Cilindrada:" Margin="176,55,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
+            <TextBox x:Name="tbxCilindrada" HorizontalAlignment="Left" Height="22" Margin="181,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="75"/>
+            <Label x:Name="lblAumento" Content="Aumento:" Margin="315,55,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
+            <TextBox x:Name="tbxAumento" HorizontalAlignment="Left" Height="22" Margin="315,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="10"/>
         </Grid>
     </Grid>
 </Page>

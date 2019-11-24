@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntidadesDelProyecto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,27 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class AltaMoto : Page
     {
-        public AltaMoto()
+        AccesoADatos.ADMoto motoBD;
+        public AltaMoto(AccesoADatos.ADMoto motoBD)
         {
             InitializeComponent();
+            this.motoBD = motoBD;
+        }
+        /// <summary>
+        /// alta de moto
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnAltaMoto_Click(object sender, RoutedEventArgs e)
+        {
+            string modelo = tbxModelo.Text;
+            double aumento = Convert.ToDouble(tbxAumento.Text);
+            int cilindrada = Convert.ToInt16( tbxCilindrada.Text);
+            DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+            double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+            Moto nuevaMoto = new Moto(modelo, fechaCompra,precioCompra,cilindrada,aumento);
+            motoBD.AltaMoto(nuevaMoto);
+
         }
     }
 }

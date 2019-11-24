@@ -16,7 +16,9 @@
             <TextBox x:Name="tbxPrecioCompra" HorizontalAlignment="Left" Height="22" Margin="280,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label x:Name="lblFechaCompra" Content="Fecha de compra:" Margin="9,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
             <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnAltaAvion" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" />
+            <Button x:Name="btnAltaAvion" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" RenderTransformOrigin="0.667,0.685" Click="BtnAltaAvion_Click" />
+            <TextBox x:Name="tbxAumento" HorizontalAlignment="Left" Height="22" Margin="268,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblAumento" Content="Aumento:" Margin="274,63,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
         </Grid>
     </Grid>
 </Page>
