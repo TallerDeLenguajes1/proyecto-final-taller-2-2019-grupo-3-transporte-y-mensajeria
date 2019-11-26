@@ -158,7 +158,7 @@ namespace EntidadesDelProyecto
             }
         }
 
-        protected virtual double CalcularPrecioNeto() { return 0; }
+        public virtual double CalcularPrecioNeto() { return 0; }
 
         protected virtual double CalcularPrecioSegunVehiculos() { return 0; }
 

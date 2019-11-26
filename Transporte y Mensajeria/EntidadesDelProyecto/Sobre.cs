@@ -50,7 +50,7 @@ namespace EntidadesDelProyecto
         }
 
         //Otros Metodos
-        protected override double CalcularPrecioNeto()
+        public override double CalcularPrecioNeto()
         {
             double aux = peso * precioGramo;
             return PrecioMercanciaAsegurada(aux);
