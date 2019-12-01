@@ -18,25 +18,30 @@ namespace AccesoADatos
         //Alta Supervisor
         public void AltaSupervisor(Supervisor supervisor)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                cmd = new MySqlCommand("Insert into supervisores(cuil,nombre,apellido,direccion,telefono) values( @cuil, @nombre, @apellido, @direccion, @telefono)", conexion.retornarCN());
 
-                cmd.Parameters.AddWithValue("@cuil", supervisor.Cuil);
-                cmd.Parameters.AddWithValue("@nombre", supervisor.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", supervisor.Apellido);
-                cmd.Parameters.AddWithValue("@direccion", supervisor.Direccion);
-                cmd.Parameters.AddWithValue("@telefono", supervisor.Telefono);
+                try
+                {
+                    conexion.abrir();
+                    cmd = new MySqlCommand("Insert into supervisores(cuil,nombre,apellido,direccion,telefono) values( @cuil, @nombre, @apellido, @direccion, @telefono)", conexion.retornarCN());
 
-                cmd.ExecuteNonQuery();
-                conexion.cerrar();
+                    cmd.Parameters.AddWithValue("@cuil", supervisor.Cuil);
+                    cmd.Parameters.AddWithValue("@nombre", supervisor.Nombre);
+                    cmd.Parameters.AddWithValue("@apellido", supervisor.Apellido);
+                    cmd.Parameters.AddWithValue("@direccion", supervisor.Direccion);
+                    cmd.Parameters.AddWithValue("@telefono", supervisor.Telefono);
+
+                    cmd.ExecuteNonQuery();
+                    conexion.cerrar();
+                }
+                catch (Exception ex)
+                {
+                    //Loguear el error
+                    MessageBox.Show("Error en la consulta" + ex.ToString());
+                }
             }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
-            }
+
         }
 
         //Buscar supervisor segun cuil
@@ -193,6 +198,31 @@ namespace AccesoADatos
                 MessageBox.Show("Error en la consulta" + ex.ToString());
             }
             return ListSupervisores;
+        }
+
+        //Modificar Supervisor
+        public void ModificacionSupervisor(Supervisor supervisor)
+        {
+            try
+            {
+                conexion.abrir();
+                cmd = new MySqlCommand("UPDATE supervisores SET cuil=@cuil, nombre=@nombre, apellido=@apellido, direccion=@direccion, telefono=@telefono WHERE cuil=@cuil", conexion.retornarCN());
+
+                cmd.Parameters.AddWithValue("@cuil", supervisor.Cuil);
+                cmd.Parameters.AddWithValue("@nombre", supervisor.Nombre);
+                cmd.Parameters.AddWithValue("@apellido", supervisor.Apellido);
+                cmd.Parameters.AddWithValue("@direccion", supervisor.Direccion);
+                cmd.Parameters.AddWithValue("@telefono", supervisor.Telefono);
+
+                cmd.ExecuteNonQuery();
+                conexion.cerrar();
+                MessageBox.Show("Supervisor modificado");
+            }
+            catch (Exception ex)
+            {
+                //Loguear el error
+                MessageBox.Show("Error en la consulta" + ex.ToString());
+            }
         }
 
         //Eliminar Supervisor

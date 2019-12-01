@@ -14,6 +14,8 @@ namespace EntidadesDelProyecto
 
         //Constructor
         public Avion(string modelo, DateTime fechaCompra, double precioCompra, double aumento) : base(modelo, fechaCompra, precioCompra,aumento) { }
+        public Avion(int idVehiculo, string modelo, DateTime fechaCompra, double precioCompra, double aumento) : base(idVehiculo, modelo, fechaCompra, precioCompra, aumento) { }
+
 
         //Otros Metodos
         public override double CalcularPrecio(double precioNeto, double unidad)
@@ -21,6 +23,11 @@ namespace EntidadesDelProyecto
             return precioNeto * ((Aumento / 100) + 1);
         }
 
+
+        public override string ToString()
+        {
+            return "(Avion) - " + Modelo;
+        }
 
 
     }

@@ -32,6 +32,36 @@ namespace UI_WPF
         AccesoADatos.ADCliente clienteBD = new AccesoADatos.ADCliente();
         AccesoADatos.ADSupervisor supervisorBD = new AccesoADatos.ADSupervisor();
 
+        //********************* Botones de control de la ventana *********************//
+
+        private void btnMin_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnMax_Click(object sender, RoutedEventArgs e)
+        {
+            btnMax.Visibility = Visibility.Collapsed;
+            btnVent.Visibility = Visibility.Visible;
+            WindowState = WindowState.Maximized;
+        }
+
+        private void btnVent_Click(object sender, RoutedEventArgs e)
+        {
+            btnMax.Visibility = Visibility.Visible;
+            btnVent.Visibility = Visibility.Collapsed;
+            WindowState = WindowState.Normal;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+
+
+        //****************** Control del menu de contenido principal *****************//
+
         //Cargar vista Clientes
         private void btnClientes_Click(object sender, RoutedEventArgs e)
         {
@@ -61,6 +91,7 @@ namespace UI_WPF
         {
             frmMain.Content = new ABMEnvio();
         }
+
 
         //Cargar una pagina en un frame
         //private void Button_Click(object sender, RoutedEventArgs e)

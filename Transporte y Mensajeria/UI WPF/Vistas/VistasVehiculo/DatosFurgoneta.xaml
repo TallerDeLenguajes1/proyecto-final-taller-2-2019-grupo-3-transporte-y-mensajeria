@@ -1,0 +1,25 @@
+﻿<Page x:Class="UI_WPF.Vistas.VistasVehiculo.DatosFurgoneta"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI_WPF.Vistas.VistasVehiculo"
+      mc:Ignorable="d" 
+      d:DesignHeight="263" d:DesignWidth="314"
+      Title="DatosFurgoneta">
+
+    <Grid>
+        <Grid >
+            <Label x:Name="lblClientCuil"  Content="Modelo:" Margin="0,45,248,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
+            <Label x:Name="lblClientNombre" Content="Precio de compra:" Margin="0,99,194,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="110"/>
+            <Label x:Name="lblClientApellido" Content="Capacidad de carga:" Margin="0,99,29,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="125"/>
+            <Label x:Name="lblClientDireccion" Content="Fecha de compra:" HorizontalAlignment="Right" Margin="0,155,199,0" VerticalAlignment="Top" Width="105"/>
+            <Label Content="DATOS FURGONETA" Margin="0,10,169,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" HorizontalAlignment="Right" Width="135"/>
+            <TextBox x:Name="tbxModelo" Style="{StaticResource TextBoxStyle1}"  IsReadOnly="True" HorizontalAlignment="Left" Height="22" Margin="16,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
+            <TextBox x:Name="tbxPrecioCompra" Style="{StaticResource TextBoxStyle1}" IsReadOnly="True" HorizontalAlignment="Left" Height="22" Margin="16,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="tbxCapacidad" Style="{StaticResource TextBoxStyle1}" IsReadOnly="True" HorizontalAlignment="Left" Height="22" Margin="165,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="tbxFechaCompra" Style="{StaticResource TextBoxStyle1}" IsReadOnly="True" HorizontalAlignment="Left" Height="22" Margin="16,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+        </Grid>
+
+    </Grid>
+</Page>

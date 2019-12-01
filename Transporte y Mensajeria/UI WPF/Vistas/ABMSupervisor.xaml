@@ -10,63 +10,62 @@
       Title="ABMSupervisor">
 
     <Grid>
-        <Grid Background="White">
-            <TextBlock HorizontalAlignment="Left" Margin="20,27,0,0" TextWrapping="Wrap" Text="SUPERVISORES" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="20"/>
-            <Border BorderBrush="Black" BorderThickness="1" Height="230" Margin="20,80,272,0" VerticalAlignment="Top" CornerRadius="10" Background="White">
+        <Grid>
+            <TextBlock HorizontalAlignment="Left" Margin="20,37,0,0" TextWrapping="Wrap" Text="SUPERVISORES" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="25"/>
+            <Border  BorderThickness="1" Height="230" Margin="20,80,272,0" VerticalAlignment="Top" CornerRadius="10" Background="White">
                 <Grid>
                     <Label Content="NUEVO" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
                     <Label x:Name="lblSupervisorCuil" Content="Cuil:" HorizontalAlignment="Left" Margin="16,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxCuil"  Height="22" Margin="22,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="11111"/>
+                    <TextBox x:Name="tbxCuil" Style="{StaticResource TextBoxStyle1}"  Height="22" Margin="22,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="222222"/>
                     <Label x:Name="lblSupervisorNombre" Content="Nombre:" HorizontalAlignment="Left" Margin="16,96,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxNombre" Height="24" Margin="22,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Juan"/>
+                    <TextBox x:Name="tbxNombre" Style="{StaticResource TextBoxStyle1}"  Height="24" Margin="22,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Maria"/>
                     <Label x:Name="lblSupervisorApellido" Content="Apellido:" HorizontalAlignment="Left" Margin="166,96,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxApellido" Height="23" Margin="171,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Perez"/>
+                    <TextBox x:Name="tbxApellido" Style="{StaticResource TextBoxStyle1}"  Height="23" Margin="171,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Gomez"/>
                     <Label x:Name="lblSupervisorDireccion" Content="Direccion:" HorizontalAlignment="Left" Margin="16,152,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxDireccion" Height="23" Margin="22,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Calle 111"/>
+                    <TextBox x:Name="tbxDireccion" Style="{StaticResource TextBoxStyle1}"  Height="23" Margin="22,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Calle 222"/>
                     <Label x:Name="lblSupervisorTelefono" Content="Telefono:" HorizontalAlignment="Left" Margin="166,152,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxTelefono" Height="23" Margin="171,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="0381-411111"/>
-                    <Button x:Name="btnAltaSupervisor" Content="Listo" Margin="0,178,22,28" HorizontalAlignment="Right" Width="75" />
+                    <TextBox x:Name="tbxTelefono" Style="{StaticResource TextBoxStyle1}"  Height="23" Margin="171,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="0381-422222"/>
+                    <Button x:Name="btnAltaSupervisor" Style="{StaticResource ButtonStyle1}" Content="LISTO" Margin="0,178,22,28" HorizontalAlignment="Right" Width="52" Click="btnAltaSupervisor_Click" />
                 </Grid>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,80,22,0" Width="236" CornerRadius="10" Background="White" Height="230" VerticalAlignment="Top">
+            <Border  BorderThickness="1" HorizontalAlignment="Right" Margin="0,80,22,0" Width="236" CornerRadius="10" Background="White" Height="230" VerticalAlignment="Top">
                 <Grid>
                     <Line X1="15" X2="218" Y1="35" Y2="35" Stroke="Black"/>
                     <Label Content="EXPORTAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
                 </Grid>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="20,324,22,21" CornerRadius="10" Background="White">
+            <Border  BorderThickness="1" Margin="20,324,22,21" CornerRadius="10" Background="White">
                 <Grid>
                     <Label Content="BUSCAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
                     <Label x:Name="lblBuscarPor" Content="Buscar por:" HorizontalAlignment="Left" Margin="16,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxBuscar" HorizontalAlignment="Left" Height="23" Margin="224,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
-                    <Button x:Name="btnBuscar" HorizontalAlignment="Left" Margin="357,45,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                    <TextBox x:Name="tbxBuscar" Style="{StaticResource TextBoxStyle1}"  HorizontalAlignment="Left" Height="23" Margin="224,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="222222"/>
+                    <Button x:Name="btnBuscar" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="357,45,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnBuscar_Click" >
                         <materialDesign:PackIcon Kind="Magnify"></materialDesign:PackIcon>
                     </Button>
                     <ComboBox x:Name="cboBuscar" HorizontalAlignment="Left" Margin="90,45,0,0" VerticalAlignment="Top" Width="129">
                         <ComboBoxItem Content="Cuil" IsSelected="True"/>
                         <ComboBoxItem Content="Nombre completo"/>
-                        <ComboBoxItem Content="Nombre o apellido"/>
                         <ComboBoxItem/>
                     </ComboBox>
                     <Label x:Name="lblResultadoBusqueda" Content="Resultados:" HorizontalAlignment="Left" Margin="16,82,0,0" VerticalAlignment="Top"/>
                     <ListBox x:Name="lbxResultBusqueda" HorizontalAlignment="Left" Height="90" Margin="90,86,0,0" VerticalAlignment="Top" Width="289"/>
                     <Label x:Name="lblAcciones" Content="Acciones:" HorizontalAlignment="Left" Margin="16,187,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="btnVer" HorizontalAlignment="Left" Margin="90,191,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                    <Button x:Name="btnVer" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="90,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnVer_Click" >
                         <materialDesign:PackIcon Kind="Eye"/>
                     </Button>
-                    <Button x:Name="btnModificar" HorizontalAlignment="Left" Margin="117,191,0,0" VerticalAlignment="Top" Width="22" Height="22" >
+                    <Button x:Name="btnModificar" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="117,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnModificar_Click" >
                         <materialDesign:PackIcon Kind="pencil"/>
                     </Button>
-                    <Button x:Name="btnEliminar" HorizontalAlignment="Left" Margin="144,191,0,0" VerticalAlignment="Top" Width="22" Height="22">
+                    <Button x:Name="btnEliminar" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="144,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnEliminar_Click">
                         <materialDesign:PackIcon Kind="Delete"/>
                     </Button>
-                    <Button x:Name="btnAsociarVehiculo" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="125" Height="22">
+                    <Button x:Name="btnAsociarVehiculo" Style="{StaticResource ButtonStyle1}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="134" Height="22">
                         <Grid>
                             <materialDesign:PackIcon Kind="CarKey" Margin="-12,0,0,0"/>
-                            <TextBlock Text="ASOCIAR VEHICULO" FontSize="10" Margin="11,0,-11,0"></TextBlock>
+                            <TextBlock Text="ASOCIAR VEHICULO" FontSize="10" Margin="10,2,-10,2"></TextBlock>
                         </Grid>
                     </Button>
-                    <Frame x:Name="frmSupervisorAccion" NavigationUIVisibility="Hidden" Margin="434,0,0,0" BorderThickness="1"/>
+                    <Frame x:Name="frmAcciones" NavigationUIVisibility="Hidden" Margin="434,0,0,0" BorderThickness="1"/>
                 </Grid>
             </Border>
         </Grid>

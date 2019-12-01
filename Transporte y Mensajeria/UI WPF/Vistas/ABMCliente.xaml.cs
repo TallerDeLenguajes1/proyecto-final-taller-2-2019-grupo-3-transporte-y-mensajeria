@@ -58,7 +58,7 @@ namespace UI_WPF.Vistas
             //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
             if (contenido != "")
             {
-                Cliente clienteBuscado= clienteBD.GetClientes(Convert.ToInt32(contenido),cboBuscar.Text);
+                Cliente clienteBuscado= clienteBD.GetClientes(Convert.ToInt32(contenido));
                 if (clienteBuscado != null)
                 {
                     ListClientesEncontrados.Add(clienteBuscado);

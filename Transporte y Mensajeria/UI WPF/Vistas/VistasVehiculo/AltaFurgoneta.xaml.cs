@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntidadesDelProyecto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,25 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class AltaFurgoneta : Page
     {
-        public AltaFurgoneta()
+        public AltaFurgoneta(AccesoADatos.ADFurgoneta furgonetaBD)
         {
             InitializeComponent();
+            this.furgonetaBD = furgonetaBD;
+        }
+
+        //Variables y colecciones de datos auxiliares
+        AccesoADatos.ADFurgoneta furgonetaBD;
+
+        private void btnAltaFurgoneta_Click(object sender, RoutedEventArgs e)
+        {
+            //Declaracion de variables para tomar el contenido del formulario
+            string modelo = tbxModelo.Text;
+            DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+            Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+            int capacidad = Convert.ToInt32(tbxCapCarga.Text);
+
+            Furgoneta nuevaFurgoneta = new Furgoneta(modelo, fechaCompra, precioCompra, capacidad, 5);
+            furgonetaBD.AltaFurgoneta(nuevaFurgoneta);
         }
     }
 }

@@ -10,10 +10,10 @@
       Title="ABMEnvio">
 
     <Grid>
-        <Grid Background="White">
-            <TextBlock HorizontalAlignment="Left" Margin="20,27,0,0" TextWrapping="Wrap" Text="ENVIOS" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="20"/>
-            <Button Content="NUEVO ENVIO" HorizontalAlignment="Left" Margin="132,27,0,0" VerticalAlignment="Top" Width="107"/>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,87,32,0" Width="728" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
+        <Grid >
+            <TextBlock HorizontalAlignment="Left" Margin="20,37,0,0" TextWrapping="Wrap" Text="ENVIOS" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="25"/>
+            <Button Content="NUEVO ENVIO" HorizontalAlignment="Left" Margin="132,38,0,0" VerticalAlignment="Top" Width="107"/>
+            <Border  BorderThickness="1" Margin="32,87,32,0" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
                 <Grid>
                     <Label x:Name="lblBuscarPor" Content="Cliente emisor:" HorizontalAlignment="Left" Margin="17,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBox x:Name="tbxBuscar" HorizontalAlignment="Left" Height="23" Margin="254,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
@@ -34,7 +34,7 @@
                     <TextBox HorizontalAlignment="Left" Height="24" Margin="508,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
                 </Grid>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,246,32,0" Width="728" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
+            <Border BorderThickness="1" Margin="32,246,32,0" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
                 <Grid>
                     <Label x:Name="lblBuscarPor1" Content="Cliente receptor:" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBox x:Name="tbxBuscar1" HorizontalAlignment="Left" Height="23" Margin="253,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
@@ -61,7 +61,7 @@
 
                 </Grid>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,406,32,0" Width="728" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
+            <Border BorderThickness="1" Margin="32,406,32,0" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
                 <Grid>
                     <Label x:Name="lblBuscarPor2" Content="Mercancia:" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
                     <TextBox x:Name="tbxBuscar2" HorizontalAlignment="Left" Height="23" Margin="254,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
@@ -95,7 +95,7 @@
 
 
         </Grid>
-        <Button Content="BUSCAR ENVIOS" HorizontalAlignment="Left" Margin="250,27,0,0" VerticalAlignment="Top" Width="108"/>
+        <Button Content="BUSCAR ENVIOS" HorizontalAlignment="Left" Margin="250,38,0,0" VerticalAlignment="Top" Width="108"/>
 
     </Grid>
 </Page>

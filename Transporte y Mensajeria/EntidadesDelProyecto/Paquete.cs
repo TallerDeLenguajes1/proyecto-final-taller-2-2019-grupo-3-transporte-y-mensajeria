@@ -49,8 +49,14 @@ namespace EntidadesDelProyecto
             this.precioM3 = precioM3;
         }
 
+        public Paquete(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioM3, double volumen) : base(idMercancia, contenido, asegurada, largoRecorrido, aumSeguro)
+        {
+            this.volumen = volumen;
+            this.precioM3 = precioM3;
+        }
+
         //Otros Metodos
-        protected override double CalcularPrecioNeto()
+        public override double CalcularPrecioNeto()
         {
             double aux = volumen * precioM3;
             return PrecioMercanciaAsegurada(aux);
@@ -64,6 +70,11 @@ namespace EntidadesDelProyecto
                 suma += Vehiculos[i].CalcularPrecio(PrecioNeto, volumen);
             }
             return suma;
+        }
+
+        public override string ToString()
+        {
+            return "(Paquete) - " + Contenido;
         }
     }
 

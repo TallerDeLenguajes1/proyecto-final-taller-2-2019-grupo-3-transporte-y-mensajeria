@@ -18,30 +18,34 @@ namespace AccesoADatos
         //Alta cliente
         public void AltaCliente(Cliente cliente)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                cmd = new MySqlCommand("Insert into clientes(cuil,nombre,apellido,direccion,telefono) values( @cuil, @nombre, @apellido, @direccion, @telefono)", conexion.retornarCN());
+                try
+                {
+                    conexion.abrir();
+                    cmd = new MySqlCommand("Insert into clientes(cuil,nombre,apellido,direccion,telefono) values( @cuil, @nombre, @apellido, @direccion, @telefono)", conexion.retornarCN());
 
-                cmd.Parameters.AddWithValue("@cuil", cliente.Cuil);
-                cmd.Parameters.AddWithValue("@nombre", cliente.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
-                cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
-                cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
+                    cmd.Parameters.AddWithValue("@cuil", cliente.Cuil);
+                    cmd.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                    cmd.Parameters.AddWithValue("@apellido", cliente.Apellido);
+                    cmd.Parameters.AddWithValue("@direccion", cliente.Direccion);
+                    cmd.Parameters.AddWithValue("@telefono", cliente.Telefono);
 
-                cmd.ExecuteNonQuery();
-                conexion.cerrar();
-                MessageBox.Show("Cliente agregado");
+                    cmd.ExecuteNonQuery();
+                    conexion.cerrar();
+                    MessageBox.Show("Cliente agregado");
+                }
+                catch (Exception ex)
+                {
+                    //Loguear el error
+                    MessageBox.Show("Error en la consulta" + ex.ToString());
+                }
             }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
-            }
+
         }
 
         //Buscar cliente segun cuil
-        public Cliente GetClientes(int cuil, string metodoBusqueda)
+        public Cliente GetClientes(int cuil)
         {
             //Variables auxiliares
             Cliente nuevoCliente = null;

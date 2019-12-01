@@ -49,8 +49,14 @@ namespace EntidadesDelProyecto
             this.precioGramo = precioGramo;
         }
 
+        public Sobre(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioGramo, double peso) : base(idMercancia, contenido, asegurada, largoRecorrido, aumSeguro)
+        {
+            this.peso = peso;
+            this.precioGramo = precioGramo;
+        }
+
         //Otros Metodos
-        protected override double CalcularPrecioNeto()
+        public override double CalcularPrecioNeto()
         {
             double aux = peso * precioGramo;
             return PrecioMercanciaAsegurada(aux);
@@ -64,6 +70,11 @@ namespace EntidadesDelProyecto
                 suma += Vehiculos[i].CalcularPrecio(PrecioNeto, peso);
             }
             return suma;
+        }
+
+        public override string ToString()
+        {
+            return "(Sobre) - " + Contenido;
         }
     }
 

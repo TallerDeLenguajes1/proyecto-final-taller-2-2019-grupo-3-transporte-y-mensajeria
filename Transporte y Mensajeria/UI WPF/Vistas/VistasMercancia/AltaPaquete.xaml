@@ -11,12 +11,12 @@
     <Grid>
         <Grid Height="149" VerticalAlignment="Top" Background="White">
             <Label x:Name="lblPeso" Content="Volumen:" Margin="10,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
-            <TextBox x:Name="tbxPeso" Height="24" Margin="16,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120"  IsReadOnly="True"/>
+            <TextBox x:Name="tbxVolumen" Style="{StaticResource TextBoxStyle1}" Text="1" Height="24" Margin="14,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" />
             <Label x:Name="lblDescripcion" Content="Contenido:" Margin="154,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"/>
-            <CheckBox x:Name="cbAsegurado" Content="Asegurado" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="cbAsegurado" IsChecked="True" Content="Asegurado" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
             <CheckBox x:Name="cbLargoRecorrido" Content="Largo recorrido" HorizontalAlignment="Left" Margin="107,68,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="tbxDescripcion" Height="22" Margin="160,26,16,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <Button x:Name="btnAltaPaquete" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" />
+            <TextBox x:Name="tbxContenido" Style="{StaticResource TextBoxStyle1}" Text="Proyector" Height="22" Margin="154,25,204,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="140"/>
+            <Button x:Name="btnAltaPaquete" Style="{StaticResource ButtonStyle1}" Content="LISTO" Margin="0,109,22,18" HorizontalAlignment="Right" Width="52" Click="btnAltaPaquete_Click" />
         </Grid>
     </Grid>
 </Page>

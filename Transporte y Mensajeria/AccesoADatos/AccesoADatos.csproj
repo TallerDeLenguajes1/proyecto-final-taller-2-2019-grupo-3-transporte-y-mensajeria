@@ -61,7 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ADAvion.cs" />
     <Compile Include="ADCliente.cs" />
+    <Compile Include="ADFurgoneta.cs" />
+    <Compile Include="ADMoto.cs" />
+    <Compile Include="ADPaquete.cs" />
+    <Compile Include="ADSobre.cs" />
     <Compile Include="ADSupervisor.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

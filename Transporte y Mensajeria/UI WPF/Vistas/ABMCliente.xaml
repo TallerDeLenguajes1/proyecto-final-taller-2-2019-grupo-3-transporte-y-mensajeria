@@ -4,67 +4,72 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UI_WPF.Vistas"
+      
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
       mc:Ignorable="d" 
       d:DesignHeight="610" d:DesignWidth="792"
       Title="ABMCliente">
 
     <Grid>
-        <Grid Background="White">
+        <Grid >
 
-            <Border BorderBrush="Black" BorderThickness="1" Height="230" Margin="20,80,272,0" VerticalAlignment="Top" CornerRadius="10" Background="White">
+            <Border BorderThickness="1" Height="230" Margin="20,80,272,0" VerticalAlignment="Top" CornerRadius="10" Background="White">
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="14*"/>
+                        <RowDefinition Height="43*"/>
+                    </Grid.RowDefinitions>
                     <Label Content="NUEVO" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
-                    <Label x:Name="lblClientCuil" Content="Cuil:" HorizontalAlignment="Left" Margin="16,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxCuil"  Height="22" Margin="22,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="11111"/>
-                    <Label x:Name="lblClientNombre" Content="Nombre:" HorizontalAlignment="Left" Margin="16,96,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxNombre" Height="24" Margin="22,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Juan"/>
-                    <Label x:Name="lblClientApellido" Content="Apellido:" HorizontalAlignment="Left" Margin="166,96,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxApellido" Height="23" Margin="171,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Perez"/>
-                    <Label x:Name="lblClientDireccion" Content="Direccion:" HorizontalAlignment="Left" Margin="16,152,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxDireccion" Height="23" Margin="22,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Calle 111"/>
-                    <Label x:Name="lblClientTelefono" Content="Telefono:" HorizontalAlignment="Left" Margin="166,152,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxTelefono" Height="23" Margin="171,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="0381-411111"/>
-                    <Button x:Name="btnAltaCliente" Content="Listo" Margin="0,178,22,28" HorizontalAlignment="Right" Width="75" Click="btnAltaCliente_Click" />
+                    <Label x:Name="lblClientCuil" Content="Cuil:" HorizontalAlignment="Left" Margin="16,41,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+                    <TextBox x:Name="tbxCuil" Text="11111" Style="{StaticResource TextBoxStyle1}" Height="22" Margin="22,11,0,139" Width="120" Grid.Row="1" HorizontalAlignment="Left" />
+                    <Label x:Name="lblClientNombre" Content="Nombre:" HorizontalAlignment="Left" Margin="16,40,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <TextBox x:Name="tbxNombre" Style="{StaticResource TextBoxStyle1}" Height="24" Margin="22,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Juan" Grid.Row="1"/>
+                    <Label x:Name="lblClientApellido" Content="Apellido:" HorizontalAlignment="Left" Margin="166,40,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <TextBox x:Name="tbxApellido" Style="{StaticResource TextBoxStyle1}" Height="23" Margin="171,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Perez" Grid.Row="1"/>
+                    <Label x:Name="lblClientDireccion" Content="Direccion:" HorizontalAlignment="Left" Margin="16,96,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <TextBox x:Name="tbxDireccion" Style="{StaticResource TextBoxStyle1}" Height="23" Margin="22,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="Calle 111" Grid.Row="1"/>
+                    <Label x:Name="lblClientTelefono" Content="Telefono:" HorizontalAlignment="Left" Margin="166,96,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+                    <TextBox x:Name="tbxTelefono" Style="{StaticResource TextBoxStyle1}" Height="23" Margin="171,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120" Text="0381-411111" Grid.Row="1"/>
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnAltaCliente" Content="LISTO" Margin="0,122,22,28" HorizontalAlignment="Right" Width="52" Click="btnAltaCliente_Click" Grid.Row="1"/>
                 </Grid>
             </Border>
-            <TextBlock HorizontalAlignment="Left" Margin="20,27,0,0" TextWrapping="Wrap" Text="CLIENTES" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="20"/>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,80,22,0" Width="236" CornerRadius="10" Background="White" Height="230" VerticalAlignment="Top">
+            <TextBlock HorizontalAlignment="Left" Margin="20,37,0,0" TextWrapping="Wrap" Text="CLIENTES" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="25"/>
+            <Border BorderThickness="1" HorizontalAlignment="Right" Margin="0,80,22,0" Width="236" CornerRadius="10" Background="White" Height="230" VerticalAlignment="Top">
                 <Grid>
                     <Line X1="15" X2="218" Y1="35" Y2="35" Stroke="Black"/>
                     <Label Content="EXPORTAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
                 </Grid>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" Margin="20,324,22,21" CornerRadius="10" Background="White">
+            <Border  BorderThickness="1" Margin="20,324,22,21" CornerRadius="10" Background="White">
                 <Grid>
                     <Label Content="BUSCAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
                     <Label x:Name="lblBuscarPor" Content="Buscar por:" HorizontalAlignment="Left" Margin="16,41,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="tbxBuscar" HorizontalAlignment="Left" Height="23" Margin="224,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
-                    <Button x:Name="btnCliente" HorizontalAlignment="Left" Margin="357,45,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnBuscar_Click">
+                    <TextBox x:Name="tbxBuscar" Style="{StaticResource TextBoxStyle1}" HorizontalAlignment="Left" Height="23" Margin="224,45,0,0" VerticalAlignment="Top" Width="128" Text="11111"/>
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnCliente" HorizontalAlignment="Left" Margin="357,45,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnBuscar_Click" Padding="0">
                         <materialDesign:PackIcon Kind="Magnify"></materialDesign:PackIcon>
                     </Button>
                     <ComboBox x:Name="cboBuscar" HorizontalAlignment="Left" Margin="90,45,0,0" VerticalAlignment="Top" Width="129">
                         <ComboBoxItem Content="Cuil" IsSelected="True"/>
                         <ComboBoxItem Content="Nombre completo"/>
-                        <ComboBoxItem Content="Nombre o apellido"/>
                         <ComboBoxItem/>
                     </ComboBox>
                     <Label x:Name="lblResultadoBusq" Content="Resultados:" HorizontalAlignment="Left" Margin="16,82,0,0" VerticalAlignment="Top"/>
                     <ListBox x:Name="lbxResultBusqueda" HorizontalAlignment="Left" Height="90" Margin="90,86,0,0" VerticalAlignment="Top" Width="289"/>
                     <Label x:Name="lblAcciones" Content="Acciones:" HorizontalAlignment="Left" Margin="16,187,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="btnVer" HorizontalAlignment="Left" Margin="90,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnVer_Click">
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnVer" HorizontalAlignment="Left" Margin="90,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnVer_Click" Padding="0">
                         <materialDesign:PackIcon Kind="Eye"/>
                     </Button>
-                    <Button x:Name="btnModificar" HorizontalAlignment="Left" Margin="117,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnModificar_Click">
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnModificar" HorizontalAlignment="Left" Margin="117,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnModificar_Click" Padding="0">
                         <materialDesign:PackIcon Kind="pencil"/>
                     </Button>
-                    <Button x:Name="btnEliminar" HorizontalAlignment="Left" Margin="144,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnEliminar_Click">
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnEliminar" HorizontalAlignment="Left" Margin="144,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnEliminar_Click" Padding="0">
                         <materialDesign:PackIcon Kind="Delete"/>
                     </Button>
-                    <Button x:Name="btnHacerEnvio" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="100" Height="22">
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnHacerEnvio" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="104" Height="22">
                         <Grid>
                             <materialDesign:PackIcon Kind="EmailAdd" Margin="-12,0,0,0"/>
-                            <TextBlock Text="HACER ENVIO" FontSize="10" Margin="11,0,-11,0"></TextBlock>
+                            <TextBlock Text="HACER ENVIO" FontSize="10" Margin="11,2,-11,2" FontWeight="Normal"></TextBlock>
                         </Grid>
                     </Button>
                     <Frame x:Name="frmAcciones" NavigationUIVisibility="Hidden" Margin="434,0,0,0" BorderThickness="1"/>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntidadesDelProyecto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,26 @@ namespace UI_WPF.Vistas.VistasMercancia
     /// </summary>
     public partial class AltaPaquete : Page
     {
-        public AltaPaquete()
+        public AltaPaquete(AccesoADatos.ADPaquete paqueteBD)
         {
             InitializeComponent();
+            this.paqueteBD = paqueteBD;
         }
+
+        //Variables y colecciones de datos auxiliares
+        AccesoADatos.ADPaquete paqueteBD;
 
         private void btnAltaPaquete_Click(object sender, RoutedEventArgs e)
         {
+            //Declaracion de variables para tomar el contenido del formulario
+            string contenido = tbxContenido.Text;
+            Double volumen = Convert.ToDouble(tbxVolumen.Text);
+            bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
+            bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
 
+            Paquete nuevoPaquete = new Paquete(contenido, asegurado, largoRecorrido, 10, 100, volumen);
+            paqueteBD.AltaPaquete(nuevoPaquete);
         }
+
     }
 }

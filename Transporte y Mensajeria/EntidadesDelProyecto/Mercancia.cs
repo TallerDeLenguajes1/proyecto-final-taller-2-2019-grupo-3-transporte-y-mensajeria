@@ -125,9 +125,20 @@ namespace EntidadesDelProyecto
             this.contenido = contenido;
             this.asegurada = asegurada;
             this.largoRecorrido = largoRecorrido;
-            this.precioNeto = CalcularPrecioNeto();
             this.Vehiculos = new List<Vehiculo>();
             this.aumSeguro = aumSeguro;
+            this.precioNeto = CalcularPrecioNeto();
+        }
+
+        public Mercancia(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro)
+        {
+            this.idMercancia = idMercancia;
+            this.contenido = contenido;
+            this.asegurada = asegurada;
+            this.largoRecorrido = largoRecorrido;
+            this.Vehiculos = new List<Vehiculo>();
+            this.aumSeguro = aumSeguro;
+            this.precioNeto = CalcularPrecioNeto();
         }
 
         //Otros Metodos
@@ -158,7 +169,7 @@ namespace EntidadesDelProyecto
             }
         }
 
-        protected virtual double CalcularPrecioNeto() { return 0; }
+        public virtual double CalcularPrecioNeto() { return 0; }
 
         protected virtual double CalcularPrecioSegunVehiculos() { return 0; }
 

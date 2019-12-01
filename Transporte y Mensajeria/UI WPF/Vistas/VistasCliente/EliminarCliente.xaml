@@ -9,10 +9,10 @@
       Title="EliminarCliente">
 
     <Grid>
-        <Grid x:Name="grdContent" Background="White">
+        <Grid x:Name="grdContent">
             <Label Content="ELIMINAR CLIENTE" Margin="0,10,181,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" HorizontalAlignment="Right" Width="123"/>
-            <Button x:Name="btnSiEliminar" Content="SI" HorizontalAlignment="Left" Margin="179,70,0,0" VerticalAlignment="Top" Width="42" Click="btnSiEliminar_Click" />
-            <Button x:Name="btnNoEliminar" Content="NO" HorizontalAlignment="Left" Margin="226,70,0,0" VerticalAlignment="Top" Width="42" Click="btnNoEliminar_Click" />
+            <Button x:Name="btnSiEliminar" Style="{StaticResource ButtonStyle1}" Height="22" Content="SI" HorizontalAlignment="Left" Margin="179,70,0,0" VerticalAlignment="Top" Width="42" Click="btnSiEliminar_Click" />
+            <Button x:Name="btnNoEliminar" Style="{StaticResource ButtonStyle1}" Height="22" Content="NO" HorizontalAlignment="Left" Margin="226,70,0,0" VerticalAlignment="Top" Width="42" Click="btnNoEliminar_Click" />
             <Label x:Name="lblClientCuil" Content="¿Seguro que desea eliminar?" Margin="0,66,140,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="164"/>
 
         </Grid>

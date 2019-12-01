@@ -20,6 +20,11 @@ namespace EntidadesDelProyecto
             this.cilindrada = cilindrada;
         }
 
+        public Moto(int idVehiculo, string modelo, DateTime fechaCompra, double precioCompra, int cilindrada, double aumento) : base(idVehiculo, modelo, fechaCompra, precioCompra, aumento)
+        {
+            this.cilindrada = cilindrada;
+        }
+
         public int Cilindrada
         {
             get
@@ -46,7 +51,10 @@ namespace EntidadesDelProyecto
             }
         }
 
-
+        public override string ToString()
+        {
+            return "(Moto) - "+Modelo;
+        }
 
 
     }
