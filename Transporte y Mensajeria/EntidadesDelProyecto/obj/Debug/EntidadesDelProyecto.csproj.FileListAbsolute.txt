@@ -64,3 +64,17 @@ C:\Users\Mariano\Desktop\Taller2\domingo1_12\proyecto-final-taller-2-2019-grupo-
 C:\Users\Mariano\Desktop\Taller2\domingo1_12\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csproj.CopyComplete
 C:\Users\Mariano\Desktop\Taller2\domingo1_12\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.dll
 C:\Users\Mariano\Desktop\Taller2\domingo1_12\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.pdb
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\EntidadesDelProyecto.dll
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\EntidadesDelProyecto.pdb
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\Google.Protobuf.dll
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\MySql.Data.dll
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\Renci.SshNet.dll
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\Google.Protobuf.xml
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\MySql.Data.xml
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\Renci.SshNet.xml
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csprojAssemblyReference.cache
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csproj.CoreCompileInputs.cache
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csproj.CopyComplete
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.dll
+C:\Users\fvg\Documents\taller3_12_19\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.pdb

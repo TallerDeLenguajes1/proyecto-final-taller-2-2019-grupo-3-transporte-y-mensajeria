@@ -43,6 +43,10 @@ namespace EntidadesDelProyecto
         //public static double PrecioGramo { get => precioGramo; set => precioGramo = value; }
 
         //Constructor
+        public Sobre()
+        {
+
+        }
         public Sobre(string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioGramo, double peso) : base(contenido, asegurada, largoRecorrido, aumSeguro)
         {
             this.peso = peso;

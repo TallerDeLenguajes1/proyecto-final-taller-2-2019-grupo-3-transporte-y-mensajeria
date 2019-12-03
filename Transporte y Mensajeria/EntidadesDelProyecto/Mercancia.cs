@@ -108,7 +108,10 @@ namespace EntidadesDelProyecto
             }
         }
 
+        public Mercancia()
+        {
 
+        }
         /// <summary>
         /// Metodo Construcor Mercancia.
         /// </summary>
