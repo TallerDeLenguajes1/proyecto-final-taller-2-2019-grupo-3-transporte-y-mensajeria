@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoADatos", "AccesoADato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI WPF", "UI WPF\UI WPF.csproj", "{D3C0C1AB-59C2-436E-B290-43154492397F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperDeArchivos", "HelperDeArchivos\HelperDeArchivos.csproj", "{42ED4C95-E31E-43E4-9027-F7A8C2030C0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D3C0C1AB-59C2-436E-B290-43154492397F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3C0C1AB-59C2-436E-B290-43154492397F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3C0C1AB-59C2-436E-B290-43154492397F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42ED4C95-E31E-43E4-9027-F7A8C2030C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42ED4C95-E31E-43E4-9027-F7A8C2030C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42ED4C95-E31E-43E4-9027-F7A8C2030C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42ED4C95-E31E-43E4-9027-F7A8C2030C0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -47,6 +47,100 @@
             </Setter>
         </Style>
 
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="Background" Value="#FF131B23"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Myriad Pro"/>
+            <Setter Property="Width" Value="142"/>
+            <Setter Property="Height" Value="35
+                    "/>
+
+
+
+            <!--Redondear bordes-->
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"  BorderBrush="#333d4a" BorderThickness="0 0 0 1" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                        <!--Trigger Click-->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#333d4a"/>
+                            </Trigger>
+                          
+                            <!--<Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF1B94DE" />
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="0" BlurRadius="8" ShadowDepth="0" Opacity="0.75"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>-->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="GithubButton" TargetType="Button">
+            <Setter Property="Background" Value="#FF131B23"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Myriad Pro"/>
+            <Setter Property="Width" Value="142"/>
+            <Setter Property="Height" Value="35"/>
+
+
+
+            <!--Redondear bordes-->
+            <Setter Property="Template" >
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            </ContentPresenter>
+                        </Border>
+                        <!--Trigger Click-->
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#333d4a"/>
+                            </Trigger>
+
+                            <!--<Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF1B94DE" />
+                                <Setter Property="Effect">
+                                    <Setter.Value>
+                                        <DropShadowEffect Color="Black" Direction="0" BlurRadius="8" ShadowDepth="0" Opacity="0.75"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>-->
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+
+                </Setter.Value>
+
+            </Setter>
+
+        </Style>
+
+        <Style x:Key="HyperlinkStyle" TargetType="Hyperlink">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Myriad Pro"/>
+            <Setter Property="TextDecorations" Value=""/>
+            
+
+        </Style>
+
         <Style x:Key="TextBoxStyle1" TargetType="TextBox">
             <Setter Property="Background" Value="#FFBFBFBF"/>
             <Setter Property="Foreground" Value="Black"/>

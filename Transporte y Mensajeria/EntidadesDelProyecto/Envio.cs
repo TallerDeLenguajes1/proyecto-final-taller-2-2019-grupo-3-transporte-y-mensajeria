@@ -14,6 +14,20 @@ namespace EntidadesDelProyecto
         Cliente emisor;
         Cliente receptor;
         Mercancia merc;
+        Double precioFinal;
+
+        public Double PrecioFinal
+        {
+            get
+            {
+                return precioFinal;
+            }
+
+            set
+            {
+                precioFinal = value;
+            }
+        }
 
         public int IdEnvio
         {
@@ -95,6 +109,7 @@ namespace EntidadesDelProyecto
             this.emisor = emisor;
             this.receptor = receptor;
             this.merc = merc;
+            precioFinal = CalcularPrecioEnvio();
         }
 
         //Otros Metodos

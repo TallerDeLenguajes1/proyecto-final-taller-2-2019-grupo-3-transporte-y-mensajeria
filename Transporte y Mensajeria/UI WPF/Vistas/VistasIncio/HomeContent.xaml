@@ -1,0 +1,31 @@
+﻿<Page x:Class="UI_WPF.Vistas.VistasIncio.HomeContent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI_WPF.Vistas.VistasIncio"
+      mc:Ignorable="d" d:DesignWidth="748"
+      Title="HomeContent" Height="1246.98">
+    
+    <Grid>
+        <Grid Height="208" VerticalAlignment="Top" Background="White">
+            <Label Content="Envios entregados este mes" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Myriad Pro" FontWeight="Bold"/>
+        </Grid>
+        <Grid Height="208" VerticalAlignment="Top" Background="#FF8B8B8B" Margin="0,208,0,0">
+            <Label Content="Recaudacion Mensual" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Myriad Pro" FontWeight="Bold"/>
+        </Grid>
+        <Grid Height="208" VerticalAlignment="Top" Background="White" Margin="0,416,0,0">
+            <Label Content="Cantidad de mercancias incorporadas este mes" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Myriad Pro" FontWeight="Bold"/>
+        </Grid>
+        <Grid Height="208" VerticalAlignment="Top" Background="#FF898989" Margin="0,624,0,0">
+            <Label Content="Nuevos clientes incorporados" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Myriad Pro" FontWeight="Bold"/>
+        </Grid>
+        <Grid Height="208" VerticalAlignment="Top" Background="White" Margin="0,832,0,0">
+            <Label Content="Envio mas costoso" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Myriad Pro" FontWeight="Bold"/>
+        </Grid>
+        <Grid Height="207" VerticalAlignment="Top" Background="#FF787878" Margin="0,1040,0,0">
+            <Label Content="Grafica recaudación" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Myriad Pro" FontWeight="Bold"/>
+        </Grid>
+    </Grid>
+
+</Page>

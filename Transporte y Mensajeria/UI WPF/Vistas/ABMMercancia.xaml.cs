@@ -27,6 +27,7 @@ namespace UI_WPF.Vistas
         }
 
         //Variables y colecciones de datos auxiliares
+        HelperDeArchivos.Reporte reporte = new HelperDeArchivos.Reporte();
         AccesoADatos.ADSobre sobreBD = new AccesoADatos.ADSobre();
         AccesoADatos.ADPaquete paqueteBD = new AccesoADatos.ADPaquete();
 
@@ -67,18 +68,7 @@ namespace UI_WPF.Vistas
                 {
                     case "Contenido":
                         ListSobresEncontrados = sobreBD.GetSobres(contenido);
-                        sobreBD.GetPrecioGramo();
-                        ///BORRAR ESTO DESPUES, se deja el codigo solo para ver que funcione correctamente el metodo calcular precio final.
-                        //foreach (var item in ListSobresEncontrados)
-                        //{
-                        //    MessageBox.Show(item.CalcularPrecioFinal().ToString());
-                        //}
                         ListPaquetesEncontrados = paqueteBD.GetPaquetes(contenido);
-                        ///BORRAR ESTO DESPUES.
-                        //foreach (var item in ListPaquetesEncontrados)
-                        //{
-                        //    MessageBox.Show(item.CalcularPrecioFinal().ToString());
-                        //}
                         ListMercanciasEncontradas = ListSobresEncontrados.Concat(ListPaquetesEncontrados).ToList();
                         break;
                     case "Codigo":
@@ -147,6 +137,34 @@ namespace UI_WPF.Vistas
             if (mercanciaEncontrada != null)
             {
                 frmAcciones.Content = new VistasMercancia.EliminarMercancia((Mercancia)mercanciaEncontrada, sobreBD, paqueteBD, this);
+            }
+        }
+
+        //Exportar tabla Sobres pdf
+        private void btnExportarSobres_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                reporte.generarReporteSobres();
+                MessageBox.Show("Reporte de sobres generado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+            }
+        }
+
+        //Exportar tabla Paquetes pdf
+        private void btnExportarPaquetes_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                reporte.generarReportePaquete();
+                MessageBox.Show("Reporte de paquetes generado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
             }
         }
     }

@@ -46,7 +46,7 @@
                     <Button x:Name="btnEliminar" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="144,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnEliminar_Click" >
                         <materialDesign:PackIcon Kind="Delete"/>
                     </Button>
-                    <Button x:Name="btnAsociarSupervisor" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="148" Height="22">
+                    <Button x:Name="btnAsociarSupervisor" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="148" Height="22" Click="btnAsociarSupervisor_Click">
                         <Grid>
                             <materialDesign:PackIcon Kind="Worker" Margin="-12,0,0,0"/>
                             <TextBlock Text="ASOCIAR SUPERVISOR" FontSize="10" Margin="10,2,-10,2"/>
@@ -71,6 +71,9 @@
             <Grid>
                 <Line X1="15" X2="218" Y1="35" Y2="35" Stroke="Black"/>
                 <Label Content="EXPORTAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
+                <Button Style="{StaticResource ButtonStyle1}" x:Name="btnExportarMotos" Content="Exportar Motos" Margin="0,55,105,151" HorizontalAlignment="Right" Width="113" Click="btnExportarMotos_Click" />
+                <Button Style="{StaticResource ButtonStyle1}" x:Name="btnExportarFurgonetas" Content="Exportar Furgonetas" Margin="0,82,78,124" HorizontalAlignment="Right" Width="140" Click="btnExportarFurgonetas_Click" />
+                <Button Style="{StaticResource ButtonStyle1}" x:Name="btnExportarAviones" Content="Exportar Aviones" Margin="0,109,98,97" HorizontalAlignment="Right" Width="120" Click="btnExportarAviones_Click" />
             </Grid>
         </Border>
 

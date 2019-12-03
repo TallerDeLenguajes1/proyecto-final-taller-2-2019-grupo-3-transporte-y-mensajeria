@@ -32,6 +32,7 @@
                 <Grid>
                     <Line X1="15" X2="218" Y1="35" Y2="35" Stroke="Black"/>
                     <Label Content="EXPORTAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnExportarSupervisores" Content="Exportar Supervisores" Margin="0,55,65,151" HorizontalAlignment="Right" Width="153" Click="btnExportarSupervisores_Click" />
                 </Grid>
             </Border>
             <Border  BorderThickness="1" Margin="20,324,22,21" CornerRadius="10" Background="White">
@@ -44,7 +45,7 @@
                     </Button>
                     <ComboBox x:Name="cboBuscar" HorizontalAlignment="Left" Margin="90,45,0,0" VerticalAlignment="Top" Width="129">
                         <ComboBoxItem Content="Cuil" IsSelected="True"/>
-                        <ComboBoxItem Content="Nombre completo"/>
+                        <ComboBoxItem Content="Nombre"/>
                         <ComboBoxItem/>
                     </ComboBox>
                     <Label x:Name="lblResultadoBusqueda" Content="Resultados:" HorizontalAlignment="Left" Margin="16,82,0,0" VerticalAlignment="Top"/>
@@ -59,13 +60,19 @@
                     <Button x:Name="btnEliminar" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="144,191,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnEliminar_Click">
                         <materialDesign:PackIcon Kind="Delete"/>
                     </Button>
-                    <Button x:Name="btnAsociarVehiculo" Style="{StaticResource ButtonStyle1}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="134" Height="22">
+                    <Button x:Name="btnAsociarVehiculo" Style="{StaticResource ButtonStyle1}" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="171,191,0,0" VerticalAlignment="Top" Width="134" Height="22" Click="btnAsociarVehiculo_Click">
                         <Grid>
                             <materialDesign:PackIcon Kind="CarKey" Margin="-12,0,0,0"/>
                             <TextBlock Text="ASOCIAR VEHICULO" FontSize="10" Margin="10,2,-10,2"></TextBlock>
                         </Grid>
                     </Button>
                     <Frame x:Name="frmAcciones" NavigationUIVisibility="Hidden" Margin="434,0,0,0" BorderThickness="1"/>
+                    <Button x:Name="btnVehiculosACargo" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="90,222,0,0" VerticalAlignment="Top" Width="148" Height="22" Click="btnVehiculosACargo_Click">
+                        <Grid>
+                            <materialDesign:PackIcon Kind="VanUtility" Margin="-12,0,0,0"/>
+                            <TextBlock Text="VEHICULOS A CARGO" FontSize="10" Margin="10,2,-10,2"/>
+                        </Grid>
+                    </Button>
                 </Grid>
             </Border>
         </Grid>

@@ -30,6 +30,7 @@ namespace UI_WPF.Vistas
         }
 
         //Variables y colecciones de datos auxiliares
+        HelperDeArchivos.Reporte reporte = new HelperDeArchivos.Reporte();
         AccesoADatos.ADSupervisor supervisorBD;
         List<Supervisor> ListSupervisoresEncontrados = new List<Supervisor>();
 
@@ -106,6 +107,45 @@ namespace UI_WPF.Vistas
             if (supervisorEncontrado != null)
             {
                 frmAcciones.Content = new VistasSupervisor.EliminarSupervisor(supervisorEncontrado, supervisorBD, this);
+            }
+        }
+
+        //Asociar un vehiculo a un supervisor
+        private void btnAsociarVehiculo_Click(object sender, RoutedEventArgs e)
+        {
+            //Tomo el cliente seleccionado del listbox de resultados de busqueda
+            Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
+
+            if (supervisorEncontrado != null)
+            {
+                frmAcciones.Content = new VistasSupervisor.AsociarVehiculo(supervisorEncontrado, supervisorBD, this);
+            }
+        }
+
+        //Mostrar vehiculos a cargo de un supervisor
+        private void btnVehiculosACargo_Click(object sender, RoutedEventArgs e)
+        {
+            //Tomo el cliente seleccionado del listbox de resultados de busqueda
+            Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
+
+            if (supervisorEncontrado != null)
+            {
+                VistasSupervisor.VehiculosAsociados pagina = new VistasSupervisor.VehiculosAsociados(supervisorEncontrado, this);
+                frmAcciones.Content = pagina;
+            }
+        }
+
+        //Exportar tabla Supervisores pdf
+        private void btnExportarSupervisores_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                reporte.generarReporteSupervisores();
+                MessageBox.Show("Reporte de supervisores generado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
             }
         }
     }

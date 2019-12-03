@@ -39,6 +39,7 @@
                 <Grid>
                     <Line X1="15" X2="218" Y1="35" Y2="35" Stroke="Black"/>
                     <Label Content="EXPORTAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnExportarClientes" Content="Exportar Clientes" Margin="0,55,94,151" HorizontalAlignment="Right" Width="124" Click="btnExportarClientes_Click" />
                 </Grid>
             </Border>
             <Border  BorderThickness="1" Margin="20,324,22,21" CornerRadius="10" Background="White">
@@ -51,7 +52,7 @@
                     </Button>
                     <ComboBox x:Name="cboBuscar" HorizontalAlignment="Left" Margin="90,45,0,0" VerticalAlignment="Top" Width="129">
                         <ComboBoxItem Content="Cuil" IsSelected="True"/>
-                        <ComboBoxItem Content="Nombre completo"/>
+                        <ComboBoxItem Content="Nombre"/>
                         <ComboBoxItem/>
                     </ComboBox>
                     <Label x:Name="lblResultadoBusq" Content="Resultados:" HorizontalAlignment="Left" Margin="16,82,0,0" VerticalAlignment="Top"/>

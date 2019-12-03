@@ -24,6 +24,8 @@
                 <Grid>
                     <Line X1="15" X2="218" Y1="35" Y2="35" Stroke="Black"/>
                     <Label Content="EXPORTAR" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold"/>
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnExportarSobres" Content="Exportar Sobres" Margin="0,55,94,151" HorizontalAlignment="Right" Width="124" Click="btnExportarSobres_Click" />
+                    <Button Style="{StaticResource ButtonStyle1}" x:Name="btnExportarPaquetes" Content="Exportar Paquetes" Margin="0,82,80,124" HorizontalAlignment="Right" Width="138" Click="btnExportarPaquetes_Click" />
                 </Grid>
             </Border>
 

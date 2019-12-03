@@ -10,7 +10,7 @@ namespace EntidadesDelProyecto
     {
         //Atributos
         double capacidadCarga;
-        private static double montoFijo = 200;
+
         //Setters and Getters
        // public double CapacidadCarga { get => capacidadCarga; set => capacidadCarga = value; }
 
@@ -43,7 +43,7 @@ namespace EntidadesDelProyecto
         {
             if (volumen > 1)
             {
-                return (precioNeto + montoFijo);
+                return precioNeto * ((Aumento / 100) + 1);
             }
             else
             {

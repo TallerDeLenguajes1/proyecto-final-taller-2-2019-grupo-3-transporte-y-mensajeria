@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\
 UI_WPF
 none
 false
 DEBUG;TRACE
-E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\App.xaml
-29-440586005
+C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\App.xaml
+331513992193
 
-37-230228717
-17-716946803
-MainWindow.xaml;Vistas\ABMCliente.xaml;Vistas\ABMEnvio.xaml;Vistas\ABMMercancia.xaml;Vistas\ABMSupervisor.xaml;Vistas\ABMVehiculos.xaml;Vistas\VistasCliente\DatosCliente.xaml;Vistas\VistasCliente\EliminarCliente.xaml;Vistas\VistasCliente\ModificarCliente.xaml;Vistas\VistasMercancia\AltaPaquete.xaml;Vistas\VistasMercancia\AltaSobre.xaml;Vistas\VistasMercancia\DatosPaquete.xaml;Vistas\VistasMercancia\DatosSobre.xaml;Vistas\VistasMercancia\EliminarMercancia.xaml;Vistas\VistasMercancia\ModificarPaquete.xaml;Vistas\VistasMercancia\ModificarSobre.xaml;Vistas\VistasSupervisor\DatosSupervisor.xaml;Vistas\VistasSupervisor\EliminarSupervisor.xaml;Vistas\VistasSupervisor\ModificarSupervisor.xaml;Vistas\VistasVehiculo\AltaAvion.xaml;Vistas\VistasVehiculo\AltaFurgoneta.xaml;Vistas\VistasVehiculo\AltaMoto.xaml;Vistas\VistasVehiculo\DatosAvion.xaml;Vistas\VistasVehiculo\DatosFurgoneta.xaml;Vistas\VistasVehiculo\DatosMoto.xaml;Vistas\VistasVehiculo\EliminarVehiculo.xaml;Vistas\VistasVehiculo\ModificarAvion.xaml;Vistas\VistasVehiculo\ModificarFurgoneta.xaml;Vistas\VistasVehiculo\ModificarMoto.xaml;
+411309629612
+18-797076141
+MainWindow.xaml;Vistas\ABMCliente.xaml;Vistas\ABMEnvio.xaml;Vistas\ABMMercancia.xaml;Vistas\ABMSupervisor.xaml;Vistas\ABMVehiculos.xaml;Vistas\VistasCliente\DatosCliente.xaml;Vistas\VistasCliente\EliminarCliente.xaml;Vistas\VistasCliente\ModificarCliente.xaml;Vistas\VistasIncio\HomeContent.xaml;Vistas\VistasIncio\HomePage.xaml;Vistas\VistasMercancia\AltaPaquete.xaml;Vistas\VistasMercancia\AltaSobre.xaml;Vistas\VistasMercancia\DatosPaquete.xaml;Vistas\VistasMercancia\DatosSobre.xaml;Vistas\VistasMercancia\EliminarMercancia.xaml;Vistas\VistasMercancia\ModificarPaquete.xaml;Vistas\VistasMercancia\ModificarSobre.xaml;Vistas\VistasSupervisor\AsociarVehiculo.xaml;Vistas\VistasSupervisor\DatosSupervisor.xaml;Vistas\VistasSupervisor\EliminarSupervisor.xaml;Vistas\VistasSupervisor\ModificarSupervisor.xaml;Vistas\VistasSupervisor\VehiculosAsociados.xaml;Vistas\VistasVehiculo\AltaAvion.xaml;Vistas\VistasVehiculo\AltaFurgoneta.xaml;Vistas\VistasVehiculo\AltaMoto.xaml;Vistas\VistasVehiculo\DatosAvion.xaml;Vistas\VistasVehiculo\DatosFurgoneta.xaml;Vistas\VistasVehiculo\DatosMoto.xaml;Vistas\VistasVehiculo\EliminarVehiculo.xaml;Vistas\VistasVehiculo\ModificarAvion.xaml;Vistas\VistasVehiculo\ModificarFurgoneta.xaml;Vistas\VistasVehiculo\ModificarMoto.xaml;
 
-False
+True
 

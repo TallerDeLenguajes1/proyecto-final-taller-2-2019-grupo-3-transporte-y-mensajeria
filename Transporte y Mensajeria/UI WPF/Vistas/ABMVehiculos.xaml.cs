@@ -32,6 +32,7 @@ namespace UI_WPF.Vistas
         }
 
         //Variables y colecciones de datos auxiliares
+        HelperDeArchivos.Reporte reporte = new HelperDeArchivos.Reporte();
         AccesoADatos.ADMoto motoBD = new AccesoADatos.ADMoto();
         AccesoADatos.ADFurgoneta furgonetaBD = new AccesoADatos.ADFurgoneta();
         AccesoADatos.ADAvion avionBD = new AccesoADatos.ADAvion();
@@ -180,5 +181,53 @@ namespace UI_WPF.Vistas
                 frmAcciones.Content = pagina;
             }
         }
+
+        private void btnAsociarSupervisor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Exportar tabla Motos pdf
+        private void btnExportarMotos_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                reporte.generarReporteMotos();
+                MessageBox.Show("Reporte de motos generado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+            }
+        }
+
+        //Exportar tabla Furgonetas pdf
+        private void btnExportarFurgonetas_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                reporte.generarReporteFurgonetas();
+                MessageBox.Show("Reporte de furgonetas generado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+            }
+        }
+
+        //Exportar tabla Aviones pdf
+        private void btnExportarAviones_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                reporte.generarReporteAviones();
+                MessageBox.Show("Reporte de aviones generado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+            }
+        }
     }
+   
 }

@@ -21,7 +21,6 @@ namespace UI_WPF.Vistas.VistasMercancia
     /// </summary>
     public partial class AltaSobre : Page
     {
-        List<Vehiculo> listaVehiculos = new List<Vehiculo>();
         public AltaSobre(AccesoADatos.ADSobre sobreBD)
         {
             InitializeComponent();
@@ -38,27 +37,10 @@ namespace UI_WPF.Vistas.VistasMercancia
             Double peso = Convert.ToDouble(tbxPeso.Text);
             bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
             bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
-            double precioGramo = sobreBD.GetPrecioGramo();
 
-            Sobre nuevoSobre = new Sobre(contenido, asegurado, largoRecorrido, 10, precioGramo, peso);
-            
-            cargarVehiculos(nuevoSobre);
-            
-            nuevoSobre.CalcularPrecioFinal();
+            Sobre nuevoSobre = new Sobre( contenido, asegurado, largoRecorrido, 10, 1, peso);
             sobreBD.AltaSobre(nuevoSobre);
         }
-        /// <summary>
-        /// El metodo permite cargar los vehiculos que se le asocian a un Sobre
-        /// esta carga es externa al sistema, y lo realizamos de esta forma para disminuir la complejidad del sistema.
-        /// </summary>
-        /// <param name="nuevoSobre"></param>
-        private void cargarVehiculos(Sobre nuevoSobre)
-        {
-            listaVehiculos.Add(new Moto("yamaha", DateTime.Now, 700000, 500, 2));
-            listaVehiculos.Add(new Moto("honda", DateTime.Now, 500000, 400, 2));
-            listaVehiculos.Add(new Avion("Aerobus920", DateTime.Now, 2000000, 10));
 
-            nuevoSobre.AsociarVehiculo(listaVehiculos);
-        }
     }
 }

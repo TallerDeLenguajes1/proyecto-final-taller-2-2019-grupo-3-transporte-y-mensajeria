@@ -12,7 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Shapes; 
 
 namespace UI_WPF.Vistas
 {
@@ -31,6 +31,8 @@ namespace UI_WPF.Vistas
 
         //Variables y colecciones de datos auxiliares
         AccesoADatos.ADCliente clienteBD;
+        HelperDeArchivos.Reporte reporte = new HelperDeArchivos.Reporte();
+        
         List<Cliente> ListClientesEncontrados = new List<Cliente>();
 
         //Alta cliente
@@ -105,11 +107,25 @@ namespace UI_WPF.Vistas
             }
         }
 
+        //Actualizar los resultados de buequeda luego de realizar una accion
         public void ActualizarResultadosBusqueda()
         {
             ListClientesEncontrados.Clear();
             lbxResultBusqueda.Items.Refresh();
         }
 
+        //Exportar tabla Clientes pdf
+        private void btnExportarClientes_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                reporte.generarReporteClientes();
+                MessageBox.Show("Reporte de clientes generado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+            }  
+        }
     }
 }

@@ -15,38 +15,35 @@ namespace AccesoADatos
         MySqlCommand cmd;
         MySqlDataReader dr;
 
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// Metodo para dar de alta una furgoneta.
+        /// dar de alta una furgoneta
         /// </summary>
         /// <param name="furgoneta"></param>
         public void AltaFurgoneta(Furgoneta furgoneta)
         {
-            using (conexion.retornarCN())
+
+            try
             {
-                try
+                conexion.abrir();
+
+                using (cmd = new MySqlCommand("Insert into furgonetas(modelo,fechaCompra,precioCompra,aumento,capacidadCarga) values (@modelo,@fechaCompra,@precioCompra,@aumento,@capacidadCarga)", conexion.retornarCN()))
                 {
-                    conexion.abrir();
 
-                    using (cmd = new MySqlCommand("Insert into furgonetas(modelo,fechaCompra,precioCompra,aumento,capacidadCarga) values (@modelo,@fechaCompra,@precioCompra,@aumento,@capacidadCarga)", conexion.retornarCN()))
-                    {
+                    cmd.Parameters.AddWithValue("@modelo", furgoneta.Modelo);
+                    cmd.Parameters.AddWithValue("@fechaCompra", furgoneta.FechaCompra);
+                    cmd.Parameters.AddWithValue("@precioCompra", furgoneta.PrecioCompra);
+                    cmd.Parameters.AddWithValue("@aumento", furgoneta.Aumento);
+                    cmd.Parameters.AddWithValue("@capacidadCarga", furgoneta.CapacidadCarga);
 
-                        cmd.Parameters.AddWithValue("@modelo", furgoneta.Modelo);
-                        cmd.Parameters.AddWithValue("@fechaCompra", furgoneta.FechaCompra);
-                        cmd.Parameters.AddWithValue("@precioCompra", furgoneta.PrecioCompra);
-                        cmd.Parameters.AddWithValue("@aumento", furgoneta.Aumento);
-                        cmd.Parameters.AddWithValue("@capacidadCarga", furgoneta.CapacidadCarga);
-
-                        cmd.ExecuteNonQuery();
-                    }
-                    conexion.cerrar();
+                    cmd.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("Error de alta de Furgoneta {0}", ex.ToString());
-                    MessageBox.Show("Error, no se pudo dar de alta el Vehiculo");
-                }
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                //Loguear el error
+                MessageBox.Show("Error en la consulta" + ex.ToString());
             }
         }
 
@@ -57,56 +54,50 @@ namespace AccesoADatos
         /// <param name="idFurgoneta"></param>
         public void BajaFurgoneta(int idFurgoneta)
         {
-            using (conexion.retornarCN())
+            try
             {
-                try
+                conexion.abrir();
+                using (cmd = new MySqlCommand("DELETE FROM furgonetas WHERE idFurgoneta = @idFurgoneta", conexion.retornarCN()))
                 {
-                    conexion.abrir();
-                    using (cmd = new MySqlCommand("DELETE FROM furgonetas WHERE idFurgoneta = @idFurgoneta", conexion.retornarCN()))
-                    {
-                        cmd.Parameters.AddWithValue("@idFurgoneta", idFurgoneta);
-                        cmd.ExecuteNonQuery();
-                    }
-                    conexion.cerrar();
+                    cmd.Parameters.AddWithValue("@idFurgoneta", idFurgoneta);
+                    cmd.ExecuteNonQuery();
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("Error de Baja de Furgoneta {0}", ex.ToString());
-                    MessageBox.Show("Error, no se pudo dar de baja la Furgoneta");
-                }
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
             }
 
         }
+
         /// <summary>
         /// modificar una furgoneta
         /// </summary>
         /// <param name="Furgoneta"></param>
         public void ModificacionFurgoneta(Furgoneta Furgoneta)
         {
-            using (conexion.retornarCN())
+            try
             {
-                try
+                conexion.abrir();
+                using (cmd = new MySqlCommand("UPDATE furgonetas SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento, capacidadCarga=@CapacidadCarga WHERE idFurgoneta=@idFurgoneta", conexion.retornarCN()))
                 {
-                    conexion.abrir();
-                    using (cmd = new MySqlCommand("UPDATE furgonetas SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento, capacidadCarga=@CapacidadCarga WHERE idFurgoneta=@idFurgoneta", conexion.retornarCN()))
-                    {
-                        cmd.Parameters.AddWithValue("@IdFurgoneta", Furgoneta.IdVehiculo);
-                        cmd.Parameters.AddWithValue("@modelo", Furgoneta.Modelo);
-                        cmd.Parameters.AddWithValue("@fechaCompra", Furgoneta.FechaCompra);
-                        cmd.Parameters.AddWithValue("@precioCompra", Furgoneta.PrecioCompra);
-                        cmd.Parameters.AddWithValue("@aumento", Furgoneta.Aumento);
-                        cmd.Parameters.AddWithValue("@capacidadCarga", Furgoneta.CapacidadCarga);
-                        cmd.ExecuteNonQuery();
-                        conexion.cerrar();
-                        MessageBox.Show("Furgoneta modificada");
-                    }
-
+                    cmd.Parameters.AddWithValue("@IdFurgoneta", Furgoneta.IdVehiculo);
+                    cmd.Parameters.AddWithValue("@modelo", Furgoneta.Modelo);
+                    cmd.Parameters.AddWithValue("@fechaCompra", Furgoneta.FechaCompra);
+                    cmd.Parameters.AddWithValue("@precioCompra", Furgoneta.PrecioCompra);
+                    cmd.Parameters.AddWithValue("@aumento", Furgoneta.Aumento);
+                    cmd.Parameters.AddWithValue("@capacidadCarga", Furgoneta.CapacidadCarga);
+                    cmd.ExecuteNonQuery();
+                    conexion.cerrar();
+                    MessageBox.Show("Furgoneta modificada");
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("Error de Moficicacion de Furgoneta {0}", ex.ToString());
-                    MessageBox.Show("Error, no se pudo Modificar");
-                }
+                
+            }
+            catch (Exception ex)
+            {
+                //Loguear el error
+                MessageBox.Show("Error en la consulta" + ex.ToString());
             }
         }
 
@@ -125,37 +116,74 @@ namespace AccesoADatos
             double precioCompra;
             double capacidad;
 
-            using (conexion.retornarCN())
+            try
             {
-                try
+                conexion.abrir();
+                using (cmd = new MySqlCommand("Select * from furgonetas", conexion.retornarCN()))
                 {
-                    conexion.abrir();
-                    using (cmd = new MySqlCommand("Select * from furgoneta", conexion.retornarCN()))
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
                     {
-                        dr = cmd.ExecuteReader();
-                        while (dr.Read())
-                        {
-                            idFurgoneta = dr.GetInt16(0);
-                            descripcion = dr.GetString(1);
-                            aumento = dr.GetDouble(2);
-                            fechaCompra = dr.GetDateTime(3);
-                            precioCompra = dr.GetDouble(4);
-                            capacidad = dr.GetDouble(5);
-                            nuevaFurgoneta = new Furgoneta(idFurgoneta, descripcion, fechaCompra, precioCompra, capacidad, aumento);
-                            listaFurgonetas.Add(nuevaFurgoneta);
-                        }
-                        dr.Close();
+                        idFurgoneta = dr.GetInt16(0);
+                        descripcion = dr.GetString(1);
+                        aumento = dr.GetDouble(2);
+                        fechaCompra = dr.GetDateTime(3);
+                        precioCompra = dr.GetDouble(4);
+                        capacidad = dr.GetDouble(5);
+                        nuevaFurgoneta = new Furgoneta(idFurgoneta, descripcion, fechaCompra, precioCompra, capacidad, aumento);
+                        listaFurgonetas.Add(nuevaFurgoneta);
                     }
-                    conexion.cerrar();
+                    dr.Close();
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("Error Busqueda {0}", ex.ToString());
-                    MessageBox.Show("Error en la consulta");
-                }
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
             }
             return listaFurgonetas;
         }
+
+        public List<Vehiculo> GetFurgonetasDeSupervisor(int idSupervisor)
+        {
+            List<Vehiculo> listaFurgonetas = new List<Vehiculo>();
+            Furgoneta nuevaFurgoneta;
+            int idFurgoneta;
+            string descripcion;
+            double aumento;
+            DateTime fechaCompra;
+            double precioCompra;
+            double capacidad;
+
+            try
+            {
+                conexion.abrir();
+                using (cmd = new MySqlCommand("Select * from furgonetas where fk_idSupervisorF = @idSupervisor ", conexion.retornarCN()))
+                {
+                    cmd.Parameters.AddWithValue("@idSupervisor", idSupervisor);
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        idFurgoneta = dr.GetInt16(0);
+                        descripcion = dr.GetString(1);
+                        aumento = dr.GetDouble(2);
+                        fechaCompra = dr.GetDateTime(3);
+                        precioCompra = dr.GetDouble(4);
+                        capacidad = dr.GetDouble(5);
+                        nuevaFurgoneta = new Furgoneta(idFurgoneta, descripcion, fechaCompra, precioCompra, capacidad, aumento);
+                        listaFurgonetas.Add(nuevaFurgoneta);
+                    }
+                    dr.Close();
+                }
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
+            }
+            return listaFurgonetas;
+        }
+
         /// <summary>
         /// devuelve una lista de las furgonetas en cierto año
         /// </summary>
@@ -173,39 +201,80 @@ namespace AccesoADatos
 
             double capacidad;
 
-            using (conexion.retornarCN())
+            try
             {
-                try
+                conexion.abrir();
+                using (cmd = new MySqlCommand("Select * from furgonetas where year(fechaCompra) = @anioCompra ", conexion.retornarCN()))
                 {
-                    conexion.abrir();
-                    using (cmd = new MySqlCommand("Select * from furgonetas where year(fechaCompra) = @anioCompra ", conexion.retornarCN()))
+                    cmd.Parameters.AddWithValue("@anioCompra", anioCompra);
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
                     {
-                        cmd.Parameters.AddWithValue("@anioCompra", anioCompra);
-                        dr = cmd.ExecuteReader();
-                        while (dr.Read())
-                        {
-                            idFurgoneta = dr.GetInt16(0);
-                            descripcion = dr.GetString(1);
-                            aumento = dr.GetDouble(2);
-                            fechaCompra = dr.GetDateTime(3);
-                            precioCompra = dr.GetDouble(4);
-                            capacidad = dr.GetDouble(5);
-                            nuevaFurgoneta = new Furgoneta(idFurgoneta, descripcion, fechaCompra, precioCompra, capacidad, aumento);
-                            listaFurgoneta.Add(nuevaFurgoneta);
+                        idFurgoneta = dr.GetInt16(0);
+                        descripcion = dr.GetString(1);
+                        aumento = dr.GetDouble(2);
+                        fechaCompra = dr.GetDateTime(3);
+                        precioCompra = dr.GetDouble(4);
+                        capacidad = dr.GetDouble(5);
+                        nuevaFurgoneta = new Furgoneta(idFurgoneta, descripcion, fechaCompra, precioCompra, capacidad, aumento);
+                        listaFurgoneta.Add(nuevaFurgoneta);
 
-                        }
-                        dr.Close();
                     }
-                    conexion.cerrar();
+                    dr.Close();
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("Error Busqueda {0}", ex.ToString());
-                    MessageBox.Show("Error en la consulta");
-                }
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
             }
             return listaFurgoneta;
         }
+
+        //Buscar vehiculos asociados a un determinado supervisor
+        public List<Vehiculo> GetFurgonetas(int anioCompra, int idSupervisor)
+        {
+            List<Vehiculo> listaFurgoneta = new List<Vehiculo>();
+            Furgoneta nuevaFurgoneta;
+            int idFurgoneta;
+            string descripcion;
+            double aumento;
+            DateTime fechaCompra;
+            double precioCompra;
+
+            double capacidad;
+
+            try
+            {
+                conexion.abrir();
+                using (cmd = new MySqlCommand("Select * from furgonetas where ( year(fechaCompra) = @anioCompra AND fk_idSupervisorF = @idSupervisor )", conexion.retornarCN()))
+                {
+                    cmd.Parameters.AddWithValue("@anioCompra", anioCompra);
+                    cmd.Parameters.AddWithValue("@idSupervisor", idSupervisor);
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        idFurgoneta = dr.GetInt16(0);
+                        descripcion = dr.GetString(1);
+                        aumento = dr.GetDouble(2);
+                        fechaCompra = dr.GetDateTime(3);
+                        precioCompra = dr.GetDouble(4);
+                        capacidad = dr.GetDouble(5);
+                        nuevaFurgoneta = new Furgoneta(idFurgoneta, descripcion, fechaCompra, precioCompra, capacidad, aumento);
+                        listaFurgoneta.Add(nuevaFurgoneta);
+
+                    }
+                    dr.Close();
+                }
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
+            }
+            return listaFurgoneta;
+        }
+
         /// <summary>
         /// devuelve lista de acuerdo a cierta marca
         /// </summary>
@@ -223,62 +292,99 @@ namespace AccesoADatos
 
             double capacidad;
 
-            using (conexion.retornarCN())
+            try
             {
-                try
+                conexion.abrir();
+                cmd = new MySqlCommand("Select * from furgonetas where modelo = @modeloToSerch ", conexion.retornarCN());
+                cmd.Parameters.AddWithValue("@modeloToSerch", modeloToSerch);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
                 {
-                    conexion.abrir();
-                    cmd = new MySqlCommand("Select * from furgonetas where modelo = @modeloToSerch ", conexion.retornarCN());
-                    cmd.Parameters.AddWithValue("@modeloToSerch", modeloToSerch);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        idFurgoneta = dr.GetInt16(0);
-                        modelo = dr.GetString(1);
-                        aumento = dr.GetDouble(2);
-                        fechaCompra = dr.GetDateTime(3);
-                        precioCompra = dr.GetDouble(4);
-                        capacidad = dr.GetInt32(5);
-                        nuevaFurgoneta = new Furgoneta(idFurgoneta, modelo, fechaCompra, precioCompra, capacidad, aumento);
-                        listaFurgonetas.Add(nuevaFurgoneta);
+                    idFurgoneta = dr.GetInt16(0);
+                    modelo = dr.GetString(1);
+                    aumento = dr.GetDouble(2);
+                    fechaCompra = dr.GetDateTime(3);
+                    precioCompra = dr.GetDouble(4);
+                    capacidad = dr.GetInt32(5);
+                    nuevaFurgoneta = new Furgoneta(idFurgoneta, modelo, fechaCompra, precioCompra, capacidad, aumento);
+                    listaFurgonetas.Add(nuevaFurgoneta);
 
-                    }
-                    dr.Close();
-                    conexion.cerrar();
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("Error Busqueda {0}", ex.ToString());
-                    MessageBox.Show("Error en la consulta");
-                }
+                dr.Close();
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
             }
             return listaFurgonetas;
         }
+
+        //Buscar Vehiculos asociados a un determinado supervisor
+        public List<Vehiculo> GetFurgonetas(string modeloToSerch, int idSupervisor)
+        {
+            List<Vehiculo> listaFurgonetas = new List<Vehiculo>();
+            Furgoneta nuevaFurgoneta;
+            int idFurgoneta;
+            string modelo;
+            double aumento;
+            DateTime fechaCompra;
+            double precioCompra;
+
+            double capacidad;
+
+            try
+            {
+                conexion.abrir();
+                cmd = new MySqlCommand("Select * from furgonetas where ( modelo = @modeloToSerch and fk_idSupervisorF = @idSupervisor )", conexion.retornarCN());
+                cmd.Parameters.AddWithValue("@modeloToSerch", modeloToSerch);
+                cmd.Parameters.AddWithValue("@idSupervisor", idSupervisor);
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    idFurgoneta = dr.GetInt16(0);
+                    modelo = dr.GetString(1);
+                    aumento = dr.GetDouble(2);
+                    fechaCompra = dr.GetDateTime(3);
+                    precioCompra = dr.GetDouble(4);
+                    capacidad = dr.GetInt32(5);
+                    nuevaFurgoneta = new Furgoneta(idFurgoneta, modelo, fechaCompra, precioCompra, capacidad, aumento);
+                    listaFurgonetas.Add(nuevaFurgoneta);
+
+                }
+                dr.Close();
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error en la consulta" + ex.ToString());
+            }
+            return listaFurgonetas;
+        }
+
         /// <summary>
         /// relaciona un supervisor con una furgoneta
         /// </summary>
         /// <param name="idFurgoneta"></param>
         /// <param name="idSup"></param>
-        public void agregarSupervisor(int idFurgoneta, int idSup)
+        public void agregarSupervisor(int idFurgoneta, int idSupervisor)
         {
-            using (conexion.retornarCN())
+            try
             {
-                try
+                conexion.abrir();
+                using (cmd = new MySqlCommand("UPDATE furgonetas SET fk_idSupervisorF = @idSupervisor WHERE idFurgoneta = @idFurgoneta", conexion.retornarCN()))
                 {
-                    conexion.abrir();
-                    using (cmd = new MySqlCommand("UPDATE furgonetas SET fk_idSupervisor= @idSup WHERE idFurgoneta = @idFurgoneta", conexion.retornarCN()))
-                    {
-                        cmd.Parameters.AddWithValue("@idSup", idSup);
-                        cmd.Parameters.AddWithValue("@idFurgoneta", idFurgoneta);
-                        cmd.ExecuteNonQuery();
-                    }
-                    conexion.cerrar();
+                    cmd.Parameters.AddWithValue("@idSupervisor", idSupervisor);
+                    cmd.Parameters.AddWithValue("@idFurgoneta", idFurgoneta);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Vehiculo asociado con éxito");
                 }
-                catch (Exception ex)
-                {
-                    Logger.Error("Error AgregarSupervisor {0}", ex.ToString());
-                    MessageBox.Show("Error en la consulta");
-                }
+                conexion.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error en la consulta" + ex.ToString());
             }
         }
     }

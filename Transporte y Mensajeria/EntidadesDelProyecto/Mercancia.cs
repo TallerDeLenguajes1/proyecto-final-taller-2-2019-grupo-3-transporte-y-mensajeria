@@ -108,23 +108,24 @@ namespace EntidadesDelProyecto
             }
         }
 
-        public Mercancia()
-        {
+        //Setters and Getters
+        //public int IdMercancia { get => idMercancia; set => idMercancia = value; }
+        //public string Contenido { get => contenido; set => contenido = value; }
+        //public bool Asegurada { get => asegurada; set => asegurada = value; }
+        //public static double AumSeguro { get => aumSeguro; set => aumSeguro = value; }
+        //public bool LargoRecorrido { get => largoRecorrido; set => largoRecorrido = value; }
+        //public double PrecioNeto { get => precioNeto; set => precioNeto = value; }
+        //public List<Vehiculo> Vehiculos { get => vehiculos; set => vehiculos = value; }
 
-        }
-        /// <summary>
-        /// Metodo Construcor Mercancia.
-        /// </summary>
-        /// <param name="contenido"></param>
-        /// <param name="asegurada"></param>
-        /// <param name="largoRecorrido"></param>
-        /// <param name="aumSeguro"></param>
+
+
+        //Constructor
         public Mercancia(string contenido, bool asegurada, bool largoRecorrido, double aumSeguro)
         {
             this.contenido = contenido;
             this.asegurada = asegurada;
             this.largoRecorrido = largoRecorrido;
-            this.Vehiculos = new List<Vehiculo>();
+            //this.Vehiculos = new List<Vehiculo>();
             this.aumSeguro = aumSeguro;
             this.precioNeto = CalcularPrecioNeto();
         }
@@ -135,7 +136,7 @@ namespace EntidadesDelProyecto
             this.contenido = contenido;
             this.asegurada = asegurada;
             this.largoRecorrido = largoRecorrido;
-            this.Vehiculos = new List<Vehiculo>();
+            //this.Vehiculos = new List<Vehiculo>();
             this.aumSeguro = aumSeguro;
             this.precioNeto = CalcularPrecioNeto();
         }
@@ -169,11 +170,13 @@ namespace EntidadesDelProyecto
         }
 
         public virtual double CalcularPrecioNeto() { return 0; }
+
         /// <summary>
         /// Este metodo permite obtener la unidad ya sea el peso o volumen segun  sea la Mercancia.
         /// </summary>
         /// <returns></returns>
         public virtual double GetUnidad() { return 0; }
+
         public double CalcularPrecioSegunVehiculos()
         {
             double suma = 0;
@@ -188,6 +191,17 @@ namespace EntidadesDelProyecto
         {
             return CalcularPrecioSegunVehiculos();
         }
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

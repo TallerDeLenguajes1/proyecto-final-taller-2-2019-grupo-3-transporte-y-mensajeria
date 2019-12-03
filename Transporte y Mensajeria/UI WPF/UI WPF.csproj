@@ -84,6 +84,12 @@
     <Compile Include="Vistas\VistasCliente\ModificarCliente.xaml.cs">
       <DependentUpon>ModificarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VistasIncio\HomeContent.xaml.cs">
+      <DependentUpon>HomeContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasIncio\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VistasMercancia\AltaPaquete.xaml.cs">
       <DependentUpon>AltaPaquete.xaml</DependentUpon>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Vistas\VistasMercancia\ModificarSobre.xaml.cs">
       <DependentUpon>ModificarSobre.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VistasSupervisor\AsociarVehiculo.xaml.cs">
+      <DependentUpon>AsociarVehiculo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VistasSupervisor\DatosSupervisor.xaml.cs">
       <DependentUpon>DatosSupervisor.xaml</DependentUpon>
     </Compile>
@@ -113,6 +122,9 @@
     </Compile>
     <Compile Include="Vistas\VistasSupervisor\ModificarSupervisor.xaml.cs">
       <DependentUpon>ModificarSupervisor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasSupervisor\VehiculosAsociados.xaml.cs">
+      <DependentUpon>VehiculosAsociados.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasVehiculo\AltaAvion.xaml.cs">
       <DependentUpon>AltaAvion.xaml</DependentUpon>
@@ -188,6 +200,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vistas\VistasIncio\HomeContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasIncio\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\VistasMercancia\AltaPaquete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +236,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vistas\VistasSupervisor\AsociarVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\VistasSupervisor\DatosSupervisor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +249,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\VistasSupervisor\ModificarSupervisor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasSupervisor\VehiculosAsociados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -296,7 +324,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AccesoADatos\AccesoADatos.csproj">
       <Project>{375ca961-960c-4a25-bb59-3ea1efca4d4d}</Project>
@@ -306,12 +333,22 @@
       <Project>{b6cd3902-d7f8-492c-89ed-c90efa0d00bd}</Project>
       <Name>EntidadesDelProyecto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HelperDeArchivos\HelperDeArchivos.csproj">
+      <Project>{42ed4c95-e31e-43e4-9027-f7a8c2030c0b}</Project>
+      <Name>HelperDeArchivos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\cerrar.png" />
     <Resource Include="Imagenes\maximizar.png" />
     <Resource Include="Imagenes\minimizar.png" />
     <Resource Include="Imagenes\ventana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\logo 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\logo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
