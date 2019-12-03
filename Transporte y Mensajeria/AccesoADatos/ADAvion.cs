@@ -15,55 +15,62 @@ namespace AccesoADatos
         MySqlCommand cmd;
         MySqlDataReader dr;
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// dar de alta un avion
+        /// Metodo para dar de alta un avion.
         /// </summary>
         /// <param name="avion"></param>
         public void AltaAvion(Avion avion)
         {
-
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-
-                using (cmd = new MySqlCommand("Insert into aviones(modelo,fechaCompra,precioCompra,aumento) values (@modelo,@fechaCompra,@precioCompra,@aumento)", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@modelo", avion.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", avion.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", avion.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", avion.Aumento);
-                    cmd.ExecuteNonQuery();
+                    conexion.abrir();
+
+                    using (cmd = new MySqlCommand("Insert into aviones(modelo,fechaCompra,precioCompra,aumento) values (@modelo,@fechaCompra,@precioCompra,@aumento)", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@modelo", avion.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", avion.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", avion.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", avion.Aumento);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de alta de Avion {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de alta el Avion");
+                }
             }
         }
 
 
         /// <summary>
-        /// eliminar un avion
+        /// Metodo para eliminar un avion.
         /// </summary>
         /// <param name="idAvion"></param>
         public void BajaAvion(int idAvion)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("DELETE FROM aviones WHERE idAvion = @idAvion", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@idAvion", idAvion);
-                    cmd.ExecuteNonQuery();
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("DELETE FROM aviones WHERE idAvion = @idAvion", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@idAvion", idAvion);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Baja de Avion {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de baja el Avion");
+                }
             }
 
         }
@@ -73,31 +80,34 @@ namespace AccesoADatos
         /// <param name="Avion"></param>
         public void ModificacionAvion(Avion Avion)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("UPDATE aviones SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento WHERE idAvion=@idAvion", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@idAvion", Avion.IdVehiculo);
-                    cmd.Parameters.AddWithValue("@modelo", Avion.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", Avion.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", Avion.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", Avion.Aumento);
-                    cmd.ExecuteNonQuery();
-                    conexion.cerrar();
-                    MessageBox.Show("Moto modificada");
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("UPDATE aviones SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento WHERE idAvion=@idAvion", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@idAvion", Avion.IdVehiculo);
+                        cmd.Parameters.AddWithValue("@modelo", Avion.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", Avion.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", Avion.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", Avion.Aumento);
+                        cmd.ExecuteNonQuery();
+                        conexion.cerrar();
+                        MessageBox.Show("Moto modificada");
+                    }
+
                 }
-               
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Modificicacion de Avion {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo Modificar el Avion");
+                }
             }
         }
 
         /// <summary>
-        /// lista de todos los aviones del sistema
+        /// Metodo para listar todos los aviones del sistema.
         /// </summary>
         /// <returns></returns>
         public List<Avion> GetAviones()
@@ -110,35 +120,41 @@ namespace AccesoADatos
             DateTime fechaCompra;
             double precioCompra;
 
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("Select * from aviones", conexion.retornarCN()))
-                {
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        idAvion = dr.GetInt16(0);
-                        modelo = dr.GetString(1);
-                        aumento = dr.GetDouble(2);
-                        fechaCompra = dr.GetDateTime(3);
-                        precioCompra = dr.GetDouble(4);
-                        nuevoAvion = new Avion(idAvion, modelo, fechaCompra, precioCompra, aumento);
-                        listaAviones.Add(nuevoAvion);
 
+                try
+                {
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("Select * from aviones", conexion.retornarCN()))
+                    {
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            idAvion = dr.GetInt16(0);
+                            modelo = dr.GetString(1);
+                            aumento = dr.GetDouble(2);
+                            fechaCompra = dr.GetDateTime(3);
+                            precioCompra = dr.GetDouble(4);
+                            nuevoAvion = new Avion(idAvion, modelo, fechaCompra, precioCompra, aumento);
+                            listaAviones.Add(nuevoAvion);
+
+                        }
+                        dr.Close();
                     }
-                    dr.Close();
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
+
             }
             return listaAviones;
         }
         /// <summary>
-        /// lista de aviones segun año de compra
+        /// Metodo para listar aviones segun año de compra.
         /// </summary>
         /// <param name="anioCompra"></param>
         /// <returns></returns>
@@ -152,32 +168,37 @@ namespace AccesoADatos
             DateTime fechaCompra;
             double precioCompra;
 
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("Select * from aviones where year(fechaCompra) = @anioCompra ", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@anioCompra", anioCompra);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("Select * from aviones where year(fechaCompra) = @anioCompra ", conexion.retornarCN()))
                     {
-                        idAvion = dr.GetInt16(0);
-                        descripcion = dr.GetString(1);
-                        aumento = dr.GetDouble(2);
-                        fechaCompra = dr.GetDateTime(3);
-                        precioCompra = dr.GetDouble(4);
-                        nuevaAvion = new Avion(idAvion, descripcion, fechaCompra, precioCompra, aumento);
-                        listaAviones.Add(nuevaAvion);
+                        cmd.Parameters.AddWithValue("@anioCompra", anioCompra);
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            idAvion = dr.GetInt16(0);
+                            descripcion = dr.GetString(1);
+                            aumento = dr.GetDouble(2);
+                            fechaCompra = dr.GetDateTime(3);
+                            precioCompra = dr.GetDouble(4);
+                            nuevaAvion = new Avion(idAvion, descripcion, fechaCompra, precioCompra, aumento);
+                            listaAviones.Add(nuevaAvion);
 
+                        }
+                        dr.Close();
                     }
-                    dr.Close();
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
-            }
+
             return listaAviones;
         }
         /// <summary>
@@ -195,34 +216,38 @@ namespace AccesoADatos
             DateTime fechaCompra;
             double precioCompra;
 
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-
-                using (cmd = new MySqlCommand("Select * from aviones where modelo = @modeloToSerch ", conexion.retornarCN()))
+                try
                 {
+                    conexion.abrir();
 
-                    cmd.Parameters.AddWithValue("@modeloToSerch", modeloToSerch);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    using (cmd = new MySqlCommand("Select * from aviones where modelo = @modeloToSerch ", conexion.retornarCN()))
                     {
-                        idAvion = dr.GetInt16(0);
-                        modelo = dr.GetString(1);
-                        aumento = dr.GetDouble(2);
-                        fechaCompra = dr.GetDateTime(3);
-                        precioCompra = dr.GetDouble(4);
-                        nuevoAvion = new Avion(idAvion, modelo, fechaCompra, precioCompra, aumento);
-                        listaAviones.Add(nuevoAvion);
+
+                        cmd.Parameters.AddWithValue("@modeloToSerch", modeloToSerch);
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            idAvion = dr.GetInt16(0);
+                            modelo = dr.GetString(1);
+                            aumento = dr.GetDouble(2);
+                            fechaCompra = dr.GetDateTime(3);
+                            precioCompra = dr.GetDouble(4);
+                            nuevoAvion = new Avion(idAvion, modelo, fechaCompra, precioCompra, aumento);
+                            listaAviones.Add(nuevoAvion);
+
+                        }
+                        dr.Close();
 
                     }
-                    dr.Close();
-
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
             }
             return listaAviones;
         }
@@ -234,19 +259,22 @@ namespace AccesoADatos
         /// <param name="idSup"></param>
         public void agregarSupervisor(int idAvion, int idSup)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                cmd = new MySqlCommand("UPDATE aviones SET fk_idSupervisor= @idSup WHERE idAvion = @idAvion", conexion.retornarCN());
-                cmd.Parameters.AddWithValue("@idSup", idSup);
-                cmd.Parameters.AddWithValue("@idAvion", idAvion);
-                cmd.ExecuteNonQuery();
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                try
+                {
+                    conexion.abrir();
+                    cmd = new MySqlCommand("UPDATE aviones SET fk_idSupervisor= @idSup WHERE idAvion = @idAvion", conexion.retornarCN());
+                    cmd.Parameters.AddWithValue("@idSup", idSup);
+                    cmd.Parameters.AddWithValue("@idAvion", idAvion);
+                    cmd.ExecuteNonQuery();
+                    conexion.cerrar();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
             }
         }
 

@@ -15,6 +15,7 @@ namespace AccesoADatos
         MySqlCommand cmd;
         MySqlDataReader dr;
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// dar de alta una moto
@@ -22,28 +23,30 @@ namespace AccesoADatos
         /// <param name="moto"></param>
         public void AltaMoto(Moto moto)
         {
-
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-
-                using (cmd = new MySqlCommand("Insert into motos(modelo,fechaCompra,precioCompra,aumento,cilindrada) values (@modelo,@fechaCompra,@precioCompra,@aumento,@cilindrada)", conexion.retornarCN()))
+                try
                 {
+                    conexion.abrir();
 
-                    //cmd = new MySqlCommand("Insert into motos(descripcion,fechaCompra,precioCompra,cilindrada) values (@descripcion,@fechaCompra,@precioCompra,@cilindrada)", conexion.retornarCN());
-                    cmd.Parameters.AddWithValue("@modelo", moto.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", moto.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", moto.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", moto.Aumento);
-                    cmd.Parameters.AddWithValue("@cilindrada", moto.Cilindrada);
-                    cmd.ExecuteNonQuery();
+                    using (cmd = new MySqlCommand("Insert into motos(modelo,fechaCompra,precioCompra,aumento,cilindrada) values (@modelo,@fechaCompra,@precioCompra,@aumento,@cilindrada)", conexion.retornarCN()))
+                    {
+
+                        //cmd = new MySqlCommand("Insert into motos(descripcion,fechaCompra,precioCompra,cilindrada) values (@descripcion,@fechaCompra,@precioCompra,@cilindrada)", conexion.retornarCN());
+                        cmd.Parameters.AddWithValue("@modelo", moto.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", moto.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", moto.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", moto.Aumento);
+                        cmd.Parameters.AddWithValue("@cilindrada", moto.Cilindrada);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de alta de Moto {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de alta el Vehiculo");
+                }
             }
         }
 
@@ -55,49 +58,56 @@ namespace AccesoADatos
         /// <param name="idMoto"></param>
         public void BajaMoto(int idMoto)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("DELETE FROM motos WHERE idMoto = @idMoto", conexion.retornarCN()))
+                try
                 {
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("DELETE FROM motos WHERE idMoto = @idMoto", conexion.retornarCN()))
+                    {
 
-                    cmd.Parameters.AddWithValue("@idMoto", idMoto);
-                    cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@idMoto", idMoto);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Baja de Moto {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de baja la Moto");
+                }
             }
 
         }
 
         public void ModificacionMoto(Moto moto)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("UPDATE motos SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento, cilindrada=@cilindrada WHERE idMoto=@idMoto", conexion.retornarCN()))
+                try
                 {
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("UPDATE motos SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento, cilindrada=@cilindrada WHERE idMoto=@idMoto", conexion.retornarCN()))
+                    {
 
-                    cmd.Parameters.AddWithValue("@idMoto", moto.IdVehiculo);
-                    cmd.Parameters.AddWithValue("@modelo", moto.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", moto.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", moto.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", moto.Aumento);
-                    cmd.Parameters.AddWithValue("@cilindrada", moto.Cilindrada);
-                    cmd.ExecuteNonQuery();
-                    conexion.cerrar();
-                    MessageBox.Show("Moto modificada");
+                        cmd.Parameters.AddWithValue("@idMoto", moto.IdVehiculo);
+                        cmd.Parameters.AddWithValue("@modelo", moto.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", moto.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", moto.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", moto.Aumento);
+                        cmd.Parameters.AddWithValue("@cilindrada", moto.Cilindrada);
+                        cmd.ExecuteNonQuery();
+                        conexion.cerrar();
+                        MessageBox.Show("Moto modificada");
+                    }
+
+
                 }
-
-                
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Moficicacion de Moto {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo Modificar");
+                }
             }
         }
 
@@ -117,31 +127,35 @@ namespace AccesoADatos
 
             int cilindrada;
 
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("Select * from motos", conexion.retornarCN()))
+                try
                 {
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("Select * from motos", conexion.retornarCN()))
                     {
-                        idMoto = dr.GetInt16(0);
-                        descripcion = dr.GetString(1);
-                        aumento = dr.GetDouble(2);
-                        fechaCompra = dr.GetDateTime(3);
-                        precioCompra = dr.GetDouble(4);
-                        cilindrada = dr.GetInt32(5);
-                        nuevaMoto = new Moto(idMoto, descripcion, fechaCompra, precioCompra, cilindrada, aumento);
-                        listaMotos.Add(nuevaMoto);
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            idMoto = dr.GetInt16(0);
+                            descripcion = dr.GetString(1);
+                            aumento = dr.GetDouble(2);
+                            fechaCompra = dr.GetDateTime(3);
+                            precioCompra = dr.GetDouble(4);
+                            cilindrada = dr.GetInt32(5);
+                            nuevaMoto = new Moto(idMoto, descripcion, fechaCompra, precioCompra, cilindrada, aumento);
+                            listaMotos.Add(nuevaMoto);
 
+                        }
+                        dr.Close();
                     }
-                    dr.Close();
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
             }
             return listaMotos;
         }
@@ -163,32 +177,36 @@ namespace AccesoADatos
 
             int cilindrada;
 
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("Select * from motos where year(fechaCompra) = @anioCompra ", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@anioCompra", anioCompra);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("Select * from motos where year(fechaCompra) = @anioCompra ", conexion.retornarCN()))
                     {
-                        idMoto = dr.GetInt16(0);
-                        descripcion = dr.GetString(1);
-                        aumento = dr.GetDouble(2);
-                        fechaCompra = dr.GetDateTime(3);
-                        precioCompra = dr.GetDouble(4);
-                        cilindrada = dr.GetInt32(5);
-                        nuevaMoto = new Moto(idMoto, descripcion, fechaCompra, precioCompra, cilindrada, aumento);
-                        listaMotos.Add(nuevaMoto);
+                        cmd.Parameters.AddWithValue("@anioCompra", anioCompra);
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            idMoto = dr.GetInt16(0);
+                            descripcion = dr.GetString(1);
+                            aumento = dr.GetDouble(2);
+                            fechaCompra = dr.GetDateTime(3);
+                            precioCompra = dr.GetDouble(4);
+                            cilindrada = dr.GetInt32(5);
+                            nuevaMoto = new Moto(idMoto, descripcion, fechaCompra, precioCompra, cilindrada, aumento);
+                            listaMotos.Add(nuevaMoto);
 
+                        }
+                        dr.Close();
                     }
-                    dr.Close();
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
             }
             return listaMotos;
         }
@@ -210,34 +228,38 @@ namespace AccesoADatos
 
             int cilindrada;
 
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-
-                using (cmd = new MySqlCommand("Select * from motos where modelo = @modeloToSerch ", conexion.retornarCN()))
+                try
                 {
-                    //cmd = new MySqlCommand("Select * from motos where descripcion like '%@descripcionMarca%' ", conexion.retornarCN());
-                    cmd.Parameters.AddWithValue("@modeloToSerch", modeloToSerch);
-                    dr = cmd.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        idMoto = dr.GetInt16(0);
-                        modelo = dr.GetString(1);
-                        aumento = dr.GetDouble(2);
-                        fechaCompra = dr.GetDateTime(3);
-                        precioCompra = dr.GetDouble(4);
-                        cilindrada = dr.GetInt32(5);
-                        nuevaMoto = new Moto(idMoto, modelo, fechaCompra, precioCompra, cilindrada, aumento);
-                        listaMotos.Add(nuevaMoto);
-                    }
-                    dr.Close();
+                    conexion.abrir();
 
+                    using (cmd = new MySqlCommand("Select * from motos where modelo = @modeloToSerch ", conexion.retornarCN()))
+                    {
+                        //cmd = new MySqlCommand("Select * from motos where descripcion like '%@descripcionMarca%' ", conexion.retornarCN());
+                        cmd.Parameters.AddWithValue("@modeloToSerch", modeloToSerch);
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            idMoto = dr.GetInt16(0);
+                            modelo = dr.GetString(1);
+                            aumento = dr.GetDouble(2);
+                            fechaCompra = dr.GetDateTime(3);
+                            precioCompra = dr.GetDouble(4);
+                            cilindrada = dr.GetInt32(5);
+                            nuevaMoto = new Moto(idMoto, modelo, fechaCompra, precioCompra, cilindrada, aumento);
+                            listaMotos.Add(nuevaMoto);
+                        }
+                        dr.Close();
+
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
             }
             return listaMotos;
         }
@@ -248,22 +270,25 @@ namespace AccesoADatos
         /// <param name="idSup"></param>
         public void agregarSupervisor(int idMoto, int idSup)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("UPDATE motos SET fk_idSupervisor= @idSup WHERE idMoto = @idMoto", conexion.retornarCN()))
+                try
                 {
-                    //UPDATE `transportemensajeria`.`motos` SET `fk_idSupervisor` = '12' WHERE (`idMoto` = '1');
-                    cmd.Parameters.AddWithValue("@idSup", idSup);
-                    cmd.Parameters.AddWithValue("@idMoto", idMoto);
-                    cmd.ExecuteNonQuery();
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("UPDATE motos SET fk_idSupervisor= @idSup WHERE idMoto = @idMoto", conexion.retornarCN()))
+                    {
+                        //UPDATE `transportemensajeria`.`motos` SET `fk_idSupervisor` = '12' WHERE (`idMoto` = '1');
+                        cmd.Parameters.AddWithValue("@idSup", idSup);
+                        cmd.Parameters.AddWithValue("@idMoto", idMoto);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error AgregarSupervisor {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
             }
         }
     }

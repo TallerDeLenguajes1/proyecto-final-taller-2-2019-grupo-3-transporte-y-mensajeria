@@ -10,26 +10,30 @@ namespace AccesoADatos
 {
     public class Conexion
     {
-
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         MySqlConnection cn;
 
         public Conexion()
         {
-
-            try
-            {
-                cn = new MySqlConnection("Server=localhost; Database=transporte_y_mensajeria; Uid=root; Pwd = 1234; Integrated Security =True");
-                //MessageBox.Show("Conectado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de conexion: " + ex.ToString());
-            }
+            string cadenaConexion = "Server=localhost;" +
+                " Database=transporte_mensajeria;" + 
+                //"Pwd = 1234" +
+                " Uid=root;" +
+                " Integrated Security =True";
+            cn = new MySqlConnection(cadenaConexion);
         }
 
         public void abrir()
         {
-            cn.Open();
+            try
+            {
+                cn.Open();
+            }
+            catch (Exception ex)
+            {
+                Logger.Error("Error CONEXION PARA ABRIR LA CONEXION {0}", ex.ToString());
+                MessageBox.Show("Error de conexion");
+            }
         }
 
         public void cerrar()

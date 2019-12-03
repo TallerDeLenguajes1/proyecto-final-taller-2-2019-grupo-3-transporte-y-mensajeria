@@ -52,8 +52,9 @@ namespace UI_WPF.Vistas.VistasMercancia
             double peso = Convert.ToDouble(tbxPeso.Text);
             bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
             bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
+            double precioGramo = sobreBD.GetPrecioGramo();
 
-            Sobre sobreEncontrado = new Sobre(sobre.IdMercancia, contenido, asegurado, largoRecorrido, 10, 1, peso);
+            Sobre sobreEncontrado = new Sobre(sobre.IdMercancia, contenido, asegurado, largoRecorrido, 10, precioGramo, peso);
 
             sobreBD.ModificacionSobre(sobreEncontrado);
 

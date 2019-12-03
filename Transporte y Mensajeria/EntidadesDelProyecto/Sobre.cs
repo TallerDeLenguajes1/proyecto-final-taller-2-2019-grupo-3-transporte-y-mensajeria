@@ -62,14 +62,9 @@ namespace EntidadesDelProyecto
             return PrecioMercanciaAsegurada(aux);
         }
 
-        protected override double CalcularPrecioSegunVehiculos()
+        public override double GetUnidad()
         {
-            double suma = 0;
-            for (int i = 0; i < Vehiculos.Count(); i++)
-            {
-                suma += Vehiculos[i].CalcularPrecio(PrecioNeto, peso);
-            }
-            return suma;
+            return this.peso;
         }
 
         public override string ToString()

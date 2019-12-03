@@ -67,7 +67,18 @@ namespace UI_WPF.Vistas
                 {
                     case "Contenido":
                         ListSobresEncontrados = sobreBD.GetSobres(contenido);
+                        sobreBD.GetPrecioGramo();
+                        ///BORRAR ESTO DESPUES, se deja el codigo solo para ver que funcione correctamente el metodo calcular precio final.
+                        //foreach (var item in ListSobresEncontrados)
+                        //{
+                        //    MessageBox.Show(item.CalcularPrecioFinal().ToString());
+                        //}
                         ListPaquetesEncontrados = paqueteBD.GetPaquetes(contenido);
+                        ///BORRAR ESTO DESPUES.
+                        //foreach (var item in ListPaquetesEncontrados)
+                        //{
+                        //    MessageBox.Show(item.CalcularPrecioFinal().ToString());
+                        //}
                         ListMercanciasEncontradas = ListSobresEncontrados.Concat(ListPaquetesEncontrados).ToList();
                         break;
                     case "Codigo":

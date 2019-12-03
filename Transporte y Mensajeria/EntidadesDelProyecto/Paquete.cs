@@ -8,7 +8,7 @@ namespace EntidadesDelProyecto
 {
     public class Paquete : Mercancia
     {
-        //Atribtos
+        //Atributos
         double volumen;
         double precioM3;
 
@@ -62,14 +62,9 @@ namespace EntidadesDelProyecto
             return PrecioMercanciaAsegurada(aux);
         }
 
-        protected override double CalcularPrecioSegunVehiculos()
+        public override double GetUnidad()
         {
-            double suma = 0;
-            for (int i = 0; i < Vehiculos.Count(); i++)
-            {
-                suma += Vehiculos[i].CalcularPrecio(PrecioNeto, volumen);
-            }
-            return suma;
+            return this.volumen;
         }
 
         public override string ToString()

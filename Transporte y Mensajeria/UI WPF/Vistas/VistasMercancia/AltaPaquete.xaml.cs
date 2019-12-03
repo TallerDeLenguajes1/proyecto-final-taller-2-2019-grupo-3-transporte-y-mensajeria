@@ -37,8 +37,9 @@ namespace UI_WPF.Vistas.VistasMercancia
             Double volumen = Convert.ToDouble(tbxVolumen.Text);
             bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
             bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
+            double precioM3 = paqueteBD.GetPrecioM3();
 
-            Paquete nuevoPaquete = new Paquete(contenido, asegurado, largoRecorrido, 10, 100, volumen);
+            Paquete nuevoPaquete = new Paquete(contenido, asegurado, largoRecorrido, 10, precioM3, volumen);
             paqueteBD.AltaPaquete(nuevoPaquete);
         }
 
