@@ -43,6 +43,10 @@ namespace EntidadesDelProyecto
         //public static double PrecioM3 { get => precioM3; set => precioM3 = value; }
 
         //Constructor
+        public Paquete()
+        {
+
+        }
         public Paquete(string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioM3, double volumen) : base(contenido, asegurada, largoRecorrido, aumSeguro)
         {
             this.volumen = volumen;

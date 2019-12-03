@@ -120,6 +120,10 @@ namespace EntidadesDelProyecto
 
 
         //Constructor
+        public Mercancia()
+        {
+
+        }
         public Mercancia(string contenido, bool asegurada, bool largoRecorrido, double aumSeguro)
         {
             this.contenido = contenido;
