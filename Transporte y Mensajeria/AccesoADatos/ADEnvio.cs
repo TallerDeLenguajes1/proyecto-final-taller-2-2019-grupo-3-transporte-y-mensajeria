@@ -164,7 +164,7 @@ namespace AccesoADatos
             return (listaEnvio);
 
         }
-        public Envio GetEnvio(int idEnvio)
+        public Envio GetEnvioUltimo()
         {
             Envio EnvioBuscado = null;
             Cliente Emisor;
@@ -176,21 +176,22 @@ namespace AccesoADatos
             /// int idEmisor;
             // int idReceptor;
             double precioFinal;
+            int idEnvio;
 
             try
             {
                 conexion.abrir();
-                using (cmd = new MySqlCommand("select * from envios e inner join clientes ce on(e.fk_idClienteEmisor = ce.idCliente) inner join clientes cr on (e.fk_idClienteReceptor= cr.idCliente) left join sobres sob on (e.fk_idSobre= sob.idSobre ) left join paquetes paq on (e.fk_idPaquete =paq.idPaquete  ) where idEnvios=@idEnvio;", conexion.retornarCN()))
+                using (cmd = new MySqlCommand("select * from envios e inner join clientes ce on(e.fk_idClienteEmisor = ce.idCliente) inner join clientes cr on (e.fk_idClienteReceptor= cr.idCliente) left join sobres sob on (e.fk_idSobre= sob.idSobre ) left join paquetes paq on (e.fk_idPaquete =paq.idPaquete  ) order by idEnvios desc limit 1 ;", conexion.retornarCN()))
                 {
                     //idEnvio
-                    cmd.Parameters.AddWithValue("@idEnvio", idEnvio);
+                    //cmd.Parameters.AddWithValue("@idEnvio", idEnvio);
                     dr = cmd.ExecuteReader();
                     while (dr.Read())
                     {
                         Emisor = new Cliente();
                         Receptor = new Cliente();
 
-                        //idEnvio = dr.GetInt16(0);
+                        idEnvio = dr.GetInt16(0);
                         fechaEnvio = dr.GetDateTime(1);
                         //idEmisor = dr.GetInt32(2);
                         //idReceptor = dr.GetInt32(3);
@@ -225,7 +226,7 @@ namespace AccesoADatos
 
                         //cargo el cliente emisor, tambien se puede hacer con el constructor. Pero asi sera mas sencillo corregir errores
                         Emisor.IdPersona = dr.GetInt16(7);
-                        Emisor.Cuil = dr.GetInt16(8);
+                        Emisor.Cuil = dr.GetInt32(8);
                         Emisor.Nombre = dr.GetString(9);
                         Emisor.Apellido = dr.GetString(10);
                         Emisor.Direccion = dr.GetString(11);
@@ -239,8 +240,8 @@ namespace AccesoADatos
                         Receptor.Telefono = dr.GetString(18);
 
 
-                        EnvioBuscado = new Envio(idEnvio, fechaEnvio, Emisor, Receptor, MercanciaEnv);
-                        //EnvioBuscado = new Envio(idEnvio, fechaEnvio, Emisor, Receptor, MercanciaEnv, precioFinal);
+                        //EnvioBuscado = new Envio(idEnvio, fechaEnvio, Emisor, Receptor, MercanciaEnv);
+                        EnvioBuscado = new Envio(idEnvio, fechaEnvio, Emisor, Receptor, MercanciaEnv, precioFinal);
 
                     }
                     dr.Close();

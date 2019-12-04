@@ -126,9 +126,17 @@ namespace AccesoADatos
 
 
 
+                            if (listVehiculos.Count()==0)
+                            {
 
+                                nuevoSobre = new Sobre(idSobre, contenido, asegurada, largoRecorrido, aumSeguro, 100, peso);
+                            }
+                            else
+                            {
+                                nuevoSobre = new Sobre(idSobre, contenido, asegurada, largoRecorrido, aumSeguro, 100, peso, listVehiculos);
+                            }
 
-                            nuevoSobre = new Sobre(idSobre, contenido, asegurada, largoRecorrido, aumSeguro, 100, peso, listVehiculos);
+                            
 
 
                             ListSobres.Add(nuevoSobre);
@@ -146,7 +154,79 @@ namespace AccesoADatos
             }
         }
 
+        public List<Mercancia> GetSobres2(string contenidoToSearch)
+        {
+            //Variables auxiliares
+            List<Mercancia> ListSobres = new List<Mercancia>();
+            List<Vehiculo> listVehiculos = new List<Vehiculo>();
+            Sobre nuevoSobre;
+            int idSobre;
+            double peso;
+            double precioNeto;
+            string contenido;
+            bool asegurada;
+            bool largoRecorrido;
+            double aumSeguro;
+            double precioGramo = this.GetPrecioGramo();
+            using (conexion.retornarCN())
+            {
+                try
+                {
+                    conexion.abrir();
 
+                    using (cmd = new MySqlCommand("select * from sobres where contenido = @contenido", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@contenido", contenidoToSearch);
+                        dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            idSobre = Convert.ToInt32(dr[0]);
+                            precioNeto = Convert.ToInt32(dr[1]);
+                            contenido = dr[2].ToString();
+                            //En Mysql un bool es 1 o 0, por lo que se hace el control para que en VS se asigne true o false.
+                            int aseguradaBD = Convert.ToInt32(dr[3]);
+                            if (aseguradaBD == 1)
+                            {
+                                asegurada = true;
+                            }
+                            else
+                            {
+                                asegurada = false;
+                            }
+                            aumSeguro = Convert.ToInt32(dr[4]);
+
+                            //En Mysql un bool es 1 o 0, por lo que se hace el control para que en VS se asigne true o false.
+                            int largoRecorridoBD = Convert.ToInt32(dr[5]);
+                            if (largoRecorridoBD == 1)
+                            {
+                                largoRecorrido = true;
+                            }
+                            else
+                            {
+                                largoRecorrido = false;
+                            }
+
+                            peso = Convert.ToInt32(dr[6]);
+
+                            nuevoSobre = new Sobre(idSobre, contenido, asegurada, largoRecorrido, aumSeguro, 100, peso);
+         
+
+
+
+                            ListSobres.Add(nuevoSobre);
+                        }
+                        dr.Close();
+                    }
+                    conexion.cerrar();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
+                return ListSobres;
+            }
+        }
 
 
         /// <summary>
@@ -286,7 +366,7 @@ namespace AccesoADatos
                             peso = Convert.ToInt32(dr[6]);
 
                             nuevoSobre = new Sobre(idSobre, contenido, asegurada, largoRecorrido, aumSeguro, precioGramo, peso);
-
+                            nuevoSobre.PrecioNeto = precioNeto;
                             ListSobres.Add(nuevoSobre);
                         }
                         dr.Close();

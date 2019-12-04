@@ -31,11 +31,11 @@
         </Grid>
         <Grid Background="#FFBFBFBF" Margin="0,537,0,0" Height="208" VerticalAlignment="Top">
             <Label Content="Total de clientes de la empresa" Margin="184,19,171,0" VerticalAlignment="Top" FontSize="16" FontFamily="Myriad Pro" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label x:Name="lblTotalClientes" HorizontalAlignment="Left" Margin="290,67,0,0" Content="56" VerticalAlignment="Top" Height="80" Width="174" FontSize="80" FontFamily="Myriad Pro" FontWeight="Bold" Foreground="#FF306191" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></Label>
+            <Label x:Name="lblTotalClientes" Margin="290,67,284,0" Content="56" VerticalAlignment="Top" Height="92" FontSize="80" FontFamily="Myriad Pro" FontWeight="Bold" Foreground="#FF306191" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Grid>
         <Grid Background="White" Margin="0,745,0,0" Height="208" VerticalAlignment="Top">
             <Label Content="Envios realizados este mes" Margin="209,19,210,0" VerticalAlignment="Top" FontSize="16" FontFamily="Myriad Pro" FontWeight="Bold" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Label x:Name="lblTotalEnvios" HorizontalAlignment="Left" Margin="290,67,0,0" Content="56" VerticalAlignment="Top" Height="80" Width="174" FontSize="80" FontFamily="Myriad Pro" FontWeight="Bold" Foreground="#FF306191" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="lblTotalEnvios" Margin="290,67,284,0" Content="56" VerticalAlignment="Top" Height="96" FontSize="80" FontFamily="Myriad Pro" FontWeight="Bold" Foreground="#FF306191" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         </Grid>
     </Grid>
 

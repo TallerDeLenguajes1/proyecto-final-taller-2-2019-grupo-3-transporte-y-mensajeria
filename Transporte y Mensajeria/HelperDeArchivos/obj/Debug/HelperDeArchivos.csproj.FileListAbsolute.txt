@@ -50,3 +50,81 @@ C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transpo
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.config
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.dll
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.config
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\BouncyCastle.Crypto.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe.config
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.xml
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csprojAssemblyReference.cache
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CoreCompileInputs.cache
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CopyComplete
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.dll
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.pdb
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.config
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.pdb
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.pdb
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.pdb
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe.config
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.pdb
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.xml
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.xml
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.xml
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.xml
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.xml
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csprojAssemblyReference.cache
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CoreCompileInputs.cache
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CopyComplete
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.dll
+C:\Users\fvg\Desktop\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.pdb
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.config
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.pdb
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.pdb
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.pdb
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe.config
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.pdb
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.xml
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.xml
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.xml
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.xml
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.xml
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csprojAssemblyReference.cache
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CoreCompileInputs.cache
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CopyComplete
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.dll
+C:\Users\fvg\Desktop\taller_proyectoFinal\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.pdb

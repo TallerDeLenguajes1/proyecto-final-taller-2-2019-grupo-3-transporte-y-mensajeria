@@ -17,7 +17,7 @@ namespace AccesoADatos
         {
             string cadenaConexion = "Server=localhost;" +
                 " Database=transporte_y_mensajeria;" +
-                "Pwd = 1234;" +
+                //"Pwd = 1234;" +
                 " Uid=root;" +
                 " Integrated Security =True";
             cn = new MySqlConnection(cadenaConexion);

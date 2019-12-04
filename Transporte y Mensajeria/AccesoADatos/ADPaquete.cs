@@ -145,6 +145,81 @@ namespace AccesoADatos
                 return ListPaquetes;
             }
         }
+        public List<Mercancia> GetPaquetes2(string contenidoToSearch)
+        {
+            //Variables auxiliares
+            List<Mercancia> ListPaquetes = new List<Mercancia>();
+            List<Vehiculo> listVehiculos = new List<Vehiculo>();
+            Paquete nuevoPaquete;
+
+            int idPaquete;
+            double volumen;
+            double precioNeto;
+            string contenido;
+            bool asegurada;
+            bool largoRecorrido;
+            double aumSeguro;
+            double precioM3 = this.GetPrecioM3();
+
+            using (conexion.retornarCN())
+            {
+                try
+                {
+                    conexion.abrir();
+                    cmd = new MySqlCommand("select * from paquetes where contenido = @contenido", conexion.retornarCN());
+                    cmd.Parameters.AddWithValue("@contenido", contenidoToSearch);
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        idPaquete = Convert.ToInt32(dr[0]);
+                        precioNeto = Convert.ToInt32(dr[1]);
+                        contenido = dr[2].ToString();
+                        //En Mysql un bool es 1 o 0, por lo que se hace el control para que en VS se asigne true o false.
+                        int aseguradaBD = Convert.ToInt32(dr[3]);
+                        if (aseguradaBD == 1)
+                        {
+                            asegurada = true;
+                        }
+                        else
+                        {
+                            asegurada = false;
+                        }
+
+                        aumSeguro = Convert.ToInt32(dr[4]);
+
+                        //En Mysql un bool es 1 o 0, por lo que se hace el control para que en VS se asigne true o false.
+                        int largoRecorridoBD = Convert.ToInt32(dr[5]);
+                        if (largoRecorridoBD == 1)
+                        {
+                            largoRecorrido = true;
+                        }
+                        else
+                        {
+                            largoRecorrido = false;
+                        }
+
+                        volumen = Convert.ToInt32(dr[6]);
+
+
+                        nuevoPaquete = new Paquete(idPaquete, contenido, asegurada, largoRecorrido, aumSeguro, 150, volumen);
+
+                        //cargarVehiculos(nuevoPaquete);
+                        //Esto funcionaba correctamente en la version q subi el lunes pero ahora aqui no.
+                        //abria q ver si es necesario q tenga los vehiculos ,asociarlos en otro lado.
+
+                        ListPaquetes.Add(nuevoPaquete);
+                    }
+                    dr.Close();
+                    conexion.cerrar();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }
+                return ListPaquetes;
+            }
+        }
         /// <summary>
         /// El metodo permite cargar los vehiculos que se le asocian a un Sobre
         /// esta carga es externa al sistema, y lo realizamos de esta forma para disminuir la complejidad del sistema.
@@ -283,7 +358,7 @@ namespace AccesoADatos
                         volumen = Convert.ToInt32(dr[6]);
 
                         nuevoPaquete = new Paquete(idPaquete, contenido, asegurada, largoRecorrido, aumSeguro, precioM3, volumen);
-
+                        nuevoPaquete.PrecioNeto = precioNeto;
                         ListPaquetes.Add(nuevoPaquete);
                     }
                     dr.Close();

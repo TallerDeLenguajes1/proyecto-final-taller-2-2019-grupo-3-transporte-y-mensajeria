@@ -102,6 +102,15 @@ namespace EntidadesDelProyecto
         //public Mercancia Merc { get => merc; set => merc = value; }
 
         //Constructor
+        public Envio(int idEnvio, DateTime fechaEnvio, Cliente emisor, Cliente receptor, Mercancia merc, double precioFinal)
+        {
+            this.idEnvio = idEnvio;
+            this.fechaEnvio = fechaEnvio;
+            this.emisor = emisor;
+            this.receptor = receptor;
+            this.merc = merc;
+            this.precioFinal = precioFinal;
+        }
         public Envio(DateTime fechaEnvio, Cliente emisor, Cliente receptor, Mercancia merc)
         {
             this.fechaEnvio = fechaEnvio;

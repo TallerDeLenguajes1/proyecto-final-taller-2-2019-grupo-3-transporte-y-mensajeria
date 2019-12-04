@@ -70,8 +70,8 @@ namespace UI_WPF.Vistas
                     switch (cboBuscar.Text)
                     {
                         case "Contenido":
-                            ListSobresEncontrados = sobreBD.GetSobres(contenido);
-                            ListPaquetesEncontrados = paqueteBD.GetPaquetes(contenido);
+                            ListSobresEncontrados = sobreBD.GetSobres2(contenido);
+                            ListPaquetesEncontrados = paqueteBD.GetPaquetes2(contenido);
                             ListMercanciasEncontradas = ListSobresEncontrados.Concat(ListPaquetesEncontrados).ToList();
                             break;
                         case "Codigo":

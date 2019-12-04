@@ -93,13 +93,12 @@ namespace UI_WPF.Vistas
                     }
                 }
 
-                
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al buscar al cliente"+ex.ToString());
-                Logger.Warn("Error al buscar al cliente" + ex);
+                Logger.Warn("Error al buscar al cliente");
             }
         }
 

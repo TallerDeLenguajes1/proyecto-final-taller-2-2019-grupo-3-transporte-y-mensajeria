@@ -36,7 +36,7 @@ namespace UI_WPF.Vistas.VistasEnvio
         {
             try
             {
-                reporte.generarBoleta(envio.IdEnvio);
+                reporte.generarBoleta();
                 lblReporte.Content = "Boleta generada";
             }
             catch (Exception)

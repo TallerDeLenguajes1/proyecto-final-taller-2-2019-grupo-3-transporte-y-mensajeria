@@ -421,7 +421,7 @@ namespace HelperDeArchivos
                 table.AddCell(Convert.ToString(sobre.AumSeguro));
 
                 table.AddCell(Convert.ToString(sobre.Peso));
-                table.AddCell(Convert.ToString(" "));
+                table.AddCell(Convert.ToString(sobre.PrecioNeto));
 
             }
             //agregamos tabla a documento
@@ -463,7 +463,7 @@ namespace HelperDeArchivos
                 table.AddCell(Convert.ToString(paquete.AumSeguro));
 
                 table.AddCell(Convert.ToString(paquete.Volumen));
-                table.AddCell(Convert.ToString(" "));
+                table.AddCell(Convert.ToString(paquete.PrecioNeto));
 
             }
             //agregamos tabla a documento
@@ -555,11 +555,12 @@ namespace HelperDeArchivos
             return cell;
         }
 
-        public void generarBoleta(int idEnvio)
+        public void generarBoleta()
         {
             crearCarpetas();
 
-            Envio envioCargar = envioBD.GetEnvio(idEnvio);
+            //Envio envioCargar = envioBD.GetEnvio(idEnvio);
+            Envio envioCargar = envioBD.GetEnvioUltimo();
 
 
             Document doc = new Document(PageSize.A4);

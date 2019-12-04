@@ -108,7 +108,7 @@ namespace UI_WPF.Vistas.VistasMercancia
                         }
                         else
                         {
-                            tblError.Text = "No se puede asociar una avion a un \nsobre que no sea de largo recorrido";
+                            //tblError.Text = "No se puede asociar una avion a un \nsobre que no sea de largo recorrido";
                         }
 
                     }
@@ -139,12 +139,12 @@ namespace UI_WPF.Vistas.VistasMercancia
                         }
                         else
                         {
-                            tblError.Text = "No se puede asociar una avion a un \npaquete que no sea de largo recorrido";
+                            //tblError.Text = "No se puede asociar una avion a un \npaquete que no sea de largo recorrido";
                         }
                     }
                     else
                     {
-                        tblError.Text = "No se puede asociar una avion a un \npaquete que no sea de largo recorrido";
+                        //tblError.Text = "No se puede asociar una avion a un \npaquete que no sea de largo recorrido";
                     }
 
                     if (vehiculoEncontrado is EntidadesDelProyecto.Moto)

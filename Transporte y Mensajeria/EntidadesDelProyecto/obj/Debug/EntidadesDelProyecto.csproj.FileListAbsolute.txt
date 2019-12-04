@@ -35,7 +35,6 @@ E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-tr
 E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\Google.Protobuf.xml
 E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\MySql.Data.xml
 E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\Renci.SshNet.xml
-E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csprojResolveAssemblyReference.cache
 E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.dll
 E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.pdb
 E:\Taller de Lenguajes II\Transporte y Mensajeria\EntidadesDelProyecto\bin\Debug\EntidadesDelProyecto.dll
@@ -78,3 +77,6 @@ C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transpo
 C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csproj.CopyComplete
 C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.dll
 C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.pdb
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csprojAssemblyReference.cache
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csproj.CoreCompileInputs.cache
+E:\Taller de Lenguajes II\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\EntidadesDelProyecto\obj\Debug\EntidadesDelProyecto.csproj.CopyComplete
