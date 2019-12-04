@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class ModificarAvion : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ModificarAvion(Avion avion, AccesoADatos.ADAvion avionBD, ABMVehiculos mainPage)
         {
             InitializeComponent();
@@ -46,16 +47,24 @@ namespace UI_WPF.Vistas.VistasVehiculo
 
         private void btnModificarAvion_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string modelo = tbxModelo.Text;
-            DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
-            Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string modelo = tbxModelo.Text;
+                DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+                Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
 
-            Avion avionEncontrado = new Avion(avion.IdVehiculo, modelo, fechaCompra, precioCompra, 10);
+                Avion avionEncontrado = new Avion(avion.IdVehiculo, modelo, fechaCompra, precioCompra, 10);
 
-            avionBD.ModificacionAvion(avionEncontrado);
+                avionBD.ModificacionAvion(avionEncontrado);
 
-            mainPage.ActualizarResultadosBusqueda();
+                mainPage.ActualizarResultadosBusqueda();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, no se pudo dar Modificar al Vehiculo, quizas ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Vehiculo" + ex);
+            }
         }
     }
 }

@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasMercancia
     /// </summary>
     public partial class ModificarPaquete : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ModificarPaquete(Paquete paquete, AccesoADatos.ADPaquete paqueteBD, ABMMercancia mainPage)
         {
             InitializeComponent();
@@ -47,17 +48,27 @@ namespace UI_WPF.Vistas.VistasMercancia
 
         private void btnModificarPaquete_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string contenido = tbxContenido.Text;
-            double volumen = Convert.ToDouble(tbxVolumen.Text);
-            bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
-            bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string contenido = tbxContenido.Text;
+                double volumen = Convert.ToDouble(tbxVolumen.Text);
+                bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
+                bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
 
-            Paquete paqueteEncontrado = new Paquete(paquete.IdMercancia, contenido, asegurado, largoRecorrido, 10, 1, volumen);
+                Paquete paqueteEncontrado = new Paquete(paquete.IdMercancia, contenido, asegurado, largoRecorrido, 10, 1, volumen);
 
-            paqueteBD.ModificacionPaquete(paqueteEncontrado);
+                paqueteBD.ModificacionPaquete(paqueteEncontrado);
 
-            mainPage.ActualizarResultadosBusqueda();
+                mainPage.ActualizarResultadosBusqueda();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Revise los datos, ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Mercancia" + ex);
+            }
+
+
         }
     }
 }

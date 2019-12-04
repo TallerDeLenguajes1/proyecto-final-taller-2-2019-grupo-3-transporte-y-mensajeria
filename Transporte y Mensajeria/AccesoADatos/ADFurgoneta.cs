@@ -15,35 +15,38 @@ namespace AccesoADatos
         MySqlCommand cmd;
         MySqlDataReader dr;
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// dar de alta una furgoneta
+        /// Metodo para dar de alta una furgoneta.
         /// </summary>
         /// <param name="furgoneta"></param>
         public void AltaFurgoneta(Furgoneta furgoneta)
         {
-
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-
-                using (cmd = new MySqlCommand("Insert into furgonetas(modelo,fechaCompra,precioCompra,aumento,capacidadCarga) values (@modelo,@fechaCompra,@precioCompra,@aumento,@capacidadCarga)", conexion.retornarCN()))
+                try
                 {
+                    conexion.abrir();
 
-                    cmd.Parameters.AddWithValue("@modelo", furgoneta.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", furgoneta.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", furgoneta.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", furgoneta.Aumento);
-                    cmd.Parameters.AddWithValue("@capacidadCarga", furgoneta.CapacidadCarga);
+                    using (cmd = new MySqlCommand("Insert into furgonetas(modelo,fechaCompra,precioCompra,aumento,capacidadCarga) values (@modelo,@fechaCompra,@precioCompra,@aumento,@capacidadCarga)", conexion.retornarCN()))
+                    {
 
-                    cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@modelo", furgoneta.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", furgoneta.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", furgoneta.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", furgoneta.Aumento);
+                        cmd.Parameters.AddWithValue("@capacidadCarga", furgoneta.CapacidadCarga);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de alta de Furgoneta {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de alta el Vehiculo");
+                }
             }
         }
 
@@ -54,50 +57,56 @@ namespace AccesoADatos
         /// <param name="idFurgoneta"></param>
         public void BajaFurgoneta(int idFurgoneta)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("DELETE FROM furgonetas WHERE idFurgoneta = @idFurgoneta", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@idFurgoneta", idFurgoneta);
-                    cmd.ExecuteNonQuery();
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("DELETE FROM furgonetas WHERE idFurgoneta = @idFurgoneta", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@idFurgoneta", idFurgoneta);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Baja de Furgoneta {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de baja la Furgoneta");
+                }
             }
 
         }
-
         /// <summary>
         /// modificar una furgoneta
         /// </summary>
         /// <param name="Furgoneta"></param>
         public void ModificacionFurgoneta(Furgoneta Furgoneta)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("UPDATE furgonetas SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento, capacidadCarga=@CapacidadCarga WHERE idFurgoneta=@idFurgoneta", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@IdFurgoneta", Furgoneta.IdVehiculo);
-                    cmd.Parameters.AddWithValue("@modelo", Furgoneta.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", Furgoneta.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", Furgoneta.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", Furgoneta.Aumento);
-                    cmd.Parameters.AddWithValue("@capacidadCarga", Furgoneta.CapacidadCarga);
-                    cmd.ExecuteNonQuery();
-                    conexion.cerrar();
-                    MessageBox.Show("Furgoneta modificada");
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("UPDATE furgonetas SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento, capacidadCarga=@CapacidadCarga WHERE idFurgoneta=@idFurgoneta", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@IdFurgoneta", Furgoneta.IdVehiculo);
+                        cmd.Parameters.AddWithValue("@modelo", Furgoneta.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", Furgoneta.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", Furgoneta.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", Furgoneta.Aumento);
+                        cmd.Parameters.AddWithValue("@capacidadCarga", Furgoneta.CapacidadCarga);
+                        cmd.ExecuteNonQuery();
+                        conexion.cerrar();
+                        MessageBox.Show("Furgoneta modificada");
+                    }
+
                 }
-                
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Moficicacion de Furgoneta {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo Modificar");
+                }
             }
         }
 
@@ -139,7 +148,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaFurgonetas;
         }
@@ -179,7 +188,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaFurgonetas;
         }
@@ -226,7 +235,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaFurgoneta;
         }
@@ -270,7 +279,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaFurgoneta;
         }
@@ -315,7 +324,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaFurgonetas;
         }
@@ -357,7 +366,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaFurgonetas;
         }
@@ -384,7 +393,7 @@ namespace AccesoADatos
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
         }
     }

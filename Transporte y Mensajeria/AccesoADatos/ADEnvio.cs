@@ -14,6 +14,16 @@ namespace AccesoADatos
         Conexion conexion = new Conexion();
         MySqlCommand cmd;
         MySqlDataReader dr;
+
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        /// <summary>
+        /// Metodo permite dar el alta de un Envio.
+        /// </summary>
+        /// <param name="emisor"></param>
+        /// <param name="receptor"></param>
+        /// <param name="mercanciaEnviada"></param>
+        /// <param name="fechaEnvio"></param>
+        /// <param name="tipoMercancia"></param>
         public void AltaEnvio(Cliente emisor, Cliente receptor, Mercancia mercanciaEnviada, DateTime fechaEnvio, string tipoMercancia)
         {
 
@@ -46,8 +56,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error de alta de Sobre {0}", ex.ToString());
             }
 
         }
@@ -148,7 +157,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error de alta de Sobre {0}", ex.ToString());
             }
 
 
@@ -240,7 +249,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error de alta de Sobre {0}", ex.ToString());
             }
 
 

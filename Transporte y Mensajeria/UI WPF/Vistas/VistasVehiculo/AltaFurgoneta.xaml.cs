@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class AltaFurgoneta : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public AltaFurgoneta(AccesoADatos.ADFurgoneta furgonetaBD)
         {
             InitializeComponent();
@@ -32,14 +33,23 @@ namespace UI_WPF.Vistas.VistasVehiculo
 
         private void btnAltaFurgoneta_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string modelo = tbxModelo.Text;
-            DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
-            Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
-            int capacidad = Convert.ToInt32(tbxCapCarga.Text);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string modelo = tbxModelo.Text;
+                DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+                Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+                int capacidad = Convert.ToInt32(tbxCapCarga.Text);
 
-            Furgoneta nuevaFurgoneta = new Furgoneta(modelo, fechaCompra, precioCompra, capacidad, 5);
-            furgonetaBD.AltaFurgoneta(nuevaFurgoneta);
+                Furgoneta nuevaFurgoneta = new Furgoneta(modelo, fechaCompra, precioCompra, capacidad, 5);
+                furgonetaBD.AltaFurgoneta(nuevaFurgoneta);
+                MessageBox.Show("Se agrego correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, no se pudo dar de alta al Vehiculo, quizas ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Vehiculo" + ex);
+            }
         }
     }
 }

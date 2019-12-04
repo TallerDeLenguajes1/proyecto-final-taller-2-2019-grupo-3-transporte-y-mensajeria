@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasMercancia
     /// </summary>
     public partial class AltaPaquete : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public AltaPaquete(AccesoADatos.ADPaquete paqueteBD)
         {
             InitializeComponent();
@@ -32,14 +33,22 @@ namespace UI_WPF.Vistas.VistasMercancia
 
         private void btnAltaPaquete_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string contenido = tbxContenido.Text;
-            Double volumen = Convert.ToDouble(tbxVolumen.Text);
-            bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
-            bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string contenido = tbxContenido.Text;
+                Double volumen = Convert.ToDouble(tbxVolumen.Text);
+                bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
+                bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
 
-            Paquete nuevoPaquete = new Paquete(contenido, asegurado, largoRecorrido, 10, 100, volumen);
-            paqueteBD.AltaPaquete(nuevoPaquete);
+                Paquete nuevoPaquete = new Paquete(contenido, asegurado, largoRecorrido, 10, 100, volumen);
+                paqueteBD.AltaPaquete(nuevoPaquete);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Revise los datos, ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Mercancia" + ex);
+            }
         }
 
     }

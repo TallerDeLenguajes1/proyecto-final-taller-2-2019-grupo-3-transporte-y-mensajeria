@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas
     /// </summary>
     public partial class ABMEnvio : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ABMEnvio()
         {
             InitializeComponent();
@@ -44,112 +45,144 @@ namespace UI_WPF.Vistas
         //Buscar cliente emisor del pedido
         private void btnBuscarEmisor_Click(object sender, RoutedEventArgs e)
         {
-            //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
-            ListEmisoresEncontrados.Clear();
-            lbxResultBusquedaEmisor.Items.Clear();
-            string contenido = tbxBuscarEmisor.Text;
-
-            //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
-            if (contenido != "")
+            try
             {
-                switch (cboBuscarEmisor.Text)
+                //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
+                ListEmisoresEncontrados.Clear();
+                lbxResultBusquedaEmisor.Items.Clear();
+                string contenido = tbxBuscarEmisor.Text;
+
+                //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
+                if (contenido != "")
                 {
-                    case "Cuil":
-                        Cliente clienteBuscado = clienteBD.GetClientes(Convert.ToInt32(contenido));
-                        if (clienteBuscado != null)
-                        {
-                            ListEmisoresEncontrados.Add(clienteBuscado);
-                        }
-                        break;
-                    case "Nombre":
-                        //Hacer busqueda por nombre
-                        break;
-                    default:
-                        break;
+                    switch (cboBuscarEmisor.Text)
+                    {
+                        case "Cuil":
+                            Cliente clienteBuscado = clienteBD.GetClientes(Convert.ToInt32(contenido));
+                            if (clienteBuscado != null)
+                            {
+                                ListEmisoresEncontrados.Add(clienteBuscado);
+                            }
+                            break;
+                        case "Nombre":
+                            //Hacer busqueda por nombre
+                            break;
+                        default:
+                            break;
+                    }
+
+                    foreach (var item in ListEmisoresEncontrados)
+                    {
+                        lbxResultBusquedaEmisor.Items.Add(item);
+                    }
                 }
 
-                foreach (var item in ListEmisoresEncontrados)
-                {
-                    lbxResultBusquedaEmisor.Items.Add(item);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar al cliente Emisor \n Verifique los datos Ingresados");
+                Logger.Warn("Error al buscar Cliente emisor ENVIO" + ex);
             }
         }
 
         //Buscar cliente receptor del pedido
         private void btnBuscarReceptor_Click(object sender, RoutedEventArgs e)
         {
-            //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
-            ListEmisoresEncontrados.Clear();
-            lbxResultBusquedaReceptor.Items.Clear();
-            string contenido = tbxBuscarReceptor.Text;
-
-            //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
-            if (contenido != "")
+            try
             {
-                switch (cboBuscarReceptor.Text)
-                {
-                    case "Cuil":
-                        Cliente clienteBuscado = clienteBD.GetClientes(Convert.ToInt32(contenido));
-                        if (clienteBuscado != null)
-                        {
-                            ListEmisoresEncontrados.Add(clienteBuscado);
-                        }
-                        break;
-                    case "Nombre":
-                        //Hacer busqueda por nombre
-                        break;
-                    default:
-                        break;
-                }
+                //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
+                ListEmisoresEncontrados.Clear();
+                lbxResultBusquedaReceptor.Items.Clear();
+                string contenido = tbxBuscarReceptor.Text;
 
-                foreach (var item in ListEmisoresEncontrados)
+                //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
+                if (contenido != "")
                 {
-                    lbxResultBusquedaReceptor.Items.Add(item);
+                    switch (cboBuscarReceptor.Text)
+                    {
+                        case "Cuil":
+                            Cliente clienteBuscado = clienteBD.GetClientes(Convert.ToInt32(contenido));
+                            if (clienteBuscado != null)
+                            {
+                                ListEmisoresEncontrados.Add(clienteBuscado);
+                            }
+                            break;
+                        case "Nombre":
+                            //Hacer busqueda por nombre
+                            break;
+                        default:
+                            break;
+                    }
+
+                    foreach (var item in ListEmisoresEncontrados)
+                    {
+                        lbxResultBusquedaReceptor.Items.Add(item);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar al cliente Receptor\n Verifique los datos Ingresados");
+                Logger.Warn("Error al buscar Cliente Receptor ENVIO" + ex);
             }
         }
 
         //Buscar mercancia a incluir en el pedido
         private void btnBuscarMercancia_Click(object sender, RoutedEventArgs e)
         {
-            //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
-            ListMercanciasEncontradas.Clear();
-            lbxResultBusquedaMercancia.Items.Clear();
-
-            string contenido = tbxBuscarMercancia.Text;
-
-            //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
-            if (contenido != "")
+            try
             {
-                switch (cboBuscarMercancia.Text)
-                {
-                    case "Contenido":
-                        ListSobresEncontrados = sobreBD.GetSobres(contenido);
-                        ListPaquetesEncontrados = paqueteBD.GetPaquetes(contenido);
-                        ListMercanciasEncontradas = ListSobresEncontrados.Concat(ListPaquetesEncontrados).ToList();
-                        break;
-                    case "Codigo":
-                        break;
-                    default:
-                        break;
-                }
+                //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
+                ListMercanciasEncontradas.Clear();
+                lbxResultBusquedaMercancia.Items.Clear();
 
-                foreach (var item in ListMercanciasEncontradas)
-                {
-                    lbxResultBusquedaMercancia.Items.Add(item);
-                }
+                string contenido = tbxBuscarMercancia.Text;
 
+                //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
+                if (contenido != "")
+                {
+                    switch (cboBuscarMercancia.Text)
+                    {
+                        case "Contenido":
+                            ListSobresEncontrados = sobreBD.GetSobres(contenido);
+                            ListPaquetesEncontrados = paqueteBD.GetPaquetes(contenido);
+                            ListMercanciasEncontradas = ListSobresEncontrados.Concat(ListPaquetesEncontrados).ToList();
+                            break;
+                        case "Codigo":
+                            break;
+                        default:
+                            break;
+                    }
+
+                    foreach (var item in ListMercanciasEncontradas)
+                    {
+                        lbxResultBusquedaMercancia.Items.Add(item);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar Mercancia \n Verifique los datos Ingresados");
+                Logger.Warn("Error al buscar Mercancia ENVIO" + ex);
             }
         }
 
         //Seleccionar cliente emisor
         private void AgregarEmisor_Click(object sender, RoutedEventArgs e)
         {
-            emisorSeleccionado = (Cliente)lbxResultBusquedaEmisor.SelectedItem;
-
-            if (emisorSeleccionado != null)
+            try
             {
-                tbxEmisorSeleccionado.Text = emisorSeleccionado.ToString();
+                emisorSeleccionado = (Cliente)lbxResultBusquedaEmisor.SelectedItem;
+
+                if (emisorSeleccionado != null)
+                {
+                    tbxEmisorSeleccionado.Text = emisorSeleccionado.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Envio no se pudo seleccionar" + ex);
             }
             
         }
@@ -157,72 +190,125 @@ namespace UI_WPF.Vistas
         //Quitar cliente emisor seleccionado
         private void QuitarEmisor_Click(object sender, RoutedEventArgs e)
         {
-            emisorSeleccionado = null;
-            tbxEmisorSeleccionado.Clear();
+            try
+            {
+                emisorSeleccionado = null;
+                tbxEmisorSeleccionado.Clear();
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Envio " + ex);
+            }
         }
 
         //Seleccionar cliente emisor
         private void AgregarReceptor_Click(object sender, RoutedEventArgs e)
         {
-            receptorSeleccionado = (Cliente)lbxResultBusquedaReceptor.SelectedItem;
-
-            if (receptorSeleccionado != null)
+            try
             {
-                tbxReceptorSeleccionado.Text = receptorSeleccionado.ToString();
+                receptorSeleccionado = (Cliente)lbxResultBusquedaReceptor.SelectedItem;
+
+                if (receptorSeleccionado != null)
+                {
+                    tbxReceptorSeleccionado.Text = receptorSeleccionado.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Envio " + ex);
             }
         }
 
         //Quitar cliente emisor seleccionado
         private void QuitarReceptor_Click(object sender, RoutedEventArgs e)
         {
-            receptorSeleccionado = null;
-            tbxReceptorSeleccionado.Clear();
+            try
+            {
+                receptorSeleccionado = null;
+                tbxReceptorSeleccionado.Clear();
+
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Envio " + ex);
+            }
         }
 
         //Seleccionar mercancia
         private void AgregarMercancia_Click(object sender, RoutedEventArgs e)
         {
-            mercanciaSeleccionada = (Mercancia)lbxResultBusquedaMercancia.SelectedItem;
-
-            if (mercanciaSeleccionada != null)
+            try
             {
-                tbxMercanciaSeleccionada.Text = mercanciaSeleccionada.ToString();
+                mercanciaSeleccionada = (Mercancia)lbxResultBusquedaMercancia.SelectedItem;
+
+                if (mercanciaSeleccionada != null)
+                {
+                    tbxMercanciaSeleccionada.Text = mercanciaSeleccionada.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Envio " + ex);
             }
         }
 
         //Quitar mercancia seleccionada
         private void QuitarMercancia_Click(object sender, RoutedEventArgs e)
         {
-            mercanciaSeleccionada = null;
-            tbxMercanciaSeleccionada.Clear();
+            try
+            {
+                mercanciaSeleccionada = null;
+                tbxMercanciaSeleccionada.Clear();
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Envio " + ex);
+            }
         }
 
         //Mostra costo de envio
         private void btnCalcularPrecio_Click(object sender, RoutedEventArgs e)
         {
-            if (mercanciaSeleccionada != null)
+            try
             {
-                //Todavia da error porque las mercancias no tienen vehiculos asignados
-                //tbxPrecioEnvio.Text = Convert.ToString(mercanciaSeleccionada.CalcularPrecioFinal());
-                tbxPrecioEnvio.Text = "1500";
+                if (mercanciaSeleccionada != null)
+                {
+                    //Todavia da error porque las mercancias no tienen vehiculos asignados
+                    //tbxPrecioEnvio.Text = Convert.ToString(mercanciaSeleccionada.CalcularPrecioFinal());
+                    tbxPrecioEnvio.Text = "1500";
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Envio " + ex);
             }
         }
 
         //Dar de alta un envio
         private void btnAltaEnvio_Click(object sender, RoutedEventArgs e)
         {
-            DateTime fechaEnvio = Convert.ToDateTime(dtpFechaEnvio.Text);
-            if ((emisorSeleccionado != null) && (receptorSeleccionado != null) && (mercanciaSeleccionada != null) && (fechaEnvio != null))
+            try
             {
-                if (mercanciaSeleccionada is Sobre)
+                DateTime fechaEnvio = Convert.ToDateTime(dtpFechaEnvio.Text);
+                if ((emisorSeleccionado != null) && (receptorSeleccionado != null) && (mercanciaSeleccionada != null) && (fechaEnvio != null))
                 {
-                    envioBD.AltaEnvio(emisorSeleccionado, receptorSeleccionado, mercanciaSeleccionada, fechaEnvio, "sobre");
-                }
+                    if (mercanciaSeleccionada is Sobre)
+                    {
+                        envioBD.AltaEnvio(emisorSeleccionado, receptorSeleccionado, mercanciaSeleccionada, fechaEnvio, "sobre");
+                    }
 
-                if (mercanciaSeleccionada is Paquete)
-                {
-                    envioBD.AltaEnvio(emisorSeleccionado, receptorSeleccionado, mercanciaSeleccionada, fechaEnvio, "paquete");
+                    if (mercanciaSeleccionada is Paquete)
+                    {
+                        envioBD.AltaEnvio(emisorSeleccionado, receptorSeleccionado, mercanciaSeleccionada, fechaEnvio, "paquete");
+                    }
                 }
+                //MessageBox.Show("Se agrego correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al dar de Alta el Envio");
+                Logger.Warn("Error al dar de Alta el Envio" + ex);
             }
         }
     }

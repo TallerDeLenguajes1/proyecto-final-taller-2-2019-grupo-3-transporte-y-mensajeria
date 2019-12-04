@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasMercancia
     /// </summary>
     public partial class ModificarSobre : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ModificarSobre(Sobre sobre, AccesoADatos.ADSobre sobreBD, ABMMercancia mainPage)
         {
             InitializeComponent();
@@ -47,17 +48,27 @@ namespace UI_WPF.Vistas.VistasMercancia
 
         private void btnModificarSobre_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string contenido = tbxContenido.Text;
-            double peso = Convert.ToDouble(tbxPeso.Text);
-            bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
-            bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string contenido = tbxContenido.Text;
+                double peso = Convert.ToDouble(tbxPeso.Text);
+                bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
+                bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
 
-            Sobre sobreEncontrado = new Sobre(sobre.IdMercancia, contenido, asegurado, largoRecorrido, 10, 1, peso);
+                Sobre sobreEncontrado = new Sobre(sobre.IdMercancia, contenido, asegurado, largoRecorrido, 10, 1, peso);
 
-            sobreBD.ModificacionSobre(sobreEncontrado);
+                sobreBD.ModificacionSobre(sobreEncontrado);
 
-            mainPage.ActualizarResultadosBusqueda();
+                mainPage.ActualizarResultadosBusqueda();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Revise los datos, ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Mercancia" + ex);
+            }
+
+
         }
     }
 }

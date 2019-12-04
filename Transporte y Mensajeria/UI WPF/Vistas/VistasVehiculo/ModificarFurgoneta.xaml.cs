@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class ModificarFurgoneta : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ModificarFurgoneta(Furgoneta furgoneta, AccesoADatos.ADFurgoneta furgonetaBD, ABMVehiculos mainPage)
         {
             InitializeComponent();
@@ -47,17 +48,25 @@ namespace UI_WPF.Vistas.VistasVehiculo
 
         private void btnModificarFurgoneta_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string modelo = tbxModelo.Text;
-            DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
-            Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
-            int capacidad = Convert.ToInt32(tbxCapacidad.Text);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string modelo = tbxModelo.Text;
+                DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+                Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+                int capacidad = Convert.ToInt32(tbxCapacidad.Text);
 
-            Furgoneta furgonetaEncontrada = new Furgoneta(furgoneta.IdVehiculo, modelo, fechaCompra, precioCompra, capacidad, 5);
+                Furgoneta furgonetaEncontrada = new Furgoneta(furgoneta.IdVehiculo, modelo, fechaCompra, precioCompra, capacidad, 5);
 
-            furgonetaBD.ModificacionFurgoneta(furgonetaEncontrada);
+                furgonetaBD.ModificacionFurgoneta(furgonetaEncontrada);
 
-            mainPage.ActualizarResultadosBusqueda();
+                mainPage.ActualizarResultadosBusqueda();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Revise los datos, ingreso algun dato incorrectamente");
+                Logger.Warn("Furgoneta Modificar" + ex);
+            }
         }
     }
 }

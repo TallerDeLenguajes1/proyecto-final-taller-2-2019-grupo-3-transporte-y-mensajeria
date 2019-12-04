@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas
     /// </summary>
     public partial class ABMCliente : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ABMCliente(AccesoADatos.ADCliente clienteBD)
         {
             InitializeComponent();
@@ -38,46 +39,71 @@ namespace UI_WPF.Vistas
         //Alta cliente
         private void btnAltaCliente_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            int cuil = Convert.ToInt32(tbxCuil.Text);
-            string nombre = tbxNombre.Text;
-            string apellido = tbxApellido.Text;
-            string direccion = tbxDireccion.Text;
-            string telefono = tbxTelefono.Text;
-            Cliente nuevoCliente = new Cliente(cuil, nombre, apellido, direccion, telefono);
-            clienteBD.AltaCliente(nuevoCliente);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                int cuil = Convert.ToInt32(tbxCuil.Text);
+                string nombre = tbxNombre.Text;
+                string apellido = tbxApellido.Text;
+                string direccion = tbxDireccion.Text;
+                string telefono = tbxTelefono.Text;
+                Cliente nuevoCliente = new Cliente(cuil, nombre, apellido, direccion, telefono);
+                clienteBD.AltaCliente(nuevoCliente);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, no se pudo dar de alta al Cliente, quizas ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Alta" + ex);
+            }
 
         }
 
         //Buscar un cliente segun el metodo elegido
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
-            ListClientesEncontrados.Clear();
-            lbxResultBusqueda.Items.Refresh();
-            string contenido = tbxBuscar.Text;
-
-            //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
-            if (contenido != "")
+            try
             {
-                Cliente clienteBuscado= clienteBD.GetClientes(Convert.ToInt32(contenido));
-                if (clienteBuscado != null)
+                //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
+                ListClientesEncontrados.Clear();
+                lbxResultBusqueda.Items.Refresh();
+                string contenido = tbxBuscar.Text;
+
+                //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
+                if (contenido != "")
                 {
-                    ListClientesEncontrados.Add(clienteBuscado);
-                    lbxResultBusqueda.Items.Refresh();
+                    Cliente clienteBuscado = clienteBD.GetClientes(Convert.ToInt32(contenido));
+                    if (clienteBuscado != null)
+                    {
+                        ListClientesEncontrados.Add(clienteBuscado);
+                        lbxResultBusqueda.Items.Refresh();
+                    }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar al cliente");
+                Logger.Warn("Error al buscar al cliente" + ex);
             }
         }
 
         //Ver datos de un cliente
         private void btnVer_Click(object sender, RoutedEventArgs e)
         {
-            //Tomo el cliente seleccionado del listbox de resultados de busqueda
-            Cliente clienteEncontrado = (Cliente)lbxResultBusqueda.SelectedItem;
-
-            if (clienteEncontrado!=null)
+            try
             {
-                frmAcciones.Content = new VistasCliente.DatosCliente((Cliente)lbxResultBusqueda.SelectedItem);
+                //Tomo el cliente seleccionado del listbox de resultados de busqueda
+                Cliente clienteEncontrado = (Cliente)lbxResultBusqueda.SelectedItem;
+
+                if (clienteEncontrado != null)
+                {
+                    frmAcciones.Content = new VistasCliente.DatosCliente((Cliente)lbxResultBusqueda.SelectedItem);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Logger.Warn("Ver Cliente" + ex);
             }
             
         }
@@ -85,25 +111,34 @@ namespace UI_WPF.Vistas
         //Modificar datos de un cliente
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            //Tomo el cliente seleccionado del listbox de resultados de busqueda
-            Cliente clienteEncontrado = (Cliente)lbxResultBusqueda.SelectedItem;
-
-            if (clienteEncontrado != null)
+            try
             {
-                frmAcciones.Content = new VistasCliente.ModificarCliente((Cliente)lbxResultBusqueda.SelectedItem,clienteBD, this);
+                //Tomo el cliente seleccionado del listbox de resultados de busqueda
+                Cliente clienteEncontrado = (Cliente)lbxResultBusqueda.SelectedItem;
+
+                if (clienteEncontrado != null)
+                {
+                    frmAcciones.Content = new VistasCliente.ModificarCliente((Cliente)lbxResultBusqueda.SelectedItem, clienteBD, this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar al cliente");
+                Logger.Warn("Modificar Cliente" + ex);
             }
         }
 
         //Eliminar Cliente
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            //Tomo el cliente seleccionado del listbox de resultados de busqueda
-            Cliente clienteEncontrado = (Cliente)lbxResultBusqueda.SelectedItem;
-
-            if (clienteEncontrado != null)
+            try
             {
-                VistasCliente.EliminarCliente pagina = new VistasCliente.EliminarCliente((Cliente)lbxResultBusqueda.SelectedItem, clienteBD, this);
-                frmAcciones.Content = pagina;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar al cliente");
+                Logger.Warn("Eliminar Cliente" + ex);
             }
         }
 
@@ -124,7 +159,8 @@ namespace UI_WPF.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+                Logger.Error("Error generando el reporte" + ex);
+                MessageBox.Show("Error generando el reporte \n");
             }  
         }
     }

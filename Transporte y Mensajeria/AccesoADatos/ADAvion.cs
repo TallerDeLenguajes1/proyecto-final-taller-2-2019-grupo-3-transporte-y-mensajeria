@@ -15,90 +15,98 @@ namespace AccesoADatos
         MySqlCommand cmd;
         MySqlDataReader dr;
 
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         /// <summary>
-        /// dar de alta un avion
+        /// Metodo para dar de alta un avion.
         /// </summary>
         /// <param name="avion"></param>
         public void AltaAvion(Avion avion)
         {
-
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-
-                using (cmd = new MySqlCommand("Insert into aviones(modelo,fechaCompra,precioCompra,aumento) values (@modelo,@fechaCompra,@precioCompra,@aumento)", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@modelo", avion.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", avion.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", avion.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", avion.Aumento);
-                    cmd.ExecuteNonQuery();
+                    conexion.abrir();
+
+                    using (cmd = new MySqlCommand("Insert into aviones(modelo,fechaCompra,precioCompra,aumento) values (@modelo,@fechaCompra,@precioCompra,@aumento)", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@modelo", avion.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", avion.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", avion.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", avion.Aumento);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de alta de Avion {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de alta el Avion");
+                }
             }
         }
 
 
         /// <summary>
-        /// eliminar un avion
+        /// Metodo para eliminar un avion.
         /// </summary>
         /// <param name="idAvion"></param>
         public void BajaAvion(int idAvion)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("DELETE FROM aviones WHERE idAvion = @idAvion", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@idAvion", idAvion);
-                    cmd.ExecuteNonQuery();
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("DELETE FROM aviones WHERE idAvion = @idAvion", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@idAvion", idAvion);
+                        cmd.ExecuteNonQuery();
+                    }
+                    conexion.cerrar();
                 }
-                conexion.cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Baja de Avion {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de baja el Avion");
+                }
             }
 
         }
-
         /// <summary>
         /// modificar un avion del sistema
         /// </summary>
         /// <param name="Avion"></param>
         public void ModificacionAvion(Avion Avion)
         {
-            try
+            using (conexion.retornarCN())
             {
-                conexion.abrir();
-                using (cmd = new MySqlCommand("UPDATE aviones SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento WHERE idAvion=@idAvion", conexion.retornarCN()))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@idAvion", Avion.IdVehiculo);
-                    cmd.Parameters.AddWithValue("@modelo", Avion.Modelo);
-                    cmd.Parameters.AddWithValue("@fechaCompra", Avion.FechaCompra);
-                    cmd.Parameters.AddWithValue("@precioCompra", Avion.PrecioCompra);
-                    cmd.Parameters.AddWithValue("@aumento", Avion.Aumento);
-                    cmd.ExecuteNonQuery();
-                    conexion.cerrar();
-                    MessageBox.Show("Moto modificada");
+                    conexion.abrir();
+                    using (cmd = new MySqlCommand("UPDATE aviones SET modelo=@modelo, fechaCompra=@fechaCompra, precioCompra=@precioCompra, aumento=@aumento WHERE idAvion=@idAvion", conexion.retornarCN()))
+                    {
+                        cmd.Parameters.AddWithValue("@idAvion", Avion.IdVehiculo);
+                        cmd.Parameters.AddWithValue("@modelo", Avion.Modelo);
+                        cmd.Parameters.AddWithValue("@fechaCompra", Avion.FechaCompra);
+                        cmd.Parameters.AddWithValue("@precioCompra", Avion.PrecioCompra);
+                        cmd.Parameters.AddWithValue("@aumento", Avion.Aumento);
+                        cmd.ExecuteNonQuery();
+                        conexion.cerrar();
+                        MessageBox.Show("Moto modificada");
+                    }
+
                 }
-               
-            }
-            catch (Exception ex)
-            {
-                //Loguear el error
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                catch (Exception ex)
+                {
+                    Logger.Error("Error de Modificicacion de Avion {0}", ex.ToString());
+                }
             }
         }
 
         /// <summary>
-        /// lista de todos los aviones del sistema
+        /// Metodo para listar todos los aviones del sistema.
         /// </summary>
         /// <returns></returns>
         public List<Avion> GetAviones()
@@ -134,7 +142,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaAviones;
         }
@@ -173,7 +181,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaAviones;
         }
@@ -217,7 +225,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaAviones;
         }
@@ -258,7 +266,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaAviones;
         }
@@ -305,7 +313,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaAviones;
         }
@@ -349,7 +357,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
             return listaAviones;
         }
@@ -373,7 +381,7 @@ namespace AccesoADatos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la consulta" + ex.ToString());
+                Logger.Error("Error Busqueda {0}", ex.ToString());
             }
         }
 

@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas
     /// </summary>
     public partial class ABMMercancia : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ABMMercancia()
         {
             InitializeComponent();
@@ -55,75 +56,100 @@ namespace UI_WPF.Vistas
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
-            ListMercanciasEncontradas.Clear();
-            lbxResultBusqueda.Items.Clear();
-
-            string contenido = tbxBuscar.Text;
-
-            //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
-            if (contenido != "")
+            try
             {
-                switch (cboBuscar.Text)
-                {
-                    case "Contenido":
-                        ListSobresEncontrados = sobreBD.GetSobres(contenido);
-                        ListPaquetesEncontrados = paqueteBD.GetPaquetes(contenido);
-                        ListMercanciasEncontradas = ListSobresEncontrados.Concat(ListPaquetesEncontrados).ToList();
-                        break;
-                    case "Codigo":
-                        break;
-                    default:
-                        break;
-                }
+                //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
+                ListMercanciasEncontradas.Clear();
+                lbxResultBusqueda.Items.Clear();
 
-                foreach (var item in ListMercanciasEncontradas)
-                {
-                    lbxResultBusqueda.Items.Add(item);
-                }
+                string contenido = tbxBuscar.Text;
 
+                //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
+                if (contenido != "")
+                {
+                    switch (cboBuscar.Text)
+                    {
+                        case "Contenido":
+                            ListSobresEncontrados = sobreBD.GetSobres(contenido);
+                            ListPaquetesEncontrados = paqueteBD.GetPaquetes(contenido);
+                            ListMercanciasEncontradas = ListSobresEncontrados.Concat(ListPaquetesEncontrados).ToList();
+                            break;
+                        case "Codigo":
+                            break;
+                        default:
+                            break;
+                    }
+
+                    foreach (var item in ListMercanciasEncontradas)
+                    {
+                        lbxResultBusqueda.Items.Add(item);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar la mercancia");
+                Logger.Warn("Error al buscar la mercancia" + ex);
             }
         }
 
         //Ver datos de un mercancia
         private void btnVer_Click(object sender, RoutedEventArgs e)
         {
-            // Tomo la mercancia seleccionada del listbox de resultados de busqueda
-            Mercancia mercanciaEncontrada = (Mercancia)lbxResultBusqueda.SelectedItem;
-
-            if (mercanciaEncontrada != null)
+            try
             {
-                //Segun el tipo de mercancia cargo su pagina correspondiente (Hacer con switch)
-                if (mercanciaEncontrada is Sobre)
+                // Tomo la mercancia seleccionada del listbox de resultados de busqueda
+                Mercancia mercanciaEncontrada = (Mercancia)lbxResultBusqueda.SelectedItem;
+
+                if (mercanciaEncontrada != null)
                 {
-                    frmAcciones.Content = new VistasMercancia.DatosSobre((Sobre)mercanciaEncontrada);
+                    //Segun el tipo de mercancia cargo su pagina correspondiente (Hacer con switch)
+                    if (mercanciaEncontrada is Sobre)
+                    {
+                        frmAcciones.Content = new VistasMercancia.DatosSobre((Sobre)mercanciaEncontrada);
+                    }
+
+                    if (mercanciaEncontrada is Paquete)
+                    {
+                        frmAcciones.Content = new VistasMercancia.DatosPaquete((Paquete)mercanciaEncontrada);
+                    }
                 }
 
-                if (mercanciaEncontrada is Paquete)
-                {
-                    frmAcciones.Content = new VistasMercancia.DatosPaquete((Paquete)mercanciaEncontrada);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error para Ver la mercancia");
+                Logger.Warn("Error para Ver la mercancia" + ex);
             }
         }
 
         //Cargar formulario de modificacion de una mercancia
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            // Tomo la mercancia seleccionada del listbox de resultados de busqueda
-            Mercancia mercanciaEncontrada = (Mercancia)lbxResultBusqueda.SelectedItem;
-
-            if (mercanciaEncontrada != null)
+            try
             {
-                //Segun el tipo de mercancia cargo su pagina correspondiente (Hacer con switch)
-                if (mercanciaEncontrada is Sobre)
-                {
-                    frmAcciones.Content = new VistasMercancia.ModificarSobre((Sobre)mercanciaEncontrada, sobreBD, this);
-                }
+                // Tomo la mercancia seleccionada del listbox de resultados de busqueda
+                Mercancia mercanciaEncontrada = (Mercancia)lbxResultBusqueda.SelectedItem;
 
-                if (mercanciaEncontrada is Paquete)
+                if (mercanciaEncontrada != null)
                 {
-                    frmAcciones.Content = new VistasMercancia.ModificarPaquete((Paquete)mercanciaEncontrada, paqueteBD, this);
+                    //Segun el tipo de mercancia cargo su pagina correspondiente (Hacer con switch)
+                    if (mercanciaEncontrada is Sobre)
+                    {
+                        frmAcciones.Content = new VistasMercancia.ModificarSobre((Sobre)mercanciaEncontrada, sobreBD, this);
+                    }
+
+                    if (mercanciaEncontrada is Paquete)
+                    {
+                        frmAcciones.Content = new VistasMercancia.ModificarPaquete((Paquete)mercanciaEncontrada, paqueteBD, this);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar la mercancia");
+                Logger.Warn("Modificar mercancia" + ex);
             }
 
         }
@@ -131,12 +157,20 @@ namespace UI_WPF.Vistas
         //Cargar formulario de eliminacion de mercancia 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            // Tomo la mercancia seleccionada del listbox de resultados de busqueda
-            Mercancia mercanciaEncontrada = (Mercancia)lbxResultBusqueda.SelectedItem;
-
-            if (mercanciaEncontrada != null)
+            try
             {
-                frmAcciones.Content = new VistasMercancia.EliminarMercancia((Mercancia)mercanciaEncontrada, sobreBD, paqueteBD, this);
+                // Tomo la mercancia seleccionada del listbox de resultados de busqueda
+                Mercancia mercanciaEncontrada = (Mercancia)lbxResultBusqueda.SelectedItem;
+
+                if (mercanciaEncontrada != null)
+                {
+                    frmAcciones.Content = new VistasMercancia.EliminarMercancia((Mercancia)mercanciaEncontrada, sobreBD, paqueteBD, this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar la mercancia");
+                Logger.Warn("Eliminar mercancia" + ex);
             }
         }
 
@@ -150,7 +184,8 @@ namespace UI_WPF.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+                Logger.Error("Error generando el reporte" + ex);
+                MessageBox.Show("Error generando el reporte \n");
             }
         }
 
@@ -164,7 +199,8 @@ namespace UI_WPF.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+                Logger.Error("Error generando el reporte" + ex);
+                MessageBox.Show("Error generando el reporte \n");
             }
         }
     }

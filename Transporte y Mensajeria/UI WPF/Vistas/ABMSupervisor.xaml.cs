@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas
     /// </summary>
     public partial class ABMSupervisor : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ABMSupervisor(AccesoADatos.ADSupervisor supervisorBD)
         {
             InitializeComponent();
@@ -44,33 +45,50 @@ namespace UI_WPF.Vistas
         //Alta supervisor
         private void btnAltaSupervisor_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            int cuil = Convert.ToInt32(tbxCuil.Text);
-            string nombre = tbxNombre.Text;
-            string apellido = tbxApellido.Text;
-            string direccion = tbxDireccion.Text;
-            string telefono = tbxTelefono.Text;
-            Supervisor nuevoSupervisor = new Supervisor(cuil, nombre, apellido, direccion, telefono);
-            supervisorBD.AltaSupervisor(nuevoSupervisor);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                int cuil = Convert.ToInt32(tbxCuil.Text);
+                string nombre = tbxNombre.Text;
+                string apellido = tbxApellido.Text;
+                string direccion = tbxDireccion.Text;
+                string telefono = tbxTelefono.Text;
+                Supervisor nuevoSupervisor = new Supervisor(cuil, nombre, apellido, direccion, telefono);
+                supervisorBD.AltaSupervisor(nuevoSupervisor);
+                MessageBox.Show("Se agrego correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, no se pudo dar de alta al Supervisor, quizas ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Alta" + ex);
+            }
         }
 
         //Buscar un supervisor segun el metodo elegido
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
-            ListSupervisoresEncontrados.Clear();
-            lbxResultBusqueda.Items.Refresh();
-            string contenido = tbxBuscar.Text;
-
-            //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
-            if (contenido != "")
+            try
             {
-                Supervisor supervisorBuscado = supervisorBD.GetSupervisores(Convert.ToInt32(contenido));
-                if (supervisorBuscado != null)
+                //Primero limpio la lista y el listbox para que los resultados de busquedas anteriores no interfieran con los nuevos
+                ListSupervisoresEncontrados.Clear();
+                lbxResultBusqueda.Items.Refresh();
+                string contenido = tbxBuscar.Text;
+
+                //Si el contenido del cuadro de busqueda esta vacio no se ejecuta la consulta a la db
+                if (contenido != "")
                 {
-                    ListSupervisoresEncontrados.Add(supervisorBuscado);
-                    lbxResultBusqueda.Items.Refresh();
+                    Supervisor supervisorBuscado = supervisorBD.GetSupervisores(Convert.ToInt32(contenido));
+                    if (supervisorBuscado != null)
+                    {
+                        ListSupervisoresEncontrados.Add(supervisorBuscado);
+                        lbxResultBusqueda.Items.Refresh();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar al Supervisor");
+                Logger.Warn("Error al buscar al Supervisor" + ex);
             }
         }
 
@@ -89,36 +107,60 @@ namespace UI_WPF.Vistas
         //Modificar datos de un supervisor
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
-            //Tomo el cliente seleccionado del listbox de resultados de busqueda
-            Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
-
-            if (supervisorEncontrado != null)
+            try
             {
-                frmAcciones.Content = new VistasSupervisor.ModificarSupervisor(supervisorEncontrado, supervisorBD, this);
+                //Tomo el cliente seleccionado del listbox de resultados de busqueda
+                Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
+
+                if (supervisorEncontrado != null)
+                {
+                    frmAcciones.Content = new VistasSupervisor.ModificarSupervisor(supervisorEncontrado, supervisorBD, this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Modificar al Supervisor");
+                Logger.Warn("Modificar Supervisor" + ex);
             }
         }
 
         //Eliminar supervisor
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            //Tomo el cliente seleccionado del listbox de resultados de busqueda
-            Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
-
-            if (supervisorEncontrado != null)
+            try
             {
-                frmAcciones.Content = new VistasSupervisor.EliminarSupervisor(supervisorEncontrado, supervisorBD, this);
+                //Tomo el cliente seleccionado del listbox de resultados de busqueda
+                Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
+
+                if (supervisorEncontrado != null)
+                {
+                    frmAcciones.Content = new VistasSupervisor.EliminarSupervisor(supervisorEncontrado, supervisorBD, this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Eliminar al Supervisor");
+                Logger.Warn("Eliminar Supervisor" + ex);
             }
         }
 
         //Asociar un vehiculo a un supervisor
         private void btnAsociarVehiculo_Click(object sender, RoutedEventArgs e)
         {
-            //Tomo el cliente seleccionado del listbox de resultados de busqueda
-            Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
-
-            if (supervisorEncontrado != null)
+            try
             {
-                frmAcciones.Content = new VistasSupervisor.AsociarVehiculo(supervisorEncontrado, supervisorBD, this);
+                //Tomo el cliente seleccionado del listbox de resultados de busqueda
+                Supervisor supervisorEncontrado = (Supervisor)lbxResultBusqueda.SelectedItem;
+
+                if (supervisorEncontrado != null)
+                {
+                    frmAcciones.Content = new VistasSupervisor.AsociarVehiculo(supervisorEncontrado, supervisorBD, this);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al Asociar Vehiculo Superviso");
+                Logger.Warn("Asociar Vehiculo Supervisor" + ex);
             }
         }
 
@@ -145,7 +187,8 @@ namespace UI_WPF.Vistas
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error generando el reporte \n" + ex.ToString());
+                Logger.Error("Error generando el reporte" + ex);
+                MessageBox.Show("Error generando el reporte \n");
             }
         }
     }

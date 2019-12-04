@@ -432,3 +432,108 @@ C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\Vist
 C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasIncio\HomePage.baml
 C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\AsociarVehiculo.baml
 C:\Users\Boris Asen\Desktop\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\VehiculosAsociados.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.exe.config
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.exe
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\UI WPF.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\AccesoADatos.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\EntidadesDelProyecto.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\HelperDeArchivos.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MaterialDesignColors.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MySql.Data.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\itextsharp.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Google.Protobuf.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Renci.SshNet.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\AccesoADatos.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\EntidadesDelProyecto.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\HelperDeArchivos.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\MySql.Data.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\itextsharp.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Google.Protobuf.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\Renci.SshNet.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csprojAssemblyReference.cache
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMCliente.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMEnvio.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMMercancia.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMSupervisor.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMVehiculos.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasCliente\DatosCliente.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasCliente\EliminarCliente.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasCliente\ModificarCliente.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasIncio\HomeContent.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasIncio\HomePage.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\AltaPaquete.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\AltaSobre.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\DatosPaquete.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\DatosSobre.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\EliminarMercancia.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\ModificarPaquete.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\ModificarSobre.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\AsociarVehiculo.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\DatosSupervisor.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\EliminarSupervisor.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\ModificarSupervisor.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\VehiculosAsociados.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\AltaAvion.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\AltaFurgoneta.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\AltaMoto.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\DatosAvion.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\DatosFurgoneta.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\DatosMoto.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\EliminarVehiculo.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\ModificarAvion.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\ModificarFurgoneta.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\ModificarMoto.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\App.g.cs
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF_MarkupCompile.cache
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF_MarkupCompile.lref
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\App.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\MainWindow.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMCliente.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMEnvio.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMMercancia.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMSupervisor.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\ABMVehiculos.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasCliente\DatosCliente.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasCliente\EliminarCliente.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasCliente\ModificarCliente.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasIncio\HomeContent.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasIncio\HomePage.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\AltaPaquete.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\AltaSobre.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\DatosPaquete.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\DatosSobre.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\EliminarMercancia.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\ModificarPaquete.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasMercancia\ModificarSobre.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\AsociarVehiculo.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\DatosSupervisor.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\EliminarSupervisor.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\ModificarSupervisor.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasSupervisor\VehiculosAsociados.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\AltaAvion.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\AltaFurgoneta.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\AltaMoto.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\DatosAvion.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\DatosFurgoneta.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\DatosMoto.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\EliminarVehiculo.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\ModificarAvion.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\ModificarFurgoneta.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\Vistas\VistasVehiculo\ModificarMoto.baml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.g.resources
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI_WPF.Properties.Resources.resources
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.GenerateResource.cache
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.CoreCompileInputs.cache
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.csproj.CopyComplete
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.exe
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\NLog.config
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\NLog.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\bin\Debug\NLog.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\UI WPF\obj\Debug\UI WPF_Content.g.cs

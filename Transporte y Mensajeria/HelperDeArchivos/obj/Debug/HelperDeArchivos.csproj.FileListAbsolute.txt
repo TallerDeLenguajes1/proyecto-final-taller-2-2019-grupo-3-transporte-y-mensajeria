@@ -21,3 +21,29 @@ C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CopyComplete
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.dll
 C:\Users\Boris Asen\Desktop\Proyecto Final\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\HelperDeArchivos.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\AccesoADatos.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Consola.exe.config
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\EntidadesDelProyecto.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\itextsharp.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\MySql.Data.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Google.Protobuf.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\Renci.SshNet.xml
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csprojAssemblyReference.cache
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CoreCompileInputs.cache
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.csproj.CopyComplete
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\obj\Debug\HelperDeArchivos.pdb
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.config
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.dll
+C:\Users\Mariano\Desktop\Taller2\a1\proyecto-final-taller-2-2019-grupo-3-transporte-y-mensajeria\Transporte y Mensajeria\HelperDeArchivos\bin\Debug\NLog.xml

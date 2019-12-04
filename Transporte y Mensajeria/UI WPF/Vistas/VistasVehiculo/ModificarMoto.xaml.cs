@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class ModificarMoto : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public ModificarMoto(Moto moto, AccesoADatos.ADMoto motoBD, ABMVehiculos mainPage)
         {
             InitializeComponent();
@@ -47,17 +48,26 @@ namespace UI_WPF.Vistas.VistasVehiculo
 
         private void btnModificarMoto_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string modelo = tbxModelo.Text;
-            DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
-            Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
-            int cilindrada = Convert.ToInt32(tbxCilindrada.Text);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string modelo = tbxModelo.Text;
+                DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+                Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+                int cilindrada = Convert.ToInt32(tbxCilindrada.Text);
 
-            Moto motoEncontrada = new Moto(moto.IdVehiculo, modelo, fechaCompra, precioCompra, cilindrada, 2);
+                Moto motoEncontrada = new Moto(moto.IdVehiculo, modelo, fechaCompra, precioCompra, cilindrada, 2);
 
-            motoBD.ModificacionMoto(motoEncontrada);
+                motoBD.ModificacionMoto(motoEncontrada);
 
-            mainPage.ActualizarResultadosBusqueda();
+                mainPage.ActualizarResultadosBusqueda();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Revise los datos, ingreso algun dato incorrectamente");
+                Logger.Warn("Moto Modificar" + ex);
+            }
         }
     }
 }

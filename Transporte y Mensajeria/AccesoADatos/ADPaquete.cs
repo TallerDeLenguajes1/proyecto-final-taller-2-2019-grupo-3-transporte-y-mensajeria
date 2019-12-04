@@ -15,7 +15,12 @@ namespace AccesoADatos
         MySqlCommand cmd;
         MySqlDataReader dr;
 
-        //Metodo alta Paquete.
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
+        /// <summary>
+        /// Metodo para dar de Alta un Paquete.
+        /// </summary>
+        /// <param name="paquete"></param>
         public void AltaPaquete(Paquete paquete)
         {
             using (conexion.retornarCN())
@@ -33,19 +38,22 @@ namespace AccesoADatos
                     cmd.Parameters.AddWithValue("@volumen", paquete.Volumen);
 
                     cmd.ExecuteNonQuery();
-                    //conexion.cerrar();
                     MessageBox.Show("Paquete agregado");
                 }
                 catch (Exception ex)
                 {
-                    //Loguear el error
-                    MessageBox.Show("Error en la consulta" + ex.ToString());
+                    Logger.Error("Error de alta de Paquete {0}", ex.ToString());
+                    MessageBox.Show("No se pudo dar el Alta el Paquete");
                 }
             }
 
         }
 
-        //Buscar Paquete segun Contenido
+        /// <summary>
+        /// Metodo para buscar Paquetes segun Contenido
+        /// </summary>
+        /// <param name="contenidoToSearch"></param>
+        /// <returns></returns>
         public List<Mercancia> GetPaquetes(string contenidoToSearch)
         {
             //Variables auxiliares
@@ -59,7 +67,7 @@ namespace AccesoADatos
             bool asegurada;
             bool largoRecorrido;
             double aumSeguro;
-            double precioGramo = 1;
+            double precioM3 = this.GetPrecioM3();
 
             using (conexion.retornarCN())
             {
@@ -100,7 +108,12 @@ namespace AccesoADatos
 
                         volumen = Convert.ToInt32(dr[6]);
 
-                        nuevoPaquete = new Paquete(idPaquete, contenido, asegurada, largoRecorrido, aumSeguro, precioGramo, volumen);
+                        nuevoPaquete = new Paquete(idPaquete, contenido, asegurada, largoRecorrido, aumSeguro, precioM3, volumen);
+
+                        //cargarVehiculos(nuevoPaquete);
+                        //Esto funcionaba correctamente en la version q subi el lunes pero ahora aqui no.
+                        //abria q ver si es necesario q tenga los vehiculos ,asociarlos en otro lado.
+
                         ListPaquetes.Add(nuevoPaquete);
                     }
                     dr.Close();
@@ -108,13 +121,31 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error en la consulta" + ex.ToString());
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
                 }
                 return ListPaquetes;
             }
         }
+        /// <summary>
+        /// El metodo permite cargar los vehiculos que se le asocian a un Sobre
+        /// esta carga es externa al sistema, y lo realizamos de esta forma para disminuir la complejidad del sistema.
+        /// </summary>
+        /// <param name="nuevoPaquete"></param>
+        private static void cargarVehiculos(Paquete nuevoPaquete)
+        {
+            List<Vehiculo> listaVehiculos = new List<Vehiculo>();
+            listaVehiculos.Add(new Furgoneta("Toyota", DateTime.Now, 900000, 500, 2));
+            listaVehiculos.Add(new Furgoneta("Renault", DateTime.Now, 500000, 450, 2));
+            listaVehiculos.Add(new Avion("Aerobus920", DateTime.Now, 2000000, 10));
 
-        //Modificar Paquete
+            nuevoPaquete.AsociarVehiculo(listaVehiculos);
+        }
+
+        /// <summary>
+        /// Metodo para Modificar Paquete.
+        /// </summary>
+        /// <param name="paquete"></param>
         public void ModificacionPaquete(Paquete paquete)
         {
             using (conexion.retornarCN())
@@ -138,8 +169,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
-                    //Loguear el error
-                    MessageBox.Show("Error en la consulta" + ex.ToString());
+                    Logger.Error("Error de Modificicacion de Paquete {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo Modificar");
                 }
             }
         }
@@ -164,7 +195,8 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error en la consulta" + ex.ToString());
+                    Logger.Error("Error de Baja de Paquete {0}", ex.ToString());
+                    MessageBox.Show("Error, no se pudo dar de baja el Paquete");
                 }
 
             }
@@ -172,21 +204,27 @@ namespace AccesoADatos
 
         }
 
+        //-------------
 
-        //-----------------
-        //Devolver listado de Paquetes.
-        public List<Paquete> GetPaquetes()
+
+        /// <summary>
+        /// Metodo para devolver listado de Paquetes.
+        /// </summary>
+        /// <returns></returns>
+        public List<Mercancia> GetPaquetes()
         {
             //Variables auxiliares
-            List<Paquete> ListPaquetes = new List<Paquete>();
+            List<Mercancia> ListPaquetes = new List<Mercancia>();
             Paquete nuevoPaquete;
+
             int idPaquete;
-            double precioNeto;
-            string descripcion;
-            bool asegurada;
-            double aumSeguro;
-            bool largoRecorrido;
             double volumen;
+            double precioNeto;
+            string contenido;
+            bool asegurada;
+            bool largoRecorrido;
+            double aumSeguro;
+            double precioM3 = this.GetPrecioM3();
 
             using (conexion.retornarCN())
             {
@@ -199,12 +237,35 @@ namespace AccesoADatos
                     {
                         idPaquete = Convert.ToInt32(dr[0]);
                         precioNeto = Convert.ToInt32(dr[1]);
-                        descripcion = dr[2].ToString();
-                        asegurada = true;//Convert.ToInt32(dr[3]);
+                        contenido = dr[2].ToString();
+                        //En Mysql un bool es 1 o 0, por lo que se hace el control para que en VS se asigne true o false.
+                        int aseguradaBD = Convert.ToInt32(dr[3]);
+                        if (aseguradaBD == 1)
+                        {
+                            asegurada = true;
+                        }
+                        else
+                        {
+                            asegurada = false;
+                        }
+
                         aumSeguro = Convert.ToInt32(dr[4]);
-                        largoRecorrido = true;//dr[5].ToString();
+
+                        //En Mysql un bool es 1 o 0, por lo que se hace el control para que en VS se asigne true o false.
+                        int largoRecorridoBD = Convert.ToInt32(dr[5]);
+                        if (largoRecorridoBD == 1)
+                        {
+                            largoRecorrido = true;
+                        }
+                        else
+                        {
+                            largoRecorrido = false;
+                        }
+
                         volumen = Convert.ToInt32(dr[6]);
-                        nuevoPaquete = new Paquete(descripcion, asegurada, largoRecorrido, aumSeguro, precioNeto, volumen);
+
+                        nuevoPaquete = new Paquete(idPaquete, contenido, asegurada, largoRecorrido, aumSeguro, precioM3, volumen);
+
                         ListPaquetes.Add(nuevoPaquete);
                     }
                     dr.Close();
@@ -212,13 +273,43 @@ namespace AccesoADatos
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error en la consulta" + ex.ToString());
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
+                }    
+            }
+            return ListPaquetes;
+        }
+        /// <summary>
+        /// Metodo para obtener el precio del Metro cubico de un paquete.
+        /// </summary>
+        /// <returns></returns>
+        public double GetPrecioM3()
+        {
+            double precioM3 = 0;
+            using (conexion.retornarCN())
+            {
+                try
+                {
+                    conexion.abrir();
+                    cmd = new MySqlCommand("select precio from precio_unidad where unidad = 'm3' order by fecha desc limit 1;", conexion.retornarCN());
+                    dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        precioM3 = Convert.ToDouble(dr[0]);
+                    }
+                    dr.Close();
+
+
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error("Error Busqueda {0}", ex.ToString());
+                    MessageBox.Show("Error en la consulta");
                 }
             }
+            return precioM3;
 
-
-
-            return ListPaquetes;
         }
     }
 }

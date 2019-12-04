@@ -21,6 +21,7 @@ namespace UI_WPF.Vistas.VistasMercancia
     /// </summary>
     public partial class AltaSobre : Page
     {
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
         public AltaSobre(AccesoADatos.ADSobre sobreBD)
         {
             InitializeComponent();
@@ -32,14 +33,23 @@ namespace UI_WPF.Vistas.VistasMercancia
 
         private void btnAltaSobre_Click(object sender, RoutedEventArgs e)
         {
-            //Declaracion de variables para tomar el contenido del formulario
-            string contenido = tbxContenido.Text;
-            Double peso = Convert.ToDouble(tbxPeso.Text);
-            bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
-            bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string contenido = tbxContenido.Text;
+                Double peso = Convert.ToDouble(tbxPeso.Text);
+                bool asegurado = Convert.ToBoolean(cbAsegurado.IsChecked);
+                bool largoRecorrido = Convert.ToBoolean(cbLargoRecorrido.IsChecked);
 
-            Sobre nuevoSobre = new Sobre( contenido, asegurado, largoRecorrido, 10, 1, peso);
-            sobreBD.AltaSobre(nuevoSobre);
+                Sobre nuevoSobre = new Sobre(contenido, asegurado, largoRecorrido, 10, 1, peso);
+                sobreBD.AltaSobre(nuevoSobre);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Revise los datos, ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Mercancia" + ex);
+            }
         }
 
     }
