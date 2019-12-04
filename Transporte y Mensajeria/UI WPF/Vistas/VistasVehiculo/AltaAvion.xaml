@@ -11,12 +11,12 @@
     <Grid>
         <Grid Height="149" VerticalAlignment="Top" Background="White">
             <Label x:Name="lblModelo" Content="Modelo:" Margin="10,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68"/>
-            <Label x:Name="lblPrecioCompra" Content="Precio de compra:" Margin="274,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
-            <TextBox x:Name="tbxModelo" HorizontalAlignment="Left" Height="22" Margin="14,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242"/>
-            <TextBox x:Name="tbxPrecioCompra" HorizontalAlignment="Left" Height="22" Margin="280,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="lblPrecioCompra" Content="Precio de compra:" Margin="176,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="114"/>
+            <TextBox x:Name="tbxModelo" Style="{StaticResource TextBoxStyle1}" HorizontalAlignment="Left" Height="22" Margin="14,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Text="Boeing 747"/>
+            <TextBox x:Name="tbxPrecioCompra" Style="{StaticResource TextBoxStyle1}" HorizontalAlignment="Left" Height="22" Margin="182,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="403000000"/>
             <Label x:Name="lblFechaCompra" Content="Fecha de compra:" Margin="9,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="110"/>
-            <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnAltaAvion" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" />
+            <DatePicker x:Name="dpFechaCompra" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top" Text="25/05/1990"/>
+            <Button x:Name="btnAltaAvion"  Style="{StaticResource ButtonStyle1}" Content="LISTO" Margin="0,109,22,18" HorizontalAlignment="Right" Width="52" Click="btnAltaAvion_Click" />
         </Grid>
     </Grid>
 </Page>

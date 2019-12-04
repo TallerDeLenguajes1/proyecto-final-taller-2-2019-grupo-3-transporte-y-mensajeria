@@ -8,7 +8,7 @@ namespace EntidadesDelProyecto
 {
     public class Paquete : Mercancia
     {
-        //Atribtos
+        //Atributos
         double volumen;
         double precioM3;
 
@@ -43,27 +43,43 @@ namespace EntidadesDelProyecto
         //public static double PrecioM3 { get => precioM3; set => precioM3 = value; }
 
         //Constructor
+        public Paquete()
+        {
+
+        }
         public Paquete(string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioM3, double volumen) : base(contenido, asegurada, largoRecorrido, aumSeguro)
         {
             this.volumen = volumen;
             this.precioM3 = precioM3;
         }
 
+        public Paquete(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioM3, double volumen) : base(idMercancia, contenido, asegurada, largoRecorrido, aumSeguro)
+        {
+            this.volumen = volumen;
+            this.precioM3 = precioM3;
+        }
+
+        public Paquete(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioM3, double volumen, List<Vehiculo> vehiculos) : base(idMercancia, contenido, asegurada, largoRecorrido, aumSeguro, vehiculos)
+        {
+            this.volumen = volumen;
+            this.precioM3 = precioM3;
+        }
+
         //Otros Metodos
-        protected override double CalcularPrecioNeto()
+        public override double CalcularPrecioNeto()
         {
             double aux = volumen * precioM3;
             return PrecioMercanciaAsegurada(aux);
         }
 
-        protected override double CalcularPrecioSegunVehiculos()
+        public override double GetUnidad()
         {
-            double suma = 0;
-            for (int i = 0; i < Vehiculos.Count(); i++)
-            {
-                suma += Vehiculos[i].CalcularPrecio(PrecioNeto, volumen);
-            }
-            return suma;
+            return this.volumen;
+        }
+
+        public override string ToString()
+        {
+            return "(Paquete) - " + Contenido;
         }
     }
 

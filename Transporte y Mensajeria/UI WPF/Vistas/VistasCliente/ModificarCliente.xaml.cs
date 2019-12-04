@@ -49,6 +49,7 @@ namespace UI_WPF.Vistas.VistasCliente
 
         private void btnModificarCliente_Click(object sender, RoutedEventArgs e)
         {
+            int idCliente = cliente.IdPersona;
             int cuil = Convert.ToInt32(tbxCuil.Text);
             string nombre = tbxNombre.Text;
             string apellido = tbxApellido.Text;
@@ -61,5 +62,6 @@ namespace UI_WPF.Vistas.VistasCliente
 
             mainPage.ActualizarResultadosBusqueda();
         }
+
     }
 }

@@ -96,6 +96,15 @@ namespace EntidadesDelProyecto
             this.aumento = aumento;
         }
 
+        public Vehiculo(int idVehiculo, string modelo, DateTime fechaCompra, double precioCompra, double aumento)
+        {
+            this.idVehiculo = idVehiculo;
+            this.modelo = modelo;
+            this.fechaCompra = fechaCompra;
+            this.precioCompra = precioCompra;
+            this.aumento = aumento;
+        }
+
         //Otros Metodos
         public virtual double CalcularPrecio(double precioMercancia, double unidad) { return 0; }
 

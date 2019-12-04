@@ -120,30 +120,51 @@ namespace EntidadesDelProyecto
 
 
         //Constructor
+        public Mercancia()
+        {
+
+        }
         public Mercancia(string contenido, bool asegurada, bool largoRecorrido, double aumSeguro)
         {
             this.contenido = contenido;
             this.asegurada = asegurada;
             this.largoRecorrido = largoRecorrido;
-            this.precioNeto = CalcularPrecioNeto();
             this.Vehiculos = new List<Vehiculo>();
             this.aumSeguro = aumSeguro;
+            this.precioNeto = CalcularPrecioNeto();
+        }
+
+        public Mercancia(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro)
+        {
+            this.idMercancia = idMercancia;
+            this.contenido = contenido;
+            this.asegurada = asegurada;
+            this.largoRecorrido = largoRecorrido;
+            this.Vehiculos = new List<Vehiculo>();
+            this.aumSeguro = aumSeguro;
+            this.precioNeto = CalcularPrecioNeto();
+        }
+
+        public Mercancia(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, List<Vehiculo> vehiculos)
+        {
+            this.idMercancia = idMercancia;
+            this.contenido = contenido;
+            this.asegurada = asegurada;
+            this.largoRecorrido = largoRecorrido;
+            this.Vehiculos = vehiculos;
+            this.aumSeguro = aumSeguro;
+            this.precioNeto = CalcularPrecioNeto();
         }
 
         //Otros Metodos
-        public void AsociarVehiculo(List<Vehiculo> VehiculosDisponibles)
+        public void AsociarVehiculo(Vehiculo vehiculo)
         {
-            if (largoRecorrido)
-            {
-                for (int i = 0; i < VehiculosDisponibles.Count(); i++)
-                {
-                    vehiculos.Add(VehiculosDisponibles[i]);
-                }
-            }
-            else
-            {
-                vehiculos.Add(VehiculosDisponibles[1]);
-            }
+            Vehiculos.Add(vehiculo);
+        }
+
+        public void QuitarVehiculo(Vehiculo vehiculo)
+        {
+            Vehiculos.Remove(vehiculo);
         }
 
         protected double PrecioMercanciaAsegurada(double precio)
@@ -158,9 +179,23 @@ namespace EntidadesDelProyecto
             }
         }
 
-        protected virtual double CalcularPrecioNeto() { return 0; }
+        public virtual double CalcularPrecioNeto() { return 0; }
 
-        protected virtual double CalcularPrecioSegunVehiculos() { return 0; }
+        /// <summary>
+        /// Este metodo permite obtener la unidad ya sea el peso o volumen segun  sea la Mercancia.
+        /// </summary>
+        /// <returns></returns>
+        public virtual double GetUnidad() { return 0; }
+
+        public double CalcularPrecioSegunVehiculos()
+        {
+            double suma = 0;
+            for (int i = 0; i < Vehiculos.Count(); i++)
+            {
+                suma += Vehiculos[i].CalcularPrecio(this.CalcularPrecioNeto(), this.GetUnidad());
+            }
+            return suma;
+        }
 
         public double CalcularPrecioFinal()
         {

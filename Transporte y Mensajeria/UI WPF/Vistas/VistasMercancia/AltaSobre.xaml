@@ -11,12 +11,12 @@
     <Grid>
         <Grid Background="White">
             <Label x:Name="lblPeso" Content="Peso:" Margin="10,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="56"/>
-            <TextBox x:Name="tbxPeso" Height="24" Margin="16,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120"  IsReadOnly="True"/>
+            <TextBox x:Name="tbxPeso" Style="{StaticResource TextBoxStyle1}" Text="100" Height="24" Margin="14,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Left" Width="120"/>
             <Label x:Name="lblDescripcion" Content="Contenido:" Margin="154,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"/>
-            <CheckBox x:Name="cbAsegurado" Content="Asegurado" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="cbAsegurado" IsChecked="True" Content="Asegurado" HorizontalAlignment="Left" Margin="17,68,0,0" VerticalAlignment="Top"/>
             <CheckBox x:Name="cbLargoRecorrido" Content="Largo recorrido" HorizontalAlignment="Left" Margin="107,68,0,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="tbxDescripcion" Height="22" Margin="160,26,16,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-            <Button x:Name="btnAltaSobre" Content="Listo" Margin="0,109,22,18" HorizontalAlignment="Right" Width="75" />
+            <TextBox x:Name="tbxContenido" Style="{StaticResource TextBoxStyle1}" Text="Zapatillas" Height="22" Margin="158,25,200,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <Button x:Name="btnAltaSobre" Style="{StaticResource ButtonStyle1}" Content="LISTO" Margin="0,109,22,18" HorizontalAlignment="Right" Width="52" Click="btnAltaSobre_Click" />
         </Grid>
 
     </Grid>

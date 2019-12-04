@@ -43,27 +43,43 @@ namespace EntidadesDelProyecto
         //public static double PrecioGramo { get => precioGramo; set => precioGramo = value; }
 
         //Constructor
+        public Sobre()
+        {
+
+        }
         public Sobre(string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioGramo, double peso) : base(contenido, asegurada, largoRecorrido, aumSeguro)
         {
             this.peso = peso;
             this.precioGramo = precioGramo;
         }
 
+        public Sobre(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioGramo, double peso) : base(idMercancia, contenido, asegurada, largoRecorrido, aumSeguro)
+        {
+            this.peso = peso;
+            this.precioGramo = precioGramo;
+        }
+
+        public Sobre(int idMercancia, string contenido, bool asegurada, bool largoRecorrido, double aumSeguro, double precioGramo, double peso, List<Vehiculo> vehiculos) : base(idMercancia, contenido, asegurada, largoRecorrido, aumSeguro, vehiculos)
+        {
+            this.peso = peso;
+            this.precioGramo = precioGramo;
+        }
+
         //Otros Metodos
-        protected override double CalcularPrecioNeto()
+        public override double CalcularPrecioNeto()
         {
             double aux = peso * precioGramo;
             return PrecioMercanciaAsegurada(aux);
         }
 
-        protected override double CalcularPrecioSegunVehiculos()
+        public override double GetUnidad()
         {
-            double suma = 0;
-            for (int i = 0; i < Vehiculos.Count(); i++)
-            {
-                suma += Vehiculos[i].CalcularPrecio(PrecioNeto, peso);
-            }
-            return suma;
+            return this.peso;
+        }
+
+        public override string ToString()
+        {
+            return "(Sobre) - " + Contenido;
         }
     }
 

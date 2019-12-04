@@ -20,6 +20,11 @@ namespace EntidadesDelProyecto
             this.capacidadCarga = capacidadCarga;
         }
 
+        public Furgoneta(int idVehiculo, string modelo, DateTime fechaCompra, double precioCompra, double capacidadCarga, double aumento) : base(idVehiculo, modelo, fechaCompra, precioCompra, aumento)
+        {
+            this.capacidadCarga = capacidadCarga;
+        }
+
         public double CapacidadCarga
         {
             get
@@ -46,7 +51,10 @@ namespace EntidadesDelProyecto
             }
         }
 
-
+        public override string ToString()
+        {
+            return "(Furgoneta) - " + Modelo;
+        }
 
 
     }

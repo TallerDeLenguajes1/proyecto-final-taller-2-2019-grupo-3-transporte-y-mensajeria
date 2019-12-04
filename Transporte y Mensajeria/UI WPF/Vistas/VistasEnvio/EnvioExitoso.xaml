@@ -1,0 +1,16 @@
+﻿<Window x:Class="UI_WPF.Vistas.VistasEnvio.EnvioExitoso"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UI_WPF.Vistas.VistasEnvio"
+        mc:Ignorable="d"
+        Title="EnvioExitoso" Height="300" Width="300" AllowsTransparency="True" Background="{x:Null}" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
+    <Grid Background="#FF898A8D">
+        <Label Content="¡Envio Exitoso!" Margin="69,30,68,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Myriad Pro" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Style="{StaticResource ButtonStyle1}" x:Name="btnImprimirFactura" Content="Imprimir factura" Margin="90,97,86,0" Height="22" VerticalAlignment="Top" Background="#FF3B5F95" Click="btnImprimirFactura_Click" />
+        <Button Style="{StaticResource ButtonStyle1}" x:Name="btnCerrar" Content="OK" Margin="109,232,111,29" FontSize="20" Click="btnCerrar_Click" />
+        <Label x:Name="lblReporte" Content="" Margin="69,124,68,0" VerticalAlignment="Top" FontWeight="Bold" FontFamily="Myriad Pro" FontSize="13" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF3B5F95"/>
+
+    </Grid>
+</Window>

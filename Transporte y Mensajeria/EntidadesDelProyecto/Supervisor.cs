@@ -28,7 +28,7 @@ namespace EntidadesDelProyecto
         // public List<Vehiculo> Vehiculos { get => vehiculos; set => vehiculos = value; }
 
         //Constructor
-        protected Supervisor(int cuil, string nombre, string apellido, string direccion, string telefono) : base(cuil, nombre, apellido, direccion, telefono)
+        public Supervisor(int cuil, string nombre, string apellido, string direccion, string telefono) : base(cuil, nombre, apellido, direccion, telefono)
         {
             this.Vehiculos = new List<Vehiculo>();
         }

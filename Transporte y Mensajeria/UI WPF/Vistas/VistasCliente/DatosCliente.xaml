@@ -9,18 +9,18 @@
       Title="DatosCliente">
 
     <Grid>
-        <Grid Background="White">
+        <Grid >
             <Label x:Name="lblClientCuil" Content="Cuil:" Margin="0,45,271,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="33"/>
-            <TextBox x:Name="tbxCuil"  Height="22" Margin="0,71,178,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" IsReadOnly="True" HorizontalAlignment="Right" Width="120"/>
+            <TextBox x:Name="tbxCuil" Style="{StaticResource TextBoxStyle1}" Height="22" Margin="0,71,178,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" IsReadOnly="True" HorizontalAlignment="Right" Width="120"/>
             <Label x:Name="lblClientNombre" Content="Nombre:" Margin="0,99,248,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
-            <TextBox x:Name="tbxNombre" Height="24" Margin="0,125,178,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Right" Width="120"  IsReadOnly="True"/>
+            <TextBox x:Name="tbxNombre" Style="{StaticResource TextBoxStyle1}" Height="24" Margin="0,125,178,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Right" Width="120"  IsReadOnly="True"/>
             <Label x:Name="lblClientApellido" Content="Apellido:" Margin="0,99,98,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
-            <TextBox x:Name="tbxApellido" Height="24" Margin="0,125,29,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" IsReadOnly="True" HorizontalAlignment="Right" Width="120"/>
+            <TextBox x:Name="tbxApellido" Style="{StaticResource TextBoxStyle1}" Height="24" Margin="0,125,29,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" IsReadOnly="True" HorizontalAlignment="Right" Width="120"/>
             <Label x:Name="lblClientDireccion" Content="Direccion:" HorizontalAlignment="Right" Margin="0,155,242,0" VerticalAlignment="Top"/>
-            <TextBox x:Name="tbxDireccion" Height="24" Margin="0,181,178,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Right" Width="120" IsReadOnly="True"/>
+            <TextBox x:Name="tbxDireccion" Style="{StaticResource TextBoxStyle1}" Height="24" Margin="0,181,178,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140" HorizontalAlignment="Right" Width="120" IsReadOnly="True"/>
             <Label x:Name="lblClientTelefono" Content="Telefono:" Margin="0,155,95,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="59"/>
-            <TextBox x:Name="tbxTelefono" Height="24" Margin="0,181,29,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140"  IsReadOnly="True" HorizontalAlignment="Right" Width="120"/>
-            <Label Content="DATOS CLIENTE" Margin="0,10,211,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" HorizontalAlignment="Right" Width="93"/>
+            <TextBox x:Name="tbxTelefono" Style="{StaticResource TextBoxStyle1}" Height="24" Margin="0,181,29,0" TextWrapping="Wrap" VerticalAlignment="Top" MinWidth="100" MaxWidth="140"  IsReadOnly="True" HorizontalAlignment="Right" Width="120"/>
+            <Label Content="DATOS CLIENTE" Margin="0,10,191,0" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" HorizontalAlignment="Right" Width="113"/>
         </Grid>
 
     </Grid>

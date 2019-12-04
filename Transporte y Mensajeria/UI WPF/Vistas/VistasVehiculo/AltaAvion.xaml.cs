@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntidadesDelProyecto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,35 @@ namespace UI_WPF.Vistas.VistasVehiculo
     /// </summary>
     public partial class AltaAvion : Page
     {
-        public AltaAvion()
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        public AltaAvion(AccesoADatos.ADAvion avionBD)
         {
             InitializeComponent();
+            this.avionBD = avionBD;
+        }
+
+        //Variables y colecciones de datos auxiliares
+        AccesoADatos.ADAvion avionBD;
+
+        private void btnAltaAvion_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Declaracion de variables para tomar el contenido del formulario
+                string modelo = tbxModelo.Text;
+                DateTime fechaCompra = Convert.ToDateTime(dpFechaCompra.Text);
+                Double precioCompra = Convert.ToDouble(tbxPrecioCompra.Text);
+
+                Avion nuevoAvion = new Avion(modelo, fechaCompra, precioCompra, 10);
+                avionBD.AltaAvion(nuevoAvion);
+                MessageBox.Show("Se agrego correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error, no se pudo dar de alta al Vehiculo, quizas ingreso algun dato incorrectamente");
+                Logger.Warn("No se pudo dar de Vehiculo" + ex);
+            }
+
         }
     }
 }

@@ -34,14 +34,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.8\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -84,11 +98,56 @@
     <Compile Include="Vistas\VistasCliente\ModificarCliente.xaml.cs">
       <DependentUpon>ModificarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VistasEnvio\EnvioExitoso.xaml.cs">
+      <DependentUpon>EnvioExitoso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasIncio\HomeContent.xaml.cs">
+      <DependentUpon>HomeContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasIncio\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\VistasMercancia\AltaPaquete.xaml.cs">
       <DependentUpon>AltaPaquete.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasMercancia\AltaSobre.xaml.cs">
       <DependentUpon>AltaSobre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasMercancia\AsociarVehiculo.xaml.cs">
+      <DependentUpon>AsociarVehiculo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasMercancia\DatosPaquete.xaml.cs">
+      <DependentUpon>DatosPaquete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasMercancia\DatosSobre.xaml.cs">
+      <DependentUpon>DatosSobre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasMercancia\EliminarMercancia.xaml.cs">
+      <DependentUpon>EliminarMercancia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasMercancia\ModificarPaquete.xaml.cs">
+      <DependentUpon>ModificarPaquete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasMercancia\ModificarSobre.xaml.cs">
+      <DependentUpon>ModificarSobre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasMercancia\VehiculosAsociados.xaml.cs">
+      <DependentUpon>VehiculosAsociados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasSupervisor\AsociarVehiculo.xaml.cs">
+      <DependentUpon>AsociarVehiculo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasSupervisor\DatosSupervisor.xaml.cs">
+      <DependentUpon>DatosSupervisor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasSupervisor\EliminarSupervisor.xaml.cs">
+      <DependentUpon>EliminarSupervisor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasSupervisor\ModificarSupervisor.xaml.cs">
+      <DependentUpon>ModificarSupervisor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasSupervisor\VehiculosAsociados.xaml.cs">
+      <DependentUpon>VehiculosAsociados.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\VistasVehiculo\AltaAvion.xaml.cs">
       <DependentUpon>AltaAvion.xaml</DependentUpon>
@@ -98,6 +157,27 @@
     </Compile>
     <Compile Include="Vistas\VistasVehiculo\AltaMoto.xaml.cs">
       <DependentUpon>AltaMoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasVehiculo\DatosAvion.xaml.cs">
+      <DependentUpon>DatosAvion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasVehiculo\DatosFurgoneta.xaml.cs">
+      <DependentUpon>DatosFurgoneta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasVehiculo\DatosMoto.xaml.cs">
+      <DependentUpon>DatosMoto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasVehiculo\EliminarVehiculo.xaml.cs">
+      <DependentUpon>EliminarVehiculo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasVehiculo\ModificarAvion.xaml.cs">
+      <DependentUpon>ModificarAvion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasVehiculo\ModificarFurgoneta.xaml.cs">
+      <DependentUpon>ModificarFurgoneta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VistasVehiculo\ModificarMoto.xaml.cs">
+      <DependentUpon>ModificarMoto.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -143,11 +223,71 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Vistas\VistasEnvio\EnvioExitoso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasIncio\HomeContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasIncio\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\VistasMercancia\AltaPaquete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\VistasMercancia\AltaSobre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasMercancia\AsociarVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasMercancia\DatosPaquete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasMercancia\DatosSobre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasMercancia\EliminarMercancia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasMercancia\ModificarPaquete.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasMercancia\ModificarSobre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasMercancia\VehiculosAsociados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasSupervisor\AsociarVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasSupervisor\DatosSupervisor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasSupervisor\EliminarSupervisor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasSupervisor\ModificarSupervisor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasSupervisor\VehiculosAsociados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -160,6 +300,34 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\VistasVehiculo\AltaMoto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasVehiculo\DatosAvion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasVehiculo\DatosFurgoneta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasVehiculo\DatosMoto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasVehiculo\EliminarVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasVehiculo\ModificarAvion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasVehiculo\ModificarFurgoneta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\VistasVehiculo\ModificarMoto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +350,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -192,9 +366,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Imagenes\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\AccesoADatos\AccesoADatos.csproj">
       <Project>{375ca961-960c-4a25-bb59-3ea1efca4d4d}</Project>
       <Name>AccesoADatos</Name>
@@ -203,6 +374,22 @@
       <Project>{b6cd3902-d7f8-492c-89ed-c90efa0d00bd}</Project>
       <Name>EntidadesDelProyecto</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HelperDeArchivos\HelperDeArchivos.csproj">
+      <Project>{42ed4c95-e31e-43e4-9027-f7a8c2030c0b}</Project>
+      <Name>HelperDeArchivos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\cerrar.png" />
+    <Resource Include="Imagenes\maximizar.png" />
+    <Resource Include="Imagenes\minimizar.png" />
+    <Resource Include="Imagenes\ventana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\logo 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\logo2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

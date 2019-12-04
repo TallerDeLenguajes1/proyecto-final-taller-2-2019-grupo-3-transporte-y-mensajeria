@@ -10,92 +10,89 @@
       Title="ABMEnvio">
 
     <Grid>
-        <Grid Background="White">
-            <TextBlock HorizontalAlignment="Left" Margin="20,27,0,0" TextWrapping="Wrap" Text="ENVIOS" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="20"/>
-            <Button Content="NUEVO ENVIO" HorizontalAlignment="Left" Margin="132,27,0,0" VerticalAlignment="Top" Width="107"/>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,87,32,0" Width="728" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
+        <Grid >
+            <TextBlock HorizontalAlignment="Left" Margin="20,37,0,0" TextWrapping="Wrap" Text="ENVIOS" VerticalAlignment="Top" FontFamily="Myriad Pro" FontWeight="Bold" FontSize="25"/>
+            <Button Content="NUEVO ENVIO" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="132,38,0,0" VerticalAlignment="Top" Width="107" Height="23"/>
+            <Border  BorderThickness="1" Margin="20,80,22,21" CornerRadius="10" Background="White">
                 <Grid>
-                    <Label x:Name="lblBuscarPor" Content="Cliente emisor:" HorizontalAlignment="Left" Margin="17,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <TextBox x:Name="tbxBuscar" HorizontalAlignment="Left" Height="23" Margin="254,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
-                    <Button x:Name="btnCliente" HorizontalAlignment="Left" Margin="387,14,0,0" VerticalAlignment="Top" Width="22" Height="22">
-                        <materialDesign:PackIcon Kind="Magnify"/>
-                    </Button>
-                    <ComboBox x:Name="cboBuscar" HorizontalAlignment="Left" Margin="120,14,0,0" VerticalAlignment="Top" Width="129">
-                        <ComboBoxItem Content="Cuil" IsSelected="True"/>
-                        <ComboBoxItem Content="Nombre completo"/>
-                        <ComboBoxItem Content="Nombre o apellido"/>
-                        <ComboBoxItem/>
-                    </ComboBox>
-                    <Label x:Name="lblResultadoBusq" Content="Resultados:" HorizontalAlignment="Left" Margin="42,46,0,0" VerticalAlignment="Top"/>
-                    <ListBox x:Name="lbxResultBusqueda" HorizontalAlignment="Left" Height="58" Margin="120,50,0,0" VerticalAlignment="Top" Width="289"/>
-                    <Button Content="Agregar" HorizontalAlignment="Left" Margin="419,50,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Remover" HorizontalAlignment="Left" Margin="419,86,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label x:Name="lblClientCuil" Content="Seleccionado:" HorizontalAlignment="Left" Margin="503,60,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="24" Margin="508,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+                    <Grid Margin="0,10,0,0" Height="124" VerticalAlignment="Top" >
+                        <Label x:Name="lblBuscarPor" Content="Cliente emisor:" HorizontalAlignment="Left" Margin="37,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <TextBox x:Name="tbxBuscarEmisor" Style="{StaticResource TextBoxStyle1}" HorizontalAlignment="Left" Height="23" Margin="274,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Text="11111"/>
+                        <Button x:Name="btnBuscarEmisor" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="439,14,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnBuscarEmisor_Click">
+                            <materialDesign:PackIcon Kind="Magnify"/>
+                        </Button>
+                        <ComboBox x:Name="cboBuscarEmisor" HorizontalAlignment="Left" Margin="140,14,0,0" VerticalAlignment="Top" Width="129">
+                            <ComboBoxItem Content="Cuil" IsSelected="True"/>
+                            <ComboBoxItem Content="Nombre"/>
+                            <ComboBoxItem/>
+                        </ComboBox>
+                        <Label x:Name="lblResultadoBusq" Content="Resultados:" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top"/>
+                        <ListBox x:Name="lbxResultBusquedaEmisor" Height="58" Margin="140,50,319,0" VerticalAlignment="Top"/>
+                        <Button x:Name="AgregarEmisor" Style="{StaticResource ButtonStyle1}" Height="22" Margin="0,50,287,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="22" Click="AgregarEmisor_Click">
+                            <materialDesign:PackIcon Kind="Plus"/>
+                        </Button>
+                        <Button x:Name="QuitarEmisor" Style="{StaticResource ButtonStyle1}" Height="22" Margin="0,86,287,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="22" Click="QuitarEmisor_Click">
+                            <materialDesign:PackIcon Kind="Minus"/>
+                        </Button>
+                        <Label x:Name="lblClientCuil" Content="Seleccionado:" Margin="0,60,178,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="82"/>
+                        <TextBox x:Name="tbxEmisorSeleccionado" Style="{StaticResource TextBoxStyle1}" Height="24" Margin="0,84,26,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="230"/>
+                    </Grid>
+                    <Grid Margin="0,148,0,0" Height="124" VerticalAlignment="Top">
+                        <Label x:Name="lblBuscarPor1" Content="Cliente receptor:" HorizontalAlignment="Left" Margin="26,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <TextBox x:Name="tbxBuscarReceptor" Style="{StaticResource TextBoxStyle1}" HorizontalAlignment="Left" Height="23" Margin="273,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Text="39128748"/>
+                        <Button x:Name="btnBuscarReceptor" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="438,14,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnBuscarReceptor_Click" >
+                            <materialDesign:PackIcon Kind="Magnify"/>
+                        </Button>
+                        <ComboBox x:Name="cboBuscarReceptor" HorizontalAlignment="Left" Margin="139,14,0,0" VerticalAlignment="Top" Width="129">
+                            <ComboBoxItem Content="Cuil" IsSelected="True"/>
+                            <ComboBoxItem Content="Nombre"/>
+                            <ComboBoxItem/>
+                        </ComboBox>
+                        <Label x:Name="lblResultadoBusq1" Content="Resultados:" HorizontalAlignment="Left" Margin="59,46,0,0" VerticalAlignment="Top"/>
+                        <ListBox x:Name="lbxResultBusquedaReceptor" Height="58" Margin="139,50,320,0" VerticalAlignment="Top"/>
+                        <Button x:Name="AgregarReceptor" Style="{StaticResource ButtonStyle1}" Height="22"  Margin="0,50,288,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="22" Click="AgregarReceptor_Click">
+                            <materialDesign:PackIcon Kind="Plus"/>
+                        </Button>
+                        <Button x:Name="QuitarReceptor" Style="{StaticResource ButtonStyle1}" Height="22" Margin="0,86,288,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="22" Click="QuitarReceptor_Click">
+                            <materialDesign:PackIcon Kind="Minus"/>
+                        </Button>
+                        <Label x:Name="lblClientCuil1" Content="Seleccionado:" Margin="0,60,178,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="82"/>
+                        <TextBox x:Name="tbxReceptorSeleccionado" Style="{StaticResource TextBoxStyle1}" Height="24" Margin="0,84,26,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="230"/>
+                    </Grid>
+                    <Grid Margin="0,288,0,0" Height="124" VerticalAlignment="Top">
+                        <Label x:Name="lblBuscarPor2" Content="Mercancia:" HorizontalAlignment="Left" Margin="61,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <TextBox x:Name="tbxBuscarMercancia" Style="{StaticResource TextBoxStyle1}" HorizontalAlignment="Left" Height="23" Margin="274,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Text="teclado"/>
+                        <Button x:Name="btnBuscarMercancia" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="439,14,0,0" VerticalAlignment="Top" Width="22" Height="22" Click="btnBuscarMercancia_Click">
+                            <materialDesign:PackIcon Kind="Magnify"/>
+                        </Button>
+                        <ComboBox x:Name="cboBuscarMercancia" HorizontalAlignment="Left" Margin="140,14,0,0" VerticalAlignment="Top" Width="129">
+                            <ComboBoxItem Content="Contenido" IsSelected="True"/>
+                        </ComboBox>
+                        <Label x:Name="lblResultadoBusq2" Content="Resultados:" HorizontalAlignment="Left" Margin="62,46,0,0" VerticalAlignment="Top"/>
+                        <ListBox x:Name="lbxResultBusquedaMercancia" Height="58" Margin="140,50,319,0" VerticalAlignment="Top"/>
+                        <Button x:Name="AgregarMercancia" Style="{StaticResource ButtonStyle1}" Height="22" Margin="0,50,287,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="22" Click="AgregarMercancia_Click">
+                            <materialDesign:PackIcon Kind="Plus"/>
+                        </Button>
+                        <Button x:Name="QuitarMercancia" Style="{StaticResource ButtonStyle1}" Height="22" Margin="0,86,287,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="22" Click="QuitarMercancia_Click">
+                            <materialDesign:PackIcon Kind="Minus"/>
+                        </Button>
+                        <Label x:Name="lblClientCuil2" Content="Seleccionado:" Margin="0,60,178,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="82"/>
+                        <TextBox x:Name="tbxMercanciaSeleccionada" Style="{StaticResource TextBoxStyle1}" HorizontalAlignment="Right" Height="24" Margin="0,84,26,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
+                    </Grid>
+                    <Button x:Name="btnAltaEnvio" Style="{StaticResource ButtonStyle1}" Content="Listo" Margin="0,0,26,23" Height="22" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="btnAltaEnvio_Click"/>
+                    <DatePicker x:Name="dtpFechaEnvio" HorizontalAlignment="Left" Text="03/12/2019" Margin="140,0,0,66" Height="24" VerticalAlignment="Bottom"/>
+                    <Label x:Name="lblResultadoBusq2_Copy" Content="Fecha envío:" HorizontalAlignment="Left" Margin="53,0,0,62" Width="86" FontWeight="Bold" Height="25" VerticalAlignment="Bottom"/>
+                    <Button x:Name="btnCalcularPrecio" Style="{StaticResource ButtonStyle1}" Content="Calcular" HorizontalAlignment="Left" Margin="140,0,0,23" Width="76" Height="22" VerticalAlignment="Bottom" Click="btnCalcularPrecio_Click"/>
+                    <TextBox x:Name="tbxPrecioEnvio" Style="{StaticResource TextBoxStyle1}" Margin="252,0,0,23" TextWrapping="Wrap" HorizontalAlignment="Left" Width="88" Height="22" VerticalAlignment="Bottom"/>
+                    <Label x:Name="lblResultadoBusq2_Copy1" Content="Precio Final:" HorizontalAlignment="Left" Margin="53,0,0,18" Width="86" FontWeight="Bold" Height="26" VerticalAlignment="Bottom"/>
+                    <Label x:Name="lblResultadoBusq2_Copy2" Content="$" HorizontalAlignment="Left" Margin="233,0,0,18" Width="19" FontWeight="Bold" Height="26" VerticalAlignment="Bottom"/>
                 </Grid>
             </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,246,32,0" Width="728" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
-                <Grid>
-                    <Label x:Name="lblBuscarPor1" Content="Cliente receptor:" HorizontalAlignment="Left" Margin="6,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <TextBox x:Name="tbxBuscar1" HorizontalAlignment="Left" Height="23" Margin="253,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
-                    <Button x:Name="btnCliente1" HorizontalAlignment="Left" Margin="386,14,0,0" VerticalAlignment="Top" Width="22" Height="22" >
-                        <materialDesign:PackIcon Kind="Magnify"/>
-                    </Button>
-                    <ComboBox x:Name="cboBuscar1" HorizontalAlignment="Left" Margin="119,14,0,0" VerticalAlignment="Top" Width="129">
-                        <ComboBoxItem Content="Cuil" IsSelected="True"/>
-                        <ComboBoxItem Content="Nombre completo"/>
-                        <ComboBoxItem Content="Nombre o apellido"/>
-                        <ComboBoxItem/>
-                    </ComboBox>
-                    <Label x:Name="lblResultadoBusq1" Content="Resultados:" HorizontalAlignment="Left" Margin="39,46,0,0" VerticalAlignment="Top"/>
-                    <ListBox x:Name="lbxResultBusqueda1" HorizontalAlignment="Left" Height="58" Margin="119,50,0,0" VerticalAlignment="Top" Width="289"/>
-                    <Button Content="Agregar" HorizontalAlignment="Left" Margin="418,50,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Remover" HorizontalAlignment="Left" Margin="418,86,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label x:Name="lblClientCuil1" Content="Seleccionado:" HorizontalAlignment="Left" Margin="503,60,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="24" Margin="508,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
-
-
-
-
-
-
-                </Grid>
-            </Border>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,406,32,0" Width="728" CornerRadius="10" Background="White" Height="124" VerticalAlignment="Top">
-                <Grid>
-                    <Label x:Name="lblBuscarPor2" Content="Mercancia:" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-                    <TextBox x:Name="tbxBuscar2" HorizontalAlignment="Left" Height="23" Margin="254,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="128" Text="11111"/>
-                    <Button x:Name="btnCliente2" HorizontalAlignment="Left" Margin="387,14,0,0" VerticalAlignment="Top" Width="22" Height="22">
-                        <materialDesign:PackIcon Kind="Magnify"/>
-                    </Button>
-                    <ComboBox x:Name="cboBuscar2" HorizontalAlignment="Left" Margin="120,14,0,0" VerticalAlignment="Top" Width="129">
-                        <ComboBoxItem Content="Contenido" IsSelected="True"/>
-                        <ComboBoxItem Content="Nombre completo"/>
-                        <ComboBoxItem Content="Nombre o apellido"/>
-                        <ComboBoxItem/>
-                    </ComboBox>
-                    <Label x:Name="lblResultadoBusq2" Content="Resultados:" HorizontalAlignment="Left" Margin="42,46,0,0" VerticalAlignment="Top"/>
-                    <ListBox x:Name="lbxResultBusqueda2" HorizontalAlignment="Left" Height="58" Margin="120,50,0,0" VerticalAlignment="Top" Width="289"/>
-                    <Button Content="Agregar" HorizontalAlignment="Left" Margin="419,50,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button Content="Remover" HorizontalAlignment="Left" Margin="419,86,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Label x:Name="lblClientCuil2" Content="Seleccionado:" HorizontalAlignment="Left" Margin="503,60,0,0" VerticalAlignment="Top"/>
-                    <TextBox HorizontalAlignment="Left" Height="24" Margin="508,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
-
-
-
-
-
-
-                </Grid>
-            </Border>
-            <DatePicker HorizontalAlignment="Left" Margin="110,561,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="lblResultadoBusq2_Copy" Content="Fecha envío:" HorizontalAlignment="Left" Margin="30,559,0,0" VerticalAlignment="Top"/>
-            <Button Content="Listo" HorizontalAlignment="Left" Margin="685,563,0,0" VerticalAlignment="Top" Width="75"/>
 
 
 
         </Grid>
-        <Button Content="BUSCAR ENVIOS" HorizontalAlignment="Left" Margin="250,27,0,0" VerticalAlignment="Top" Width="108"/>
+        <!--<Button Content="BUSCAR ENVIOS" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Left" Margin="250,38,0,0" VerticalAlignment="Top" Width="119" Height="23"/>-->
 
     </Grid>
 </Page>
